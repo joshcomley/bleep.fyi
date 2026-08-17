@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Bleep — Where are the official UK government statistics on crime broken down by nationality?</title>
-  <meta name="description" content="Yes — official UK data broken down by nationality exists. The Ministry of Justice publishes the prison population by nationality every quarter: as at 30 June 2026, foreign nationals were 11.8% of the prison population (10,134 of 85,858), and 10.25% of prisoners held for sexual offences specifically — slightly under-represented on that measure. What the government does NOT routinely publish is criminal convictions broken down by nationality; MoJ has confirmed in writing to Parliament that its conviction statistics carry no nationality breakdown, and MoJ is currently appealing an Information Commissioner&#39;s Office order to release fuller conviction-by-nationality data. Full sources, verified figures and archived copies of every spreadsheet: https://bleep.fyi/r/uk-crime-by-nationality">
+  <meta name="description" content="Official UK data shows foreign nationals are represented in the prison population at almost exactly their share of the general population (about 12% either way) — not the large gap sometimes claimed online. There is real variation by offence type: over-represented for drug offences, under-represented for robbery and violence. Separate official research also finds disparities in how the justice system treats different groups at each stage, from stop-and-search through to sentencing. Full sourced breakdown: https://bleep.fyi/r/uk-crime-by-nationality">
   <link rel="stylesheet" href="/static/bleep.css">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◼</text></svg>">
 </head>
@@ -23,14 +23,107 @@
   retrieval date. Where the official record has a gap or a live dispute, that is stated as plainly as
   the figures themselves — see
   <a href="#limits">what this data can and cannot tell you</a>.</p>
-  <p class="briefing-updated">Updated 2026-08-17</p>
+  <p class="briefing-updated">Updated 2026-08-18</p>
 </section>
 
+<nav class="glance-tabs" aria-label="Briefing view" id="glance-tabs-nav">
+  <a href="#glance" id="tab-glance" aria-selected="true">At a glance</a>
+  <a href="#detail" id="tab-detail" aria-selected="false">Full detail</a>
+</nav>
+
+<section id="glance" class="tab-panel" aria-labelledby="tab-glance">
+  
+  
+  
+
+  <div class="hero-stat">
+  <p class="hero-stat-label">Representation ratio</p>
+  <p class="hero-stat-value">0.99&times;</p>
+  <p class="hero-stat-note">Foreign nationals&#39; share of the prison population was 0.99 times non-UK nationals&#39; share of the general population — effectively the same in this raw comparison. 1.00× would mean the two shares matched exactly. This is a comparison of two snapshot SHARES, not a measured likelihood of imprisonment or offending for any individual — the two datasets do not share a common age range, geography or time period precise enough to support that stronger claim.</p>
+</div>
+
+  <div class="glance-grid">
+    <figure class="chart" id="chart-population-vs-prison-share">
+  <figcaption class="chart-title">Foreign nationals: share of the general population vs share of the prison population</figcaption>
+  <div class="chart-svg-wrap"><svg viewBox="0 0 860 152" class="chart-svg chart-svg-paired" role="img" aria-label="Foreign nationals: share of the general population vs share of the prison population"><line x1="105.2" y1="8" x2="105.2" y2="144" class="chart-refline"/><text x="4" y="10" class="chart-label-lg">Non-UK nationals, general population <tspan class="chart-axis">— Calendar year 2024</tspan></text><rect x="4" y="18" width="852" height="28" rx="6" class="chart-track"/><rect x="4" y="18" width="101.2" height="28" rx="6" style="fill:#d95926"><title>Non-UK nationals, general population, Calendar year 2024: 11.9%</title></rect><text x="115.2" y="37.0" class="chart-label chart-label-bold" style="fill:#d95926">11.9%</text><text x="4" y="78" class="chart-label-lg">Foreign nationals, prison population <tspan class="chart-axis">— 30 June 2026</tspan></text><rect x="4" y="86" width="852" height="28" rx="6" class="chart-track"/><rect x="4" y="86" width="100.5" height="28" rx="6" style="fill:#d95926"><title>Foreign nationals, prison population, 30 June 2026: 11.8%</title></rect><text x="114.5" y="105.0" class="chart-label chart-label-bold" style="fill:#d95926">11.8%</text></svg></div>
+  <div class="chart-foot">
+    <p class="chart-source">ONS, Annual Population Survey (ad-hoc request 3063), Jan-Dec 2024, released 13 October 2025, retrieved 2026-08-17; Ministry of Justice, Offender management statistics quarterly, Table 1.Q.11, as at 30 June 2026, retrieved 2026-08-17</p>
+    <p class="chart-note">These two figures are the best currently available matched pair, but their reference dates differ by about 20 months (2024 calendar year vs 30 June 2026) because no more recent official nationality-by-population breakdown exists. &quot;Non-UK national&quot; (population, source S6) and &quot;foreign national&quot; (prison, source S1) are the same legal concept — citizenship — not birthplace or ethnicity. Plotted on a fixed 0-100 scale, not a zoomed-in axis, so the near-equality is not visually manufactured or understated.</p>
+    <button type="button" class="copy-btn" data-copy="Foreign nationals: share of the general population vs share of the prison population
+Non-UK nationals, general population (Calendar year 2024): 11.9%
+Foreign nationals, prison population (30 June 2026): 11.8%
+
+Source: ONS, Annual Population Survey (ad-hoc request 3063), Jan-Dec 2024, released 13 October 2025, retrieved 2026-08-17; Ministry of Justice, Offender management statistics quarterly, Table 1.Q.11, as at 30 June 2026, retrieved 2026-08-17">Copy data</button>
+  </div>
+  <details class="chart-table"><summary>Show as table</summary><table><thead><tr><th>Group</th><th>As of</th><th>%</th><th>Source</th></tr></thead><tbody><tr><td>Non-UK nationals, general population</td><td>Calendar year 2024</td><td>11.9%</td><td>ONS, Annual Population Survey (ad-hoc request 3063), Jan-Dec 2024, released 13 October 2025, retrieved 2026-08-17</td></tr><tr><td>Foreign nationals, prison population</td><td>30 June 2026</td><td>11.8%</td><td>Ministry of Justice, Offender management statistics quarterly, Table 1.Q.11, as at 30 June 2026, retrieved 2026-08-17</td></tr></tbody></table></details>
+</figure>
+    <figure class="chart" id="chart-population-vs-prison-pictogram">
+  <figcaption class="chart-title">Out of every 100 people…</figcaption>
+  <div class="chart-svg-wrap"><div class="pictogram-groups"><div class="pictogram-group"><p class="chart-label-lg">in the general population, about this many are non-UK nationals</p><p class="chart-axis">12 of 100 (11.9%) — Calendar year 2024</p><svg viewBox="0 0 178 178" class="chart-svg chart-svg-pictogram" role="img" aria-label="in the general population, about this many are non-UK nationals: 12 of 100"><g aria-hidden="true"><rect x="0" y="0" width="16" height="16" rx="3" style="fill:#d95926"/><rect x="18" y="0" width="16" height="16" rx="3" style="fill:#d95926"/><rect x="36" y="0" width="16" height="16" rx="3" style="fill:#d95926"/><rect x="54" y="0" width="16" height="16" rx="3" style="fill:#d95926"/><rect x="72" y="0" width="16" height="16" rx="3" style="fill:#d95926"/><rect x="90" y="0" width="16" height="16" rx="3" style="fill:#d95926"/><rect x="108" y="0" width="16" height="16" rx="3" style="fill:#d95926"/><rect x="126" y="0" width="16" height="16" rx="3" style="fill:#d95926"/><rect x="144" y="0" width="16" height="16" rx="3" style="fill:#d95926"/><rect x="162" y="0" width="16" height="16" rx="3" style="fill:#d95926"/><rect x="0" y="18" width="16" height="16" rx="3" style="fill:#d95926"/><rect x="18" y="18" width="16" height="16" rx="3" style="fill:#d95926"/><rect x="36" y="18" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="54" y="18" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="72" y="18" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="90" y="18" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="108" y="18" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="126" y="18" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="144" y="18" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="162" y="18" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="0" y="36" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="18" y="36" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="36" y="36" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="54" y="36" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="72" y="36" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="90" y="36" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="108" y="36" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="126" y="36" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="144" y="36" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="162" y="36" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="0" y="54" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="18" y="54" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="36" y="54" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="54" y="54" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="72" y="54" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="90" y="54" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="108" y="54" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="126" y="54" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="144" y="54" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="162" y="54" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="0" y="72" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="18" y="72" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="36" y="72" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="54" y="72" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="72" y="72" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="90" y="72" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="108" y="72" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="126" y="72" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="144" y="72" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="162" y="72" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="0" y="90" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="18" y="90" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="36" y="90" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="54" y="90" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="72" y="90" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="90" y="90" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="108" y="90" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="126" y="90" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="144" y="90" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="162" y="90" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="0" y="108" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="18" y="108" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="36" y="108" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="54" y="108" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="72" y="108" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="90" y="108" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="108" y="108" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="126" y="108" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="144" y="108" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="162" y="108" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="0" y="126" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="18" y="126" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="36" y="126" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="54" y="126" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="72" y="126" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="90" y="126" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="108" y="126" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="126" y="126" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="144" y="126" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="162" y="126" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="0" y="144" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="18" y="144" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="36" y="144" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="54" y="144" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="72" y="144" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="90" y="144" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="108" y="144" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="126" y="144" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="144" y="144" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="162" y="144" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="0" y="162" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="18" y="162" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="36" y="162" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="54" y="162" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="72" y="162" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="90" y="162" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="108" y="162" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="126" y="162" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="144" y="162" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="162" y="162" width="16" height="16" rx="3" style="fill:#3987e5"/></g></svg></div><div class="pictogram-group"><p class="chart-label-lg">in prison, about this many are foreign nationals</p><p class="chart-axis">12 of 100 (11.8%) — 30 June 2026</p><svg viewBox="0 0 178 178" class="chart-svg chart-svg-pictogram" role="img" aria-label="in prison, about this many are foreign nationals: 12 of 100"><g aria-hidden="true"><rect x="0" y="0" width="16" height="16" rx="3" style="fill:#d95926"/><rect x="18" y="0" width="16" height="16" rx="3" style="fill:#d95926"/><rect x="36" y="0" width="16" height="16" rx="3" style="fill:#d95926"/><rect x="54" y="0" width="16" height="16" rx="3" style="fill:#d95926"/><rect x="72" y="0" width="16" height="16" rx="3" style="fill:#d95926"/><rect x="90" y="0" width="16" height="16" rx="3" style="fill:#d95926"/><rect x="108" y="0" width="16" height="16" rx="3" style="fill:#d95926"/><rect x="126" y="0" width="16" height="16" rx="3" style="fill:#d95926"/><rect x="144" y="0" width="16" height="16" rx="3" style="fill:#d95926"/><rect x="162" y="0" width="16" height="16" rx="3" style="fill:#d95926"/><rect x="0" y="18" width="16" height="16" rx="3" style="fill:#d95926"/><rect x="18" y="18" width="16" height="16" rx="3" style="fill:#d95926"/><rect x="36" y="18" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="54" y="18" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="72" y="18" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="90" y="18" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="108" y="18" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="126" y="18" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="144" y="18" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="162" y="18" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="0" y="36" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="18" y="36" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="36" y="36" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="54" y="36" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="72" y="36" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="90" y="36" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="108" y="36" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="126" y="36" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="144" y="36" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="162" y="36" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="0" y="54" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="18" y="54" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="36" y="54" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="54" y="54" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="72" y="54" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="90" y="54" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="108" y="54" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="126" y="54" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="144" y="54" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="162" y="54" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="0" y="72" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="18" y="72" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="36" y="72" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="54" y="72" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="72" y="72" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="90" y="72" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="108" y="72" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="126" y="72" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="144" y="72" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="162" y="72" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="0" y="90" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="18" y="90" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="36" y="90" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="54" y="90" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="72" y="90" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="90" y="90" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="108" y="90" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="126" y="90" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="144" y="90" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="162" y="90" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="0" y="108" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="18" y="108" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="36" y="108" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="54" y="108" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="72" y="108" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="90" y="108" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="108" y="108" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="126" y="108" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="144" y="108" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="162" y="108" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="0" y="126" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="18" y="126" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="36" y="126" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="54" y="126" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="72" y="126" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="90" y="126" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="108" y="126" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="126" y="126" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="144" y="126" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="162" y="126" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="0" y="144" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="18" y="144" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="36" y="144" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="54" y="144" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="72" y="144" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="90" y="144" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="108" y="144" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="126" y="144" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="144" y="144" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="162" y="144" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="0" y="162" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="18" y="162" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="36" y="162" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="54" y="162" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="72" y="162" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="90" y="162" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="108" y="162" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="126" y="162" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="144" y="162" width="16" height="16" rx="3" style="fill:#3987e5"/><rect x="162" y="162" width="16" height="16" rx="3" style="fill:#3987e5"/></g></svg></div></div><p class="chart-note">Nationality not recorded in the prison population: 0.27 per 100 — too small to show as a rounded icon (one icon would depict 1%, nearly four times the true share), so it is stated here as text instead.</p></div>
+  <div class="chart-foot">
+    <p class="chart-source">in the general population, about this many are non-UK nationals: source s6; in prison, about this many are foreign nationals: source s1</p>
+    <p class="chart-note">Values rounded to the nearest whole person for the icon grid; exact percentages are 11.88% and 11.80% respectively — see the paired-share comparison above for the unrounded figures and reference dates.</p>
+    <button type="button" class="copy-btn" data-copy="Out of every 100 people…
+in the general population, about this many are non-UK nationals (Calendar year 2024): 12 of 100 people (11.9%)
+in prison, about this many are foreign nationals (30 June 2026): 12 of 100 people (11.8%)
+
+Source: in the general population, about this many are non-UK nationals: source s6; in prison, about this many are foreign nationals: source s1">Copy data</button>
+  </div>
+  <details class="chart-table"><summary>Show as table</summary><table><thead><tr><th>Group</th><th>As of</th><th>Rounded</th><th>Exact</th></tr></thead><tbody><tr><td>in the general population, about this many are non-UK nationals</td><td>Calendar year 2024</td><td>12 of 100</td><td>11.9%</td></tr><tr><td>in prison, about this many are foreign nationals</td><td>30 June 2026</td><td>12 of 100</td><td>11.8%</td></tr></tbody></table></details>
+</figure>
+  </div>
+
+  <section class="evidence-panel" aria-labelledby="evidence-heading">
+  <h2 id="evidence-heading">What prison shares cannot establish</h2>
+  <p class="evidence-intro">Prison representation reflects offending, policing, charging, bail and remand decisions, sentencing, and time served. The figures above cannot separate those effects from each other. The research below is the best official evidence on whether the justice system itself treats people differently at the same stage — and it must be read alongside the representation numbers above, not filed underneath them as a footnote.</p>
+  <div class="evidence-columns"><div class="evidence-col"><h3>Police contact</h3><ul><li><p>The routine Home Office statistics on stop and search and arrests carry no nationality breakdown at all — only ethnicity. There is no official way to check whether foreign nationals are stopped or arrested at a different rate than their population share, because the data simply is not collected that way.</p><p class="evidence-source"><a href="https://www.gov.uk/government/statistics/stop-and-search-arrests-and-mental-health-detentions-march-2025" rel="noopener">Home Office, Stop and search, arrests, and mental health detentions, March 2025, published 6 November 2025</a></p></li></ul></div><div class="evidence-col"><h3>Charging and sentencing</h3><ul><li><p>MoJ&#39;s own 2024 ethnicity statistics find disparity widening at each successive stage of the justice pipeline, with the largest gaps at stop and search, custodial remand and the prison population itself. MoJ&#39;s own caveat: this cannot show whether ethnicity itself, rather than related factors, causes the difference.</p><p class="evidence-source"><a href="https://www.gov.uk/government/statistics/ethnicity-and-the-criminal-justice-system-2024" rel="noopener">Ministry of Justice, Ethnicity and the Criminal Justice System 2024, published 27 November 2025, Figure 1.01</a></p></li><li><p>The 2017 Lammy Review, and the Ministry of Justice analysis behind it, found the odds of imprisonment overall for Black, Asian and Minority Ethnic offenders were 2.4 times the odds for White offenders — an ethnicity finding, not a nationality one, using 2015 data.</p><p class="evidence-source"><a href="https://www.gov.uk/government/organisations/lammy-review" rel="noopener">Lammy Review: final report, published 8 September 2017, MoJ analysis cited via source S10</a></p></li><li><p>For drug supply offences specifically, Sentencing Council research found Black offenders had 40% higher odds, and Asian and &quot;Other&quot; ethnicity offenders 50% higher odds, of an immediate custodial sentence than White offenders with comparable case factors — at the Crown Court, using 2012-2015 data.</p><p class="evidence-source"><a href="https://sentencingcouncil.org.uk/publications/research-reports/investigating-the-association-between-an-offender-s-sex-and-ethnicity-and-the-sentence-imposed-at-the-crown-court-for-drug-offences/" rel="noopener">Sentencing Council, Investigating the association between an offender&#39;s sex and ethnicity and the sentence imposed at the Crown Court for drug offences, published 15 January 2020</a></p></li></ul></div><div class="evidence-col"><h3>Custody before conviction</h3><ul><li><p>Foreign nationals are 21.3% of the REMAND (pre-conviction, presumed-innocent) prison population but only 9.2% of the SENTENCED population — against an overall 11.8% share. Remand is not a finding of guilt: it typically turns on bail-risk factors such as a fixed UK address or flight risk, which a non-British national may more often lack the ties to satisfy a court on.</p><p class="evidence-source"><a href="https://www.gov.uk/government/statistics/offender-management-statistics-quarterly-january-to-march-2026" rel="noopener">Ministry of Justice, Offender management statistics quarterly, Table 1.A.24, as at 30 June 2026</a></p></li></ul></div></div>
+  <p class="evidence-gap">All of the disparity research above — the Lammy Review, MoJ&#39;s 2024 ethnicity statistics, stop-and-search and arrest data, Sentencing Council research — records ETHNICITY, not NATIONALITY. These are different categories: British nationals of Black, Asian, Mixed or Other ethnicity are the overwhelming majority of people in this research. It identifies real mechanisms in how the justice system operates, but it cannot prove that a NATIONALITY difference (the subject of this page) has the same cause as an ETHNICITY difference. The missing nationality breakdown at most stages of the justice system is itself an evidence gap, not a minor footnote.</p>
+</section>
+
+  <figure class="chart" id="chart-offence-type-over-under-representation">
+  <figcaption class="chart-title">Foreign nationals in prison, by offence type: over- and under-represented relative to their 11.8% overall share</figcaption>
+  <div class="chart-svg-wrap"><svg viewBox="0 0 800 328" class="chart-svg chart-svg-diverging" role="img" aria-label="Foreign nationals in prison, by offence type: over- and under-represented relative to their 11.8% overall share"><line x1="450.0" y1="20" x2="450.0" y2="304" class="chart-zero-axis"/><text x="450.0" y="14" class="chart-axis" text-anchor="middle">11.80% baseline (overall foreign-national share of the prison population)</text><text x="180" y="46" class="chart-axis" text-anchor="end">Fraud offences</text><rect x="450.0" y="32" width="169.0" height="18" rx="4" style="fill:#d95926"><title>Fraud offences: 18.30% foreign vs 11.80% baseline (1.55×)</title></rect><text x="627.0" y="46" class="chart-axis" text-anchor="start">+6.5pp</text><text x="180" y="76" class="chart-axis" text-anchor="end">Drug offences</text><rect x="450.0" y="62" width="131.3" height="18" rx="4" style="fill:#d95926"><title>Drug offences: 16.85% foreign vs 11.80% baseline (1.43×)</title></rect><text x="589.3" y="76" class="chart-axis" text-anchor="start">+5.0pp</text><text x="180" y="106" class="chart-axis" text-anchor="end">Possession of weapons</text><rect x="434.1" y="92" width="15.9" height="18" rx="4" style="fill:#d95926"><title>Possession of weapons: 11.19% foreign vs 11.80% baseline (0.95×, roughly even)</title></rect><text x="426.1" y="106" class="chart-axis" text-anchor="end">-0.6pp</text><text x="180" y="136" class="chart-axis" text-anchor="end">Violence against the person</text><rect x="412.3" y="122" width="37.7" height="18" rx="4" style="fill:#d95926"><title>Violence against the person: 10.35% foreign vs 11.80% baseline (0.88×)</title></rect><text x="404.3" y="136" class="chart-axis" text-anchor="end">-1.4pp</text><text x="180" y="166" class="chart-axis" text-anchor="end">Sexual offences</text><rect x="409.7" y="152" width="40.3" height="18" rx="4" style="fill:#d95926"><title>Sexual offences: 10.25% foreign vs 11.80% baseline (0.87×)</title></rect><text x="401.7" y="166" class="chart-axis" text-anchor="end">-1.6pp</text><text x="180" y="196" class="chart-axis" text-anchor="end">Criminal damage and arson</text><rect x="380.6" y="182" width="69.4" height="18" rx="4" style="fill:#d95926"><title>Criminal damage and arson: 9.13% foreign vs 11.80% baseline (0.77×)</title></rect><text x="372.6" y="196" class="chart-axis" text-anchor="end">-2.7pp</text><text x="180" y="226" class="chart-axis" text-anchor="end">Theft offences</text><rect x="371.0" y="212" width="79.0" height="18" rx="4" style="fill:#d95926"><title>Theft offences: 8.76% foreign vs 11.80% baseline (0.74×)</title></rect><text x="363.0" y="226" class="chart-axis" text-anchor="end">-3.0pp</text><text x="180" y="256" class="chart-axis" text-anchor="end">Robbery</text><rect x="363.2" y="242" width="86.8" height="18" rx="4" style="fill:#d95926"><title>Robbery: 8.46% foreign vs 11.80% baseline (0.72×)</title></rect><text x="355.2" y="256" class="chart-axis" text-anchor="end">-3.3pp</text><text x="180" y="286" class="chart-axis" text-anchor="end">Public order offences</text><rect x="335.9" y="272" width="114.1" height="18" rx="4" style="fill:#d95926"><title>Public order offences: 7.41% foreign vs 11.80% baseline (0.63×)</title></rect><text x="327.9" y="286" class="chart-axis" text-anchor="end">-4.4pp</text><text x="194" y="320" class="chart-axis">Lower foreign-national share</text><text x="706" y="320" class="chart-axis" text-anchor="end">Higher foreign-national share</text></svg></div>
+  <div class="chart-foot">
+    <p class="chart-source">Ministry of Justice, Offender management statistics quarterly, Table 1.A.27, as at 30 June 2026, retrieved 2026-08-17; self-computed as each offence group&#39;s foreign-national share minus the 11.80% overall baseline</p>
+    <p class="chart-note">Shown as percentage points above/below the 11.80% overall baseline, for the nine largest, clearly-defined offence groups (covering 82,673 of 85,858 prisoners, 96.3% of the total). Excluded: &quot;Offence not recorded&quot; (1,518 cases — a data gap, not an offence type), &quot;Miscellaneous crimes against society&quot; (4,065 cases, foreign-national share 25.31% — excluded because this MoJ catch-all category&#39;s fine composition is not broken down in this table and may include offences definitionally more likely to involve foreign nationals, such as specific immigration-status offences, which would not mean what it means for an offence like robbery or theft), and the small summary-motoring/non-motoring categories. Drug offences and fraud are the only two categories where foreign nationals are over-represented among these nine; every other category shows under- or roughly-even representation.</p>
+    <button type="button" class="copy-btn" data-copy="Foreign nationals in prison, by offence type: over- and under-represented relative to their 11.8% overall share
+Fraud offences: +6.5pp — 18.30% foreign vs 11.80% baseline (1.55×)
+Drug offences: +5.0pp — 16.85% foreign vs 11.80% baseline (1.43×)
+Possession of weapons: -0.6pp — 11.19% foreign vs 11.80% baseline (0.95×, roughly even)
+Violence against the person: -1.4pp — 10.35% foreign vs 11.80% baseline (0.88×)
+Sexual offences: -1.6pp — 10.25% foreign vs 11.80% baseline (0.87×)
+Criminal damage and arson: -2.7pp — 9.13% foreign vs 11.80% baseline (0.77×)
+Theft offences: -3.0pp — 8.76% foreign vs 11.80% baseline (0.74×)
+Robbery: -3.3pp — 8.46% foreign vs 11.80% baseline (0.72×)
+Public order offences: -4.4pp — 7.41% foreign vs 11.80% baseline (0.63×)
+
+Source: Ministry of Justice, Offender management statistics quarterly, Table 1.A.27, as at 30 June 2026, retrieved 2026-08-17; self-computed as each offence group&#39;s foreign-national share minus the 11.80% overall baseline">Copy data</button>
+  </div>
+  <details class="chart-table"><summary>Show as table</summary><table><thead><tr><th>Offence group</th><th>vs baseline</th><th>Detail</th></tr></thead><tbody><tr><td>Fraud offences</td><td>+6.5pp</td><td>18.30% foreign vs 11.80% baseline (1.55×)</td></tr><tr><td>Drug offences</td><td>+5.0pp</td><td>16.85% foreign vs 11.80% baseline (1.43×)</td></tr><tr><td>Possession of weapons</td><td>-0.6pp</td><td>11.19% foreign vs 11.80% baseline (0.95×, roughly even)</td></tr><tr><td>Violence against the person</td><td>-1.4pp</td><td>10.35% foreign vs 11.80% baseline (0.88×)</td></tr><tr><td>Sexual offences</td><td>-1.6pp</td><td>10.25% foreign vs 11.80% baseline (0.87×)</td></tr><tr><td>Criminal damage and arson</td><td>-2.7pp</td><td>9.13% foreign vs 11.80% baseline (0.77×)</td></tr><tr><td>Theft offences</td><td>-3.0pp</td><td>8.76% foreign vs 11.80% baseline (0.74×)</td></tr><tr><td>Robbery</td><td>-3.3pp</td><td>8.46% foreign vs 11.80% baseline (0.72×)</td></tr><tr><td>Public order offences</td><td>-4.4pp</td><td>7.41% foreign vs 11.80% baseline (0.63×)</td></tr></tbody></table></details>
+</figure>
+
+  <p class="glance-more"><a href="#detail">See every source, figure and caveat in full detail ↓</a></p>
+</section>
+
+<section id="detail" class="tab-panel" aria-labelledby="tab-detail">
+
 <section class="comment-box">
-  <h2>For the comment thread</h2>
-  <p>Yes — official UK data broken down by nationality exists. The Ministry of Justice publishes the prison population by nationality every quarter: as at 30 June 2026, foreign nationals were 11.8% of the prison population (10,134 of 85,858), and 10.25% of prisoners held for sexual offences specifically — slightly under-represented on that measure. What the government does NOT routinely publish is criminal convictions broken down by nationality; MoJ has confirmed in writing to Parliament that its conviction statistics carry no nationality breakdown, and MoJ is currently appealing an Information Commissioner&#39;s Office order to release fuller conviction-by-nationality data. Full sources, verified figures and archived copies of every spreadsheet: https://bleep.fyi/r/uk-crime-by-nationality</p>
+  <h2>Copy and share this</h2>
+  <p class="comment-box-framing">This is something you can copy and paste if you see this misinformation online elsewhere — in a comment thread, a forum, anywhere it comes up. It is written to stand on its own, for anyone to post.</p>
+
+  <div class="comment-box-payload">
+    <p class="comment-box-label">Short version</p>
+    <p>Official UK data shows foreign nationals are represented in the prison population at almost exactly their share of the general population (about 12% either way) — not the large gap sometimes claimed online. There is real variation by offence type: over-represented for drug offences, under-represented for robbery and violence. Separate official research also finds disparities in how the justice system treats different groups at each stage, from stop-and-search through to sentencing. Full sourced breakdown: https://bleep.fyi/r/uk-crime-by-nationality</p>
+    <div class="comment-box-actions"><button type="button" class="copy-btn" data-copy="Official UK data shows foreign nationals are represented in the prison population at almost exactly their share of the general population (about 12% either way) — not the large gap sometimes claimed online. There is real variation by offence type: over-represented for drug offences, under-represented for robbery and violence. Separate official research also finds disparities in how the justice system treats different groups at each stage, from stop-and-search through to sentencing. Full sourced breakdown: https://bleep.fyi/r/uk-crime-by-nationality">Copy</button></div>
+  </div>
+
+  <div class="comment-box-payload">
+    <p class="comment-box-label">Full version</p>
+    <p>Official UK government data on crime and nationality does exist, but it is scattered and easy to miss. The Ministry of Justice publishes the prison population by nationality every quarter: as at 30 June 2026, foreign nationals were 11.8% of the prison population (10,134 of 85,858), and 10.25% of prisoners held for sexual offences specifically — slightly under-represented on that measure. What the government does NOT routinely publish is criminal convictions broken down by nationality: MoJ has confirmed in writing to Parliament that its conviction statistics carry no nationality breakdown, and MoJ is currently appealing an Information Commissioner&#39;s Office order to release fuller conviction-by-nationality data. Full sources, verified figures and archived copies of every spreadsheet: https://bleep.fyi/r/uk-crime-by-nationality</p>
+    <div class="comment-box-actions"><button type="button" class="copy-btn" data-copy="Official UK government data on crime and nationality does exist, but it is scattered and easy to miss. The Ministry of Justice publishes the prison population by nationality every quarter: as at 30 June 2026, foreign nationals were 11.8% of the prison population (10,134 of 85,858), and 10.25% of prisoners held for sexual offences specifically — slightly under-represented on that measure. What the government does NOT routinely publish is criminal convictions broken down by nationality: MoJ has confirmed in writing to Parliament that its conviction statistics carry no nationality breakdown, and MoJ is currently appealing an Information Commissioner&#39;s Office order to release fuller conviction-by-nationality data. Full sources, verified figures and archived copies of every spreadsheet: https://bleep.fyi/r/uk-crime-by-nationality">Copy</button></div>
+  </div>
+
   <div class="comment-box-actions">
-    <button type="button" class="copy-btn" data-copy="Yes — official UK data broken down by nationality exists. The Ministry of Justice publishes the prison population by nationality every quarter: as at 30 June 2026, foreign nationals were 11.8% of the prison population (10,134 of 85,858), and 10.25% of prisoners held for sexual offences specifically — slightly under-represented on that measure. What the government does NOT routinely publish is criminal convictions broken down by nationality; MoJ has confirmed in writing to Parliament that its conviction statistics carry no nationality breakdown, and MoJ is currently appealing an Information Commissioner&#39;s Office order to release fuller conviction-by-nationality data. Full sources, verified figures and archived copies of every spreadsheet: https://bleep.fyi/r/uk-crime-by-nationality">Copy</button>
     <span class="page-link">https://bleep.fyi/r/uk-crime-by-nationality/ <button type="button" class="copy-btn" data-copy="https://bleep.fyi/r/uk-crime-by-nationality/">Copy</button></span>
   </div>
 </section>
@@ -140,6 +233,39 @@ Source: Offender management statistics quarterly: January to March 2026, Ministr
 Source: Offender management statistics quarterly: January to March 2026, Ministry of Justice and HM Prison and Probation Service — https://www.gov.uk/government/statistics/offender-management-statistics-quarterly-january-to-march-2026">Copy</button>
     </div>
     
+    
+    <div class="key-figure">
+      <p class="kf-figure"><strong>Foreign nationals&#39; share of the REMAND (pre-conviction) prison population:</strong> 3,283 of 15,386 (21.3%)</p>
+      <p class="kf-caveat">Remand decisions turn on bail-risk factors (flight risk, fixed address, community ties) where a non-British national may more often lack the ties a court weighs favourably — this is not necessarily evidence of harsher treatment for the same alleged conduct, but it is a real, measurable disparity worth stating plainly.</p>
+      <p class="kf-ref">prison-population-2026.ods, sheet Table_1_A_24 (&#34;prison population by nationality group and custody type group&#34;), column &#34;30 June 2026&#34;</p>
+      <button type="button" class="copy-btn" data-copy="Foreign nationals&#39; share of the REMAND (pre-conviction) prison population: 3,283 of 15,386 (21.3%)
+Remand decisions turn on bail-risk factors (flight risk, fixed address, community ties) where a non-British national may more often lack the ties a court weighs favourably — this is not necessarily evidence of harsher treatment for the same alleged conduct, but it is a real, measurable disparity worth stating plainly.
+
+Source: Offender management statistics quarterly: January to March 2026, Ministry of Justice and HM Prison and Probation Service — https://www.gov.uk/government/statistics/offender-management-statistics-quarterly-january-to-march-2026">Copy</button>
+    </div>
+    
+    
+    <div class="key-figure">
+      <p class="kf-figure"><strong>Foreign nationals&#39; share of the SENTENCED prison population:</strong> 6,431 of 70,003 (9.2%)</p>
+      <p class="kf-caveat">Well below their 11.8% share of the overall prison population and well below their 21.3% share of remand — the sentenced population is where foreign nationals are most under-represented of any custody-type split in this table.</p>
+      <p class="kf-ref">prison-population-2026.ods, sheet Table_1_A_24, column &#34;30 June 2026&#34;</p>
+      <button type="button" class="copy-btn" data-copy="Foreign nationals&#39; share of the SENTENCED prison population: 6,431 of 70,003 (9.2%)
+Well below their 11.8% share of the overall prison population and well below their 21.3% share of remand — the sentenced population is where foreign nationals are most under-represented of any custody-type split in this table.
+
+Source: Offender management statistics quarterly: January to March 2026, Ministry of Justice and HM Prison and Probation Service — https://www.gov.uk/government/statistics/offender-management-statistics-quarterly-january-to-march-2026">Copy</button>
+    </div>
+    
+    
+    <div class="key-figure">
+      <p class="kf-figure"><strong>Foreign nationals by offence group, share of each group vs their 11.8% overall share:</strong> Over-represented: drug offences 16.85% (1.43x), fraud 18.30% (1.55x). Under-represented: public order 7.41% (0.63x), robbery 8.46% (0.72x), theft 8.76% (0.74x), criminal damage/arson 9.13% (0.77x), sexual offences 10.25% (0.87x), violence against the person 10.35% (0.88x), possession of weapons 11.19% (0.95x, roughly even)</p>
+      <p class="kf-caveat">&#34;Miscellaneous crimes against society&#34; (25.31%, 2.15x) is excluded from headline reporting here: it is a catch-all MoJ grouping whose fine composition is not broken down in this table, and may include offences definitionally more likely to involve foreign nationals (for example specific immigration-status offences) — a ratio computed on a category like that would not mean what it means for an offence like robbery or theft. &#34;Offence not recorded&#34; (1,518 cases) and the smaller summary-offence categories (summary motoring, summary non-motoring) are excluded as not being substantive, comparably-defined offence types.</p>
+      <p class="kf-ref">prison-population-2026.ods, sheet Table_1_A_27, Sex=&#34;Male and female&#34;, Custody type group=&#34;All custody types&#34;, column &#34;30 June 2026&#34;, self-computed as Foreign nationals / All nationalities per offence group</p>
+      <button type="button" class="copy-btn" data-copy="Foreign nationals by offence group, share of each group vs their 11.8% overall share: Over-represented: drug offences 16.85% (1.43x), fraud 18.30% (1.55x). Under-represented: public order 7.41% (0.63x), robbery 8.46% (0.72x), theft 8.76% (0.74x), criminal damage/arson 9.13% (0.77x), sexual offences 10.25% (0.87x), violence against the person 10.35% (0.88x), possession of weapons 11.19% (0.95x, roughly even)
+&#34;Miscellaneous crimes against society&#34; (25.31%, 2.15x) is excluded from headline reporting here: it is a catch-all MoJ grouping whose fine composition is not broken down in this table, and may include offences definitionally more likely to involve foreign nationals (for example specific immigration-status offences) — a ratio computed on a category like that would not mean what it means for an offence like robbery or theft. &#34;Offence not recorded&#34; (1,518 cases) and the smaller summary-offence categories (summary motoring, summary non-motoring) are excluded as not being substantive, comparably-defined offence types.
+
+Source: Offender management statistics quarterly: January to March 2026, Ministry of Justice and HM Prison and Probation Service — https://www.gov.uk/government/statistics/offender-management-statistics-quarterly-january-to-march-2026">Copy</button>
+    </div>
+    
   </div>
   
 
@@ -198,6 +324,27 @@ Nationality not recorded: 0.1 %
 Source: Ministry of Justice, Offender management statistics quarterly: January to March 2026, Table 1.A.27, as at 30 June 2026, retrieved 2026-08-17">Copy data</button>
   </div>
   <details class="chart-table"><summary>Show as table</summary><table><thead><tr><th>Group</th><th>%</th></tr></thead><tbody><tr><td>British national</td><td>89.6 %</td></tr><tr><td>Foreign national</td><td>10.2 %</td></tr><tr><td>Nationality not recorded</td><td>0.1 %</td></tr></tbody></table></details>
+</figure>
+<figure class="chart" id="chart-offence-type-over-under-representation">
+  <figcaption class="chart-title">Foreign nationals in prison, by offence type: over- and under-represented relative to their 11.8% overall share</figcaption>
+  <div class="chart-svg-wrap"><svg viewBox="0 0 800 328" class="chart-svg chart-svg-diverging" role="img" aria-label="Foreign nationals in prison, by offence type: over- and under-represented relative to their 11.8% overall share"><line x1="450.0" y1="20" x2="450.0" y2="304" class="chart-zero-axis"/><text x="450.0" y="14" class="chart-axis" text-anchor="middle">11.80% baseline (overall foreign-national share of the prison population)</text><text x="180" y="46" class="chart-axis" text-anchor="end">Fraud offences</text><rect x="450.0" y="32" width="169.0" height="18" rx="4" style="fill:#d95926"><title>Fraud offences: 18.30% foreign vs 11.80% baseline (1.55×)</title></rect><text x="627.0" y="46" class="chart-axis" text-anchor="start">+6.5pp</text><text x="180" y="76" class="chart-axis" text-anchor="end">Drug offences</text><rect x="450.0" y="62" width="131.3" height="18" rx="4" style="fill:#d95926"><title>Drug offences: 16.85% foreign vs 11.80% baseline (1.43×)</title></rect><text x="589.3" y="76" class="chart-axis" text-anchor="start">+5.0pp</text><text x="180" y="106" class="chart-axis" text-anchor="end">Possession of weapons</text><rect x="434.1" y="92" width="15.9" height="18" rx="4" style="fill:#d95926"><title>Possession of weapons: 11.19% foreign vs 11.80% baseline (0.95×, roughly even)</title></rect><text x="426.1" y="106" class="chart-axis" text-anchor="end">-0.6pp</text><text x="180" y="136" class="chart-axis" text-anchor="end">Violence against the person</text><rect x="412.3" y="122" width="37.7" height="18" rx="4" style="fill:#d95926"><title>Violence against the person: 10.35% foreign vs 11.80% baseline (0.88×)</title></rect><text x="404.3" y="136" class="chart-axis" text-anchor="end">-1.4pp</text><text x="180" y="166" class="chart-axis" text-anchor="end">Sexual offences</text><rect x="409.7" y="152" width="40.3" height="18" rx="4" style="fill:#d95926"><title>Sexual offences: 10.25% foreign vs 11.80% baseline (0.87×)</title></rect><text x="401.7" y="166" class="chart-axis" text-anchor="end">-1.6pp</text><text x="180" y="196" class="chart-axis" text-anchor="end">Criminal damage and arson</text><rect x="380.6" y="182" width="69.4" height="18" rx="4" style="fill:#d95926"><title>Criminal damage and arson: 9.13% foreign vs 11.80% baseline (0.77×)</title></rect><text x="372.6" y="196" class="chart-axis" text-anchor="end">-2.7pp</text><text x="180" y="226" class="chart-axis" text-anchor="end">Theft offences</text><rect x="371.0" y="212" width="79.0" height="18" rx="4" style="fill:#d95926"><title>Theft offences: 8.76% foreign vs 11.80% baseline (0.74×)</title></rect><text x="363.0" y="226" class="chart-axis" text-anchor="end">-3.0pp</text><text x="180" y="256" class="chart-axis" text-anchor="end">Robbery</text><rect x="363.2" y="242" width="86.8" height="18" rx="4" style="fill:#d95926"><title>Robbery: 8.46% foreign vs 11.80% baseline (0.72×)</title></rect><text x="355.2" y="256" class="chart-axis" text-anchor="end">-3.3pp</text><text x="180" y="286" class="chart-axis" text-anchor="end">Public order offences</text><rect x="335.9" y="272" width="114.1" height="18" rx="4" style="fill:#d95926"><title>Public order offences: 7.41% foreign vs 11.80% baseline (0.63×)</title></rect><text x="327.9" y="286" class="chart-axis" text-anchor="end">-4.4pp</text><text x="194" y="320" class="chart-axis">Lower foreign-national share</text><text x="706" y="320" class="chart-axis" text-anchor="end">Higher foreign-national share</text></svg></div>
+  <div class="chart-foot">
+    <p class="chart-source">Ministry of Justice, Offender management statistics quarterly, Table 1.A.27, as at 30 June 2026, retrieved 2026-08-17; self-computed as each offence group&#39;s foreign-national share minus the 11.80% overall baseline</p>
+    <p class="chart-note">Shown as percentage points above/below the 11.80% overall baseline, for the nine largest, clearly-defined offence groups (covering 82,673 of 85,858 prisoners, 96.3% of the total). Excluded: &quot;Offence not recorded&quot; (1,518 cases — a data gap, not an offence type), &quot;Miscellaneous crimes against society&quot; (4,065 cases, foreign-national share 25.31% — excluded because this MoJ catch-all category&#39;s fine composition is not broken down in this table and may include offences definitionally more likely to involve foreign nationals, such as specific immigration-status offences, which would not mean what it means for an offence like robbery or theft), and the small summary-motoring/non-motoring categories. Drug offences and fraud are the only two categories where foreign nationals are over-represented among these nine; every other category shows under- or roughly-even representation.</p>
+    <button type="button" class="copy-btn" data-copy="Foreign nationals in prison, by offence type: over- and under-represented relative to their 11.8% overall share
+Fraud offences: +6.5pp — 18.30% foreign vs 11.80% baseline (1.55×)
+Drug offences: +5.0pp — 16.85% foreign vs 11.80% baseline (1.43×)
+Possession of weapons: -0.6pp — 11.19% foreign vs 11.80% baseline (0.95×, roughly even)
+Violence against the person: -1.4pp — 10.35% foreign vs 11.80% baseline (0.88×)
+Sexual offences: -1.6pp — 10.25% foreign vs 11.80% baseline (0.87×)
+Criminal damage and arson: -2.7pp — 9.13% foreign vs 11.80% baseline (0.77×)
+Theft offences: -3.0pp — 8.76% foreign vs 11.80% baseline (0.74×)
+Robbery: -3.3pp — 8.46% foreign vs 11.80% baseline (0.72×)
+Public order offences: -4.4pp — 7.41% foreign vs 11.80% baseline (0.63×)
+
+Source: Ministry of Justice, Offender management statistics quarterly, Table 1.A.27, as at 30 June 2026, retrieved 2026-08-17; self-computed as each offence group&#39;s foreign-national share minus the 11.80% overall baseline">Copy data</button>
+  </div>
+  <details class="chart-table"><summary>Show as table</summary><table><thead><tr><th>Offence group</th><th>vs baseline</th><th>Detail</th></tr></thead><tbody><tr><td>Fraud offences</td><td>+6.5pp</td><td>18.30% foreign vs 11.80% baseline (1.55×)</td></tr><tr><td>Drug offences</td><td>+5.0pp</td><td>16.85% foreign vs 11.80% baseline (1.43×)</td></tr><tr><td>Possession of weapons</td><td>-0.6pp</td><td>11.19% foreign vs 11.80% baseline (0.95×, roughly even)</td></tr><tr><td>Violence against the person</td><td>-1.4pp</td><td>10.35% foreign vs 11.80% baseline (0.88×)</td></tr><tr><td>Sexual offences</td><td>-1.6pp</td><td>10.25% foreign vs 11.80% baseline (0.87×)</td></tr><tr><td>Criminal damage and arson</td><td>-2.7pp</td><td>9.13% foreign vs 11.80% baseline (0.77×)</td></tr><tr><td>Theft offences</td><td>-3.0pp</td><td>8.76% foreign vs 11.80% baseline (0.74×)</td></tr><tr><td>Robbery</td><td>-3.3pp</td><td>8.46% foreign vs 11.80% baseline (0.72×)</td></tr><tr><td>Public order offences</td><td>-4.4pp</td><td>7.41% foreign vs 11.80% baseline (0.63×)</td></tr></tbody></table></details>
 </figure></div>
   
 
@@ -594,6 +741,367 @@ Source: ONS, Crime in England and Wales: year ending March 2026 (CSEW for burgla
   
 </article>
 
+<article class="source-card" id="s6">
+  <h3>Population estimates by grouped country of birth and nationality, UK, 2024</h3>
+  <p class="source-meta">Office for National Statistics · published 2025-10-13 · retrieved 2026-08-17</p>
+  <p class="source-contains">An ONS ad-hoc user request (reference 3063), not a routine release: total UK population and population aged 16-64, split by grouped nationality, from the Annual Population Survey (APS), January-December 2024. This is the general-population denominator used elsewhere on this page to compare against the prison-population nationality share (source S1). It is the CURRENT dataset for this purpose; ONS&#39;s older routine &#34;Population by country of birth and nationality&#34; series (previously used for this kind of comparison) was discontinued after its July 2020-June 2021 edition and is not used here for that reason (see the retired-dataset note below).</p>
+
+  
+  <div class="key-figures">
+    
+    
+    <div class="key-figure">
+      <p class="kf-figure"><strong>Total UK population, 2024:</strong> 67,253,598</p>
+      <p class="kf-caveat">Annual Population Survey estimate, calendar year 2024 (not a Census count).</p>
+      <p class="kf-ref">populationandworkingagepopbygroupedcobnationality2024rev.xlsx, sheet Nationality, row &#34;Total&#34;</p>
+      <button type="button" class="copy-btn" data-copy="Total UK population, 2024: 67,253,598
+Annual Population Survey estimate, calendar year 2024 (not a Census count).
+
+Source: Population estimates by grouped country of birth and nationality, UK, 2024, Office for National Statistics — https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/adhocs/3063populationestimatesbygroupedcountryofbirthandnationalityuk2024">Copy</button>
+    </div>
+    
+    
+    <div class="key-figure">
+      <p class="kf-figure"><strong>UK nationals, 2024:</strong> 59,263,589 (88.1% of the total)</p>
+      
+      <p class="kf-ref">populationandworkingagepopbygroupedcobnationality2024rev.xlsx, sheet Nationality, row &#34;1 UK&#34;</p>
+      <button type="button" class="copy-btn" data-copy="UK nationals, 2024: 59,263,589 (88.1% of the total)
+
+Source: Population estimates by grouped country of birth and nationality, UK, 2024, Office for National Statistics — https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/adhocs/3063populationestimatesbygroupedcountryofbirthandnationalityuk2024">Copy</button>
+    </div>
+    
+    
+    <div class="key-figure">
+      <p class="kf-figure"><strong>Non-UK nationals, 2024:</strong> 7,990,009 (11.88% of the total)</p>
+      <p class="kf-caveat">Self-computed as Total minus UK nationals; not printed as a single row in the source table, which instead breaks non-UK down into 15 regional/national groups.</p>
+      <p class="kf-ref">populationandworkingagepopbygroupedcobnationality2024rev.xlsx, sheet Nationality, sum of all non-UK nationality rows</p>
+      <button type="button" class="copy-btn" data-copy="Non-UK nationals, 2024: 7,990,009 (11.88% of the total)
+Self-computed as Total minus UK nationals; not printed as a single row in the source table, which instead breaks non-UK down into 15 regional/national groups.
+
+Source: Population estimates by grouped country of birth and nationality, UK, 2024, Office for National Statistics — https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/adhocs/3063populationestimatesbygroupedcountryofbirthandnationalityuk2024">Copy</button>
+    </div>
+    
+  </div>
+  
+
+  
+  <div class="source-limits-context">
+    <p>ONS&#39;s own &#34;Note&#34; tab on this spreadsheet states, quoted directly: &#34;The population totals used for the latest APS estimates use projected growth rates from Real Time Information (RTI) data for UK, EU and non-EU populations based on 2021 patterns. The total population used for the APS therefore does not take into account any changes in migration, birth rates, death rates, and so on since June 2021, and hence levels estimates may be under- or over-estimating the true values and should be used with caution. Estimates of rates will, however, be robust.&#34; In plain terms: the absolute headcounts (levels) carry more uncertainty than usual because of population-growth assumptions fixed to 2021 patterns, but the PERCENTAGE this page uses (11.88%, a rate) is the figure ONS says remains robust. Separately, the Office for Statistics Regulation temporarily removed accredited-statistics status from LFS/APS-derived outputs in 2023-2024 over survey response-rate quality concerns (source S11) — a general data-quality caveat that applies to this dataset too, though it does not invalidate it.</p>
+  </div>
+  
+
+  
+  
+
+  <div class="source-links">
+    <p><a href="https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/adhocs/3063populationestimatesbygroupedcountryofbirthandnationalityuk2024" target="_blank" rel="noopener noreferrer">Official page ↗</a> <button type="button" class="copy-btn" data-copy="https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/adhocs/3063populationestimatesbygroupedcountryofbirthandnationalityuk2024">Copy</button></p>
+    
+    <p><a href="https://www.ons.gov.uk/file?uri=/peoplepopulationandcommunity/populationandmigration/populationestimates/adhocs/3063populationestimatesbygroupedcountryofbirthandnationalityuk2024/populationandworkingagepopbygroupedcobnationality2024rev.xlsx" target="_blank" rel="noopener noreferrer">Direct spreadsheet download ↗</a> <button type="button" class="copy-btn" data-copy="https://www.ons.gov.uk/file?uri=/peoplepopulationandcommunity/populationandmigration/populationestimates/adhocs/3063populationestimatesbygroupedcountryofbirthandnationalityuk2024/populationandworkingagepopbygroupedcobnationality2024rev.xlsx">Copy</button></p>
+    
+    
+    
+    <p><a href="/r/uk-crime-by-nationality/evidence/ons-population-by-nationality-2024.xlsx">Archived copy: ons-population-by-nationality-2024.xlsx ↗</a></p>
+    
+    
+    
+    
+  </div>
+  
+  
+    
+  
+    
+  
+  
+  <details class="source-shots">
+    <summary>Archived screenshot of this source, as retrieved</summary>
+    
+    <a href="/r/uk-crime-by-nationality/evidence/ons-population-nationality-2024-adhoc-landing-2026-08-17.png" target="_blank" rel="noopener noreferrer" class="shot-link">
+      <img src="/r/uk-crime-by-nationality/evidence/ons-population-nationality-2024-adhoc-landing-2026-08-17.png" alt="Archived screenshot of Population estimates by grouped country of birth and nationality, UK, 2024" loading="lazy">
+    </a>
+    
+  </details>
+  
+</article>
+
+<article class="source-card" id="s7">
+  <h3>Ethnicity and the Criminal Justice System 2024</h3>
+  <p class="source-meta">Ministry of Justice · published 2025-11-27 · retrieved 2026-08-17</p>
+  <p class="source-contains">MoJ&#39;s compiled statistics on ethnic-group experience across every stage of the criminal justice system: population, stop and search, arrests, prosecutions, convictions, custodial remands, custodial sentences and prison population. IMPORTANT: this is an ETHNICITY breakdown (Asian / Black / Mixed / Other / White, per 2021 Census categories), not a NATIONALITY breakdown — a different, broader lens from the rest of this page. British nationals of Black, Asian, Mixed or Other ethnicity are the overwhelming majority of &#34;minority ethnic&#34; people in this dataset; it cannot be read as being about foreign nationals. It is included here because it is the clearest official evidence on whether disparity grows at each successive stage of the system, which a single nationality-share number cannot show on its own.</p>
+
+  
+  <div class="key-figures">
+    
+    
+    <div class="key-figure">
+      <p class="kf-figure"><strong>Ethnic-group share of the England &amp; Wales population vs each CJS stage, 2024 (adults):</strong> Population: 11% Asian, 4% Black, 2% Mixed, 84% White. Prison population (30 June 2025): 8% Asian, 12% Black, 5% Mixed, 73% White.</p>
+      <p class="kf-caveat">Figure 1.01 shows the full stage-by-stage funnel (stop and search, arrests, prosecutions, convictions, custodial remands, custodial sentences, prison population) — the source figure, not this row alone, is what this page&#39;s enforcement-bias chart is drawn from. Population baseline is 2021 Census; CJS-stage data is 2024 (2024/25 for arrests and stop and search; 30 June 2025 for prison population).</p>
+      <p class="kf-ref">Executive_Summary_-_Statistics_on_Ethnicity_in_the_Criminal_Justice_System__2024.pdf, Figure 1.01 (&#34;Ethnicity proportions for adults throughout the criminal justice system, 2024&#34;)</p>
+      <button type="button" class="copy-btn" data-copy="Ethnic-group share of the England &amp; Wales population vs each CJS stage, 2024 (adults): Population: 11% Asian, 4% Black, 2% Mixed, 84% White. Prison population (30 June 2025): 8% Asian, 12% Black, 5% Mixed, 73% White.
+Figure 1.01 shows the full stage-by-stage funnel (stop and search, arrests, prosecutions, convictions, custodial remands, custodial sentences, prison population) — the source figure, not this row alone, is what this page&#39;s enforcement-bias chart is drawn from. Population baseline is 2021 Census; CJS-stage data is 2024 (2024/25 for arrests and stop and search; 30 June 2025 for prison population).
+
+Source: Ethnicity and the Criminal Justice System 2024, Ministry of Justice — https://www.gov.uk/government/statistics/ethnicity-and-the-criminal-justice-system-2024">Copy</button>
+    </div>
+    
+    
+    <div class="key-figure">
+      <p class="kf-figure"><strong>MoJ&#39;s own headline interpretation:</strong> &#34;In general, minority ethnic groups appear to be over-represented at many stages throughout the CJS compared with the White ethnic group... The greatest disparity appears at the point of stop and search, custodial remands and prison population.&#34;</p>
+      <p class="kf-caveat">MoJ&#39;s own next sentence, quoted in full: &#34;No causative links can be drawn from these summary statistics... it is not possible to determine what proportion of differences identified in this report are directly attributable to ethnicity. Differences observed may indicate areas worth further investigation but should not be taken as evidence of bias or as direct effects of ethnicity.&#34;</p>
+      <p class="kf-ref">Executive_Summary_-_Statistics_on_Ethnicity_in_the_Criminal_Justice_System__2024.pdf, Executive Summary</p>
+      <button type="button" class="copy-btn" data-copy="MoJ&#39;s own headline interpretation: &#34;In general, minority ethnic groups appear to be over-represented at many stages throughout the CJS compared with the White ethnic group... The greatest disparity appears at the point of stop and search, custodial remands and prison population.&#34;
+MoJ&#39;s own next sentence, quoted in full: &#34;No causative links can be drawn from these summary statistics... it is not possible to determine what proportion of differences identified in this report are directly attributable to ethnicity. Differences observed may indicate areas worth further investigation but should not be taken as evidence of bias or as direct effects of ethnicity.&#34;
+
+Source: Ethnicity and the Criminal Justice System 2024, Ministry of Justice — https://www.gov.uk/government/statistics/ethnicity-and-the-criminal-justice-system-2024">Copy</button>
+    </div>
+    
+  </div>
+  
+
+  
+
+  
+  
+
+  <div class="source-links">
+    <p><a href="https://www.gov.uk/government/statistics/ethnicity-and-the-criminal-justice-system-2024" target="_blank" rel="noopener noreferrer">Official page ↗</a> <button type="button" class="copy-btn" data-copy="https://www.gov.uk/government/statistics/ethnicity-and-the-criminal-justice-system-2024">Copy</button></p>
+    
+    <p><a href="https://assets.publishing.service.gov.uk/media/692716712a37784b16ecf554/Executive_Summary_-_Statistics_on_Ethnicity_in_the_Criminal_Justice_System__2024.pdf" target="_blank" rel="noopener noreferrer">Direct spreadsheet download ↗</a> <button type="button" class="copy-btn" data-copy="https://assets.publishing.service.gov.uk/media/692716712a37784b16ecf554/Executive_Summary_-_Statistics_on_Ethnicity_in_the_Criminal_Justice_System__2024.pdf">Copy</button></p>
+    
+    
+    
+    
+    
+    <p><a href="/r/uk-crime-by-nationality/evidence/moj-ethnicity-cjs-2024-executive-summary.pdf">Archived copy: moj-ethnicity-cjs-2024-executive-summary.pdf ↗</a></p>
+    
+    
+  </div>
+  
+  
+    
+  
+    
+  
+  
+  <details class="source-shots">
+    <summary>Archived screenshot of this source, as retrieved</summary>
+    
+    <a href="/r/uk-crime-by-nationality/evidence/moj-ethnicity-cjs-2024-landing-2026-08-17.png" target="_blank" rel="noopener noreferrer" class="shot-link">
+      <img src="/r/uk-crime-by-nationality/evidence/moj-ethnicity-cjs-2024-landing-2026-08-17.png" alt="Archived screenshot of Ethnicity and the Criminal Justice System 2024" loading="lazy">
+    </a>
+    
+  </details>
+  
+</article>
+
+<article class="source-card" id="s8">
+  <h3>Lammy Review: final report</h3>
+  <p class="source-meta">Ministry of Justice (independent review chaired by David Lammy MP) · published 2017-09-08 · retrieved 2026-08-17</p>
+  <p class="source-contains">An independent government-commissioned review (closed, final report published 8 September 2017) of the treatment of, and outcomes for, Black, Asian and Minority Ethnic (BAME) individuals in the Criminal Justice System — again an ETHNICITY review, not a nationality one. Its most-cited statistic, quoted here via the Sentencing Council&#39;s own 2020 paper (source S10), which cites the underlying MoJ analysis directly: the odds of imprisonment overall for Black, Asian and Minority Ethnic offenders were found to be 2.4 times the odds for White offenders. This page does not re-derive that figure independently; it is reported here as MoJ/Sentencing Council&#39;s own characterisation of the review&#39;s headline finding, not as this page&#39;s own analysis.</p>
+
+  
+
+  
+  <div class="source-limits-context">
+    <p>The review is from 2017 and its underlying sentencing analysis used 2015 data — it predates every nationality figure elsewhere on this page by roughly a decade, and (like S7) is about ethnicity, not nationality. It is included because the operator&#39;s original question about representation in the justice system cannot be honestly answered by raw nationality-share numbers alone without pointing at the best available evidence on whether the system itself treats people differently at the same stage for the same conduct.</p>
+  </div>
+  
+
+  
+  
+
+  <div class="source-links">
+    <p><a href="https://www.gov.uk/government/organisations/lammy-review" target="_blank" rel="noopener noreferrer">Official page ↗</a> <button type="button" class="copy-btn" data-copy="https://www.gov.uk/government/organisations/lammy-review">Copy</button></p>
+    
+    <p><a href="https://www.gov.uk/government/publications/lammy-review-final-report" target="_blank" rel="noopener noreferrer">Direct spreadsheet download ↗</a> <button type="button" class="copy-btn" data-copy="https://www.gov.uk/government/publications/lammy-review-final-report">Copy</button></p>
+    
+    
+    
+    
+  </div>
+  
+  
+    
+  
+  
+  <details class="source-shots">
+    <summary>Archived screenshot of this source, as retrieved</summary>
+    
+    <a href="/r/uk-crime-by-nationality/evidence/lammy-review-landing-2026-08-17.png" target="_blank" rel="noopener noreferrer" class="shot-link">
+      <img src="/r/uk-crime-by-nationality/evidence/lammy-review-landing-2026-08-17.png" alt="Archived screenshot of Lammy Review: final report" loading="lazy">
+    </a>
+    
+  </details>
+  
+</article>
+
+<article class="source-card" id="s9">
+  <h3>Police powers and procedures: Stop and search, arrests and mental health detentions, England and Wales, year ending 31 March 2025</h3>
+  <p class="source-meta">Home Office · published 2025-11-06 · retrieved 2026-08-17</p>
+  <p class="source-contains">Home Office&#39;s routine, regularly-published statistics on stop and search and arrests. Included here for a negative finding, in the same spirit as source S4: this release&#39;s data tables (including its dedicated &#34;Stop and search – ethnic disparity time series&#34; and &#34;Arrests – ethnic disparity time series&#34; spreadsheets) break results down by ETHNICITY only. The word &#34;nationality&#34; does not appear anywhere on this release&#39;s own page. There is no official nationality breakdown of who gets stopped and searched or arrested in England and Wales — ethnicity is the only demographic lens the routine statistics provide at these two CJS stages.</p>
+
+  
+  <div class="key-figures">
+    
+    
+    <div class="key-figure">
+      <p class="kf-figure"><strong>Nationality breakdown available for stop-and-search or arrests statistics:</strong> None found — ethnicity only</p>
+      <p class="kf-caveat">This is a genuine, confirmed gap in the regular statistical series (like source S4&#39;s finding for court outcomes), not an oversight in this page&#39;s research.</p>
+      <p class="kf-ref">gov.uk release page body text, checked directly for the word &#34;nationality&#34;</p>
+      <button type="button" class="copy-btn" data-copy="Nationality breakdown available for stop-and-search or arrests statistics: None found — ethnicity only
+This is a genuine, confirmed gap in the regular statistical series (like source S4&#39;s finding for court outcomes), not an oversight in this page&#39;s research.
+
+Source: Police powers and procedures: Stop and search, arrests and mental health detentions, England and Wales, year ending 31 March 2025, Home Office — https://www.gov.uk/government/statistics/stop-and-search-arrests-and-mental-health-detentions-march-2025">Copy</button>
+    </div>
+    
+  </div>
+  
+
+  
+
+  
+  
+
+  <div class="source-links">
+    <p><a href="https://www.gov.uk/government/statistics/stop-and-search-arrests-and-mental-health-detentions-march-2025" target="_blank" rel="noopener noreferrer">Official page ↗</a> <button type="button" class="copy-btn" data-copy="https://www.gov.uk/government/statistics/stop-and-search-arrests-and-mental-health-detentions-march-2025">Copy</button></p>
+    
+    
+    
+    
+  </div>
+  
+  
+    
+  
+  
+  <details class="source-shots">
+    <summary>Archived screenshot of this source, as retrieved</summary>
+    
+    <a href="/r/uk-crime-by-nationality/evidence/homeoffice-stop-search-arrests-landing-2026-08-17.png" target="_blank" rel="noopener noreferrer" class="shot-link">
+      <img src="/r/uk-crime-by-nationality/evidence/homeoffice-stop-search-arrests-landing-2026-08-17.png" alt="Archived screenshot of Police powers and procedures: Stop and search, arrests and mental health detentions, England and Wales, year ending 31 March 2025" loading="lazy">
+    </a>
+    
+  </details>
+  
+</article>
+
+<article class="source-card" id="s10">
+  <h3>Investigating the association between an offender&#39;s sex and ethnicity and the sentence imposed at the Crown Court for drug offences</h3>
+  <p class="source-meta">Sentencing Council for England and Wales · published 2020-01-15 · retrieved 2026-08-17</p>
+  <p class="source-contains">Commissioned Sentencing Council research (author: A. Isaac, 2020) using Crown Court Sentencing Survey (CCSS) data, April 2012 to March 2015, for supply, possession-with-intent-to-supply and conspiracy-to-supply offences of Class A/B drugs at the Crown Court — again an ETHNICITY analysis, not nationality. Two statistical models controlled for many (not all) factors judges must weigh: culpability, harm, aggravating/mitigating factors, guilty plea, and age. The Council states plainly that results &#34;should not be regarded as conclusive&#34; since not every factor judges consider could be included.</p>
+
+  
+  <div class="key-figures">
+    
+    
+    <div class="key-figure">
+      <p class="kf-figure"><strong>Odds of an immediate custodial sentence, by ethnicity, after controlling for the factors above:</strong> Asian and &#34;Other&#34; ethnicity offenders: 1.5x the odds of White offenders. Black offenders: 1.4x the odds of White offenders.</p>
+      <p class="kf-caveat">The Council&#39;s own worked example, quoted directly: for possession with intent to supply a Class B drug with the most common case factors, &#34;around 37 White offenders, around 46 Asian offenders, around 46 Other ethnicity offenders and around 44 Black offenders&#34; per 100 would be expected to receive immediate custody — an odds ratio of 1.5x does not mean &#34;50% more people,&#34; a distinction the Council itself is careful to spell out.</p>
+      <p class="kf-ref">sex-and-ethnicity-analysis-final-1.pdf, p.3, &#34;Findings related to an offender&#39;s ethnicity&#34;</p>
+      <button type="button" class="copy-btn" data-copy="Odds of an immediate custodial sentence, by ethnicity, after controlling for the factors above: Asian and &#34;Other&#34; ethnicity offenders: 1.5x the odds of White offenders. Black offenders: 1.4x the odds of White offenders.
+The Council&#39;s own worked example, quoted directly: for possession with intent to supply a Class B drug with the most common case factors, &#34;around 37 White offenders, around 46 Asian offenders, around 46 Other ethnicity offenders and around 44 Black offenders&#34; per 100 would be expected to receive immediate custody — an odds ratio of 1.5x does not mean &#34;50% more people,&#34; a distinction the Council itself is careful to spell out.
+
+Source: Investigating the association between an offender&#39;s sex and ethnicity and the sentence imposed at the Crown Court for drug offences, Sentencing Council for England and Wales — https://sentencingcouncil.org.uk/publications/research-reports/investigating-the-association-between-an-offender-s-sex-and-ethnicity-and-the-sentence-imposed-at-the-crown-court-for-drug-offences/">Copy</button>
+    </div>
+    
+    
+    <div class="key-figure">
+      <p class="kf-figure"><strong>Sentence length, by ethnicity (same offences, same controls):</strong> Asian offenders: custodial sentences ~1 month (4%) longer on average than White offenders. No statistically significant difference found for Black or &#34;Other&#34; ethnicity offenders vs White.</p>
+      
+      <p class="kf-ref">sex-and-ethnicity-analysis-final-1.pdf, p.3-4, &#34;Findings related to an offender&#39;s ethnicity&#34;</p>
+      <button type="button" class="copy-btn" data-copy="Sentence length, by ethnicity (same offences, same controls): Asian offenders: custodial sentences ~1 month (4%) longer on average than White offenders. No statistically significant difference found for Black or &#34;Other&#34; ethnicity offenders vs White.
+
+Source: Investigating the association between an offender&#39;s sex and ethnicity and the sentence imposed at the Crown Court for drug offences, Sentencing Council for England and Wales — https://sentencingcouncil.org.uk/publications/research-reports/investigating-the-association-between-an-offender-s-sex-and-ethnicity-and-the-sentence-imposed-at-the-crown-court-for-drug-offences/">Copy</button>
+    </div>
+    
+    
+    <div class="key-figure">
+      <p class="kf-figure"><strong>Context cited from the Lammy Review-era MoJ analysis (2015 data, all offence types combined):</strong> Odds of imprisonment overall for Black, Asian and Minority Ethnic offenders: 2.4x the odds for White offenders</p>
+      <p class="kf-caveat">This is the Sentencing Council&#39;s own citation of the earlier, broader MoJ figure — not this drug-offences study&#39;s own finding, and it covers all offence types together, not drug offences specifically.</p>
+      <p class="kf-ref">sex-and-ethnicity-analysis-final-1.pdf, p.5, citing MoJ&#39;s 2015 &#34;Associations between ethnic background and being sentenced to prison in the Crown Court&#34; analysis (drawn on by the Lammy Review, source S8)</p>
+      <button type="button" class="copy-btn" data-copy="Context cited from the Lammy Review-era MoJ analysis (2015 data, all offence types combined): Odds of imprisonment overall for Black, Asian and Minority Ethnic offenders: 2.4x the odds for White offenders
+This is the Sentencing Council&#39;s own citation of the earlier, broader MoJ figure — not this drug-offences study&#39;s own finding, and it covers all offence types together, not drug offences specifically.
+
+Source: Investigating the association between an offender&#39;s sex and ethnicity and the sentence imposed at the Crown Court for drug offences, Sentencing Council for England and Wales — https://sentencingcouncil.org.uk/publications/research-reports/investigating-the-association-between-an-offender-s-sex-and-ethnicity-and-the-sentence-imposed-at-the-crown-court-for-drug-offences/">Copy</button>
+    </div>
+    
+  </div>
+  
+
+  
+
+  
+  
+
+  <div class="source-links">
+    <p><a href="https://sentencingcouncil.org.uk/publications/research-reports/investigating-the-association-between-an-offender-s-sex-and-ethnicity-and-the-sentence-imposed-at-the-crown-court-for-drug-offences/" target="_blank" rel="noopener noreferrer">Official page ↗</a> <button type="button" class="copy-btn" data-copy="https://sentencingcouncil.org.uk/publications/research-reports/investigating-the-association-between-an-offender-s-sex-and-ethnicity-and-the-sentence-imposed-at-the-crown-court-for-drug-offences/">Copy</button></p>
+    
+    <p><a href="https://sentencingcouncil.org.uk/media/ezahmi4x/sex-and-ethnicity-analysis-final-1.pdf" target="_blank" rel="noopener noreferrer">Direct spreadsheet download ↗</a> <button type="button" class="copy-btn" data-copy="https://sentencingcouncil.org.uk/media/ezahmi4x/sex-and-ethnicity-analysis-final-1.pdf">Copy</button></p>
+    
+    
+    
+    
+    
+    <p><a href="/r/uk-crime-by-nationality/evidence/sentencing-council-ethnicity-analysis-2026-08-17.pdf">Archived copy: sentencing-council-ethnicity-analysis-2026-08-17.pdf ↗</a></p>
+    
+    
+  </div>
+  
+  
+    
+  
+    
+  
+  
+  <details class="source-shots">
+    <summary>Archived screenshot of this source, as retrieved</summary>
+    
+    <a href="/r/uk-crime-by-nationality/evidence/sentencing-council-publication-landing-2026-08-17.png" target="_blank" rel="noopener noreferrer" class="shot-link">
+      <img src="/r/uk-crime-by-nationality/evidence/sentencing-council-publication-landing-2026-08-17.png" alt="Archived screenshot of Investigating the association between an offender&#39;s sex and ethnicity and the sentence imposed at the Crown Court for drug offences" loading="lazy">
+    </a>
+    
+  </details>
+  
+</article>
+
+<article class="source-card" id="s11">
+  <h3>OSR&#39;s statement on the Labour Force Survey-derived estimates and Annual Population Survey-derived estimates</h3>
+  <p class="source-meta">Office for Statistics Regulation · published 2024-12-12 · retrieved 2026-08-17</p>
+  <p class="source-contains">The statistics regulator&#39;s public statement identifying 14 statistical outputs that had accredited-official-statistics status temporarily removed in 2023-2024, following declining Labour Force Survey (LFS) response rates that also affect the related Annual Population Survey (APS) — the survey underlying source S6&#39;s population figures used on this page. Included as a general, transparent data-quality caveat on the population denominator, not because S6 itself has been flagged.</p>
+
+  
+
+  
+  <div class="source-limits-context">
+    <p>Quoted directly: &#34;This statement provides information about statistics that have recently had their accredited official statistics status removed due to issues with the quality of the Labour Force Survey (LFS) and associated Annual Population Survey (APS) produced by the Office for National Statistics (ONS).&#34; ONS&#39;s own note on the S6 dataset (quoted there in full) separately states that rate/percentage estimates — the figure this page uses — &#34;will, however, be robust&#34; even where absolute levels carry more uncertainty.</p>
+  </div>
+  
+
+  
+  
+
+  <div class="source-links">
+    <p><a href="https://osr.statisticsauthority.gov.uk/news/osrs-statement-on-the-labour-force-survey-derived-estimates-and-annual-population-survey-derived-estimates/" target="_blank" rel="noopener noreferrer">Official page ↗</a> <button type="button" class="copy-btn" data-copy="https://osr.statisticsauthority.gov.uk/news/osrs-statement-on-the-labour-force-survey-derived-estimates-and-annual-population-survey-derived-estimates/">Copy</button></p>
+    
+    
+    
+    
+  </div>
+  
+  
+    
+  
+  
+  <details class="source-shots">
+    <summary>Archived screenshot of this source, as retrieved</summary>
+    
+    <a href="/r/uk-crime-by-nationality/evidence/osr-lfs-aps-statement-landing-2026-08-17.png" target="_blank" rel="noopener noreferrer" class="shot-link">
+      <img src="/r/uk-crime-by-nationality/evidence/osr-lfs-aps-statement-landing-2026-08-17.png" alt="Archived screenshot of OSR&#39;s statement on the Labour Force Survey-derived estimates and Annual Population Survey-derived estimates" loading="lazy">
+    </a>
+    
+  </details>
+  
+</article>
+
 </section>
 
 <section id="limits" class="briefing-limits">
@@ -614,7 +1122,17 @@ Source: ONS, Crime in England and Wales: year ending March 2026 (CSEW for burgla
     
     <li>Every table on this page carries its own small &#34;nationality not recorded&#34; category (0.27% of the prison population as at 30 June 2026; around 0.4% in a June 2025 snapshot per the Migration Observatory) — a genuine data-quality gap, not a rounding artefact, and it is included in the figures above rather than silently dropped.</li>
     
+    <li>The &#34;At a glance&#34; tab compares a general-population estimate for calendar year 2024 (source S6, released 13 October 2025) against a prison-population snapshot as at 30 June 2026 — the best currently available matched pair, but around 20 months apart, not a same-day comparison. No more recent official nationality-by-population breakdown exists.</li>
+    
+    <li>Sources S7, S8, S9 and S10 (the Ministry of Justice&#39;s Ethnicity and the Criminal Justice System 2024, the Lammy Review, the Home Office&#39;s stop-and-search/arrests statistics, and the Sentencing Council&#39;s drug-sentencing research) all measure ETHNICITY, not NATIONALITY. These are different, broader categories: British nationals of Black, Asian, Mixed or Other ethnicity are the overwhelming majority of &#34;minority ethnic&#34; people in this research, and none of it can be read as being specifically about foreign nationals. It is included because raw nationality-representation numbers alone cannot show whether the justice system treats people differently at the same stage for the same conduct — and the best official evidence on that question happens to be recorded by ethnicity, not nationality.</li>
+    
+    <li>Stop-and-search and arrest statistics (source S9) carry no nationality breakdown at all, official or otherwise — checked directly against the Home Office&#39;s own release page. Ethnicity is the only demographic lens available at those two stages of the justice system.</li>
+    
+    <li>The Sentencing Council&#39;s odds-ratio findings (source S10) apply specifically to drug supply-type offences at the Crown Court, using 2012-2015 data — not a general finding across all offence types, courts, or time periods. The Council&#39;s own paper states its results &#34;should not be regarded as conclusive&#34; because not every factor a judge considers when sentencing could be included in the statistical model.</li>
+    
   </ul>
+</section>
+
 </section>
 
 
@@ -637,6 +1155,74 @@ if (!navigator.clipboard) {
     }
   });
 }
+</script>
+<script>
+// At a glance / Full detail tabs. The base HTML has both #glance and
+// #detail always visible (see bleep.css) so this is a pure enhancement —
+// without it, both panels show and every hash link (#glance, #detail, or
+// a deep link INTO #detail like #s1/#limits) is a plain, correct browser
+// scroll. With it: only the active panel shows, and a hash pointing at
+// anything nested inside #detail activates #detail first.
+(function () {
+  var glance = document.getElementById('glance');
+  var detail = document.getElementById('detail');
+  var tabGlance = document.getElementById('tab-glance');
+  var tabDetail = document.getElementById('tab-detail');
+  var tablist = document.getElementById('glance-tabs-nav');
+  if (!glance || !detail || !tabGlance || !tabDetail) return;
+  var tabs = [tabGlance, tabDetail];
+
+  if (tablist) tablist.setAttribute('role', 'tablist');
+  tabGlance.setAttribute('role', 'tab');
+  tabGlance.setAttribute('aria-controls', 'glance');
+  tabDetail.setAttribute('role', 'tab');
+  tabDetail.setAttribute('aria-controls', 'detail');
+  glance.setAttribute('role', 'tabpanel');
+  detail.setAttribute('role', 'tabpanel');
+
+  function activate(which) {
+    var showDetail = which === 'detail';
+    detail.hidden = !showDetail;
+    glance.hidden = showDetail;
+    tabDetail.setAttribute('aria-selected', String(showDetail));
+    tabGlance.setAttribute('aria-selected', String(!showDetail));
+  }
+
+  function targetPanel(hash) {
+    var id = (hash || '').slice(1);
+    if (id === 'detail') return 'detail';
+    if (!id || id === 'glance') return 'glance';
+    var el = document.getElementById(id);
+    return (el && detail.contains(el)) ? 'detail' : 'glance';
+  }
+
+  function applyHash(scroll) {
+    activate(targetPanel(location.hash));
+    if (scroll && location.hash.length > 1) {
+      var el = document.getElementById(location.hash.slice(1));
+      if (el) el.scrollIntoView();
+    }
+  }
+
+  tabGlance.addEventListener('click', function (e) { e.preventDefault(); location.hash = '#glance'; });
+  tabDetail.addEventListener('click', function (e) { e.preventDefault(); location.hash = '#detail'; });
+  window.addEventListener('hashchange', function () { applyHash(true); });
+
+  tabs.forEach(function (tab) {
+    tab.addEventListener('keydown', function (e) {
+      var idx = tabs.indexOf(document.activeElement);
+      if (idx === -1) return;
+      var next = null;
+      if (e.key === 'ArrowRight') next = tabs[(idx + 1) % tabs.length];
+      else if (e.key === 'ArrowLeft') next = tabs[(idx - 1 + tabs.length) % tabs.length];
+      else if (e.key === 'Home') next = tabs[0];
+      else if (e.key === 'End') next = tabs[tabs.length - 1];
+      if (next) { e.preventDefault(); next.focus(); next.click(); }
+    });
+  });
+
+  applyHash(false);
+})();
 </script>
 
 
