@@ -35,7 +35,15 @@ a:hover { text-decoration: underline; }
 
 .hero { padding: 56px 0 24px; }
 .hero h1, #subject-head h1 { font-family: var(--serif); font-size: 44px; line-height: 1.1; margin: 0 0 16px; letter-spacing: -0.5px; }
-.lede { font-size: 19px; color: var(--ink-dim); max-width: 62ch; }
+/* overflow-wrap: break-word — the lede doubles as a copy-paste comment body
+   (app/briefings.py's comment_thread_summary doctrine) and always ends in a
+   long, unbreakable URL; without this the URL forces the line — and with it
+   the whole document — wider than a 390px viewport (found 2026-08-18 while
+   verifying this page's mobile-legibility follow-up: document.scrollWidth
+   431px vs clientWidth 390px, on BOTH live briefings, since both ledes end
+   in one). Same failure mode share_bar's on-bar-<text> removal fixed for
+   SVG; this is the HTML-text version of it. */
+.lede { font-size: 19px; color: var(--ink-dim); max-width: 62ch; overflow-wrap: break-word; }
 .loading { color: var(--ink-faint); padding: 40px 0; }
 
 #subject-head { padding: 48px 0 8px; }
@@ -267,20 +275,12 @@ tr.row-primary th, tr.row-primary td { background: rgba(217,164,65,.06); }
 .chart-title { font-family: var(--serif); font-weight: 600; font-size: 15px; color: var(--ink); margin-bottom: 10px; }
 .chart-svg-wrap { overflow-x: auto; }
 .chart-svg { width: 100%; height: auto; display: block; }
-/* chart-svg-ranked / chart-track: the "16.6x" briefing's own inline-SVG
-   components (app/infographic_ratios.py, a deliberately separate module —
-   see its docstring) still render bars as real SVG <rect>/<text>, unlike
-   this page's HTML/CSS bar charts, so they need their own sizing/fill
-   hooks. */
-.chart-svg-ranked { min-width: 480px; }
-.chart-track { fill: var(--line); }
-/* chart-label / chart-axis are DUAL-USE: an HTML <p> here (pictogram
-   labels, below) AND an SVG <text> in app/infographic_ratios.py's
-   still-SVG chart kinds — so both a CSS `color` (for the HTML case) and
-   an SVG `fill` (for the SVG case, where `color` has no effect) are
-   declared together rather than picking one and silently unstyling the
-   other's text. */
-.chart-label { display: block; color: var(--ink); fill: var(--ink); font-size: 12px; font-family: var(--sans); }
+/* chart-label-lg / chart-axis: real HTML text (pictogram group labels,
+   paired_share's inline date span, etc.) — every chart kind across both
+   app/charts.py and app/infographic_ratios.py is pure HTML/CSS as of the
+   2026-08-18 mobile-legibility rebuild, so no SVG <text> dual-use
+   declaration is needed here any more (a `fill` alongside `color` was
+   removed with the last SVG-<text>-emitting chart kind). */
 .chart-label-lg { display: block; color: var(--ink); font-size: 14px; font-weight: 600; margin: 0 0 2px; }
 .chart-axis { display: block; color: var(--ink-faint); fill: var(--ink-faint); font-size: 11px; font-family: var(--sans); font-variant-numeric: tabular-nums; }
 /* vector-effect: non-scaling-stroke makes stroke-width a true CSS pixel
@@ -452,12 +452,47 @@ tr.row-primary th, tr.row-primary td { background: rgba(217,164,65,.06); }
 .stepper-dot.is-done { background: var(--ink-faint); }
 .stepper-dot.is-current { background: var(--accent); width: 9px; height: 9px; }
 
+/* Page-specific components (app/infographic_ratios.py) — pure HTML/CSS rows,
+   migrated 2026-08-18 from inline-SVG <text> to match lane 1's mobile-
+   legibility rebuild of app/charts.py (see that module's docstring for why:
+   SVG <text> scales down with its viewBox and goes illegible on a phone). */
+
+/* ratio_compare — two stacked rows (claimed / reproduced) per nationality */
+.rc-rows { display: flex; flex-direction: column; gap: 16px; }
+.rc-group-label { margin: 0 0 6px; font-size: 13.5px; font-weight: 600; color: var(--ink); }
+.rc-bar-row { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 10px; margin-bottom: 4px; }
+.rc-track { background: var(--line); border-radius: 4px; height: 18px; overflow: hidden; }
+.rc-fill { height: 100%; border-radius: 4px; }
+.rc-value { color: var(--ink); font-size: 13px; font-variant-numeric: tabular-nums; min-width: 4ch; }
+
+/* range_bar — point estimate + 95% CI whisker, same absolutely-positioned-
+   span-in-a-track technique as .diverging-track/.diverging-zero above. */
+.rb-rows { display: flex; flex-direction: column; gap: 14px; }
+.rb-row { display: grid; grid-template-columns: minmax(72px, 140px) 1fr auto; align-items: center; gap: 10px; }
+.rb-label { color: var(--ink-faint); font-size: 13px; text-align: right; overflow-wrap: break-word; }
+.rb-track { position: relative; height: 20px; }
+.rb-whisker { position: absolute; top: 8px; height: 4px; border-radius: 2px; }
+.rb-point { position: absolute; top: 3px; width: 14px; height: 14px; margin-left: -7px; border-radius: 50%; border: 2px solid var(--panel-2); }
+.rb-value { color: var(--ink); font-size: 13px; font-variant-numeric: tabular-nums; min-width: 8ch; }
+
+/* custody_share — single 100%-wide composite bar, page-local color map */
+.cs-track { display: flex; height: 28px; border-radius: 6px; overflow: hidden; width: 100%; }
+.cs-seg { height: 100%; }
+
+/* age_compare — two 100%-wide composite bars, each with its own row label
+   and its own value-bearing legend (values differ per row for the same
+   category, so the legend cannot be shared — see the module docstring). */
+.ac-rows { display: flex; flex-direction: column; gap: 20px; }
+.ac-row-label { margin: 0 0 6px; font-size: 13.5px; font-weight: 600; color: var(--ink); }
+.ac-track { display: flex; height: 28px; border-radius: 6px; overflow: hidden; width: 100%; }
+.ac-seg { height: 100%; }
+
 /* Beat-driven transitions — the "Apply" click reveals the mechanism.
    All transform/opacity only: cheap on mobile, no layout thrash. */
 [data-beat="apply"] .rc-claimed { opacity: 0.35; }
 [data-beat="apply"] .rc-reproduced { opacity: 1; }
 [data-beat="setup"] .rc-reproduced { opacity: 0.25; }
-.rc-bar, .rc-bar-label, .rc-claimed-label, .rc-reproduced-label { transition: opacity 380ms ease; }
+.rc-fill, .rc-value { transition: opacity 380ms ease; }
 
 [data-beat="setup"] .rb-whisker, [data-beat="setup"] .rb-whisker-label { opacity: 0; }
 [data-beat="apply"] .rb-whisker, [data-beat="apply"] .rb-whisker-label { opacity: 1; }
@@ -468,13 +503,13 @@ tr.row-primary th, tr.row-primary td { background: rgba(217,164,65,.06); }
 .ac-seg { transition: opacity 420ms ease; }
 
 [data-beat="apply"] .cs-seg-remand { transform: translateY(-6px); }
-.cs-seg-remand { transition: transform 320ms ease; transform-box: fill-box; transform-origin: center; }
+.cs-seg-remand { transition: transform 320ms ease; transform-origin: center; }
 
 @media (prefers-reduced-motion: reduce) {
   .stepper { display: none !important; }
   .stages-sequence { display: flex !important; }
   .stepper-headline.stepper-headline-in { animation: none; opacity: 1; transform: none; }
-  .rc-bar, .rc-bar-label, .rc-claimed-label, .rc-reproduced-label,
+  .rc-fill, .rc-value,
   .rb-whisker, .rb-whisker-label, .ac-seg, .cs-seg-remand { transition: none; }
 }
 @media print {
@@ -601,8 +636,8 @@ tr.row-primary th, tr.row-primary td { background: rgba(217,164,65,.06); }
    have more room for the track itself on a narrow phone width, and grow
    copy buttons a touch further for comfortable thumb tapping. */
 @media (max-width: 480px) {
-  .ranked-row, .diverging-row { grid-template-columns: minmax(56px, 92px) 1fr auto; gap: 6px; }
-  .ranked-label, .diverging-label { font-size: 11.5px; }
+  .ranked-row, .diverging-row, .rb-row { grid-template-columns: minmax(56px, 92px) 1fr auto; gap: 6px; }
+  .ranked-label, .diverging-label, .rb-label { font-size: 11.5px; }
   .trend-yaxis { min-width: 2.5ch; font-size: 10px; }
   .trend-xaxis { font-size: 10px; }
   .paired-track-wrap { gap: 6px; }
