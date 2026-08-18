@@ -173,6 +173,7 @@ tr.row-primary th, tr.row-primary td { background: rgba(217,164,65,.06); }
 /* Briefings */
 .briefing-hero { padding-bottom: 8px; }
 .briefing-updated { color: var(--ink-faint); font-size: 13px; margin-top: -4px; }
+.audit-provenance { color: var(--defence); font-size: 13px; margin-top: -6px; font-weight: 600; }
 
 /* Tap targets: a 44px comfortable-thumb minimum on touch devices, per
    the mobile-verification doctrine (docs/mobile-verification.md) — a
