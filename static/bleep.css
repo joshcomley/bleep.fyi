@@ -257,6 +257,119 @@ tr.row-primary th, tr.row-primary td { background: rgba(217,164,65,.06); }
 .chart-table th, .chart-table td { text-align: left; padding: 5px 8px; border-bottom: 1px solid var(--line); font-variant-numeric: tabular-nums; }
 .chart-table th { color: var(--ink-faint); font-weight: 600; }
 
+/* Briefing stages (infographic-led "how the trick works" sequence).
+   Mobile-first sizing throughout — clamp() scales text without a media
+   query, and the >720px block below only ADDS room, never fixes legibility. */
+.stages-wrap { padding: 24px 0 8px; }
+.stepper-intro { color: var(--ink-dim); font-size: 15.5px; max-width: 74ch; margin: 0 0 20px; }
+
+.stages-sequence { display: flex; flex-direction: column; gap: 0; }
+.stages-sequence[data-stepper-active="true"] { display: none; }
+.stage-panel {
+  background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+  padding: clamp(16px, 4vw, 26px);
+}
+.stage-head { display: flex; align-items: center; gap: 14px; margin-bottom: 8px; }
+.stage-num {
+  flex: 0 0 auto; width: 34px; height: 34px; border-radius: 50%;
+  background: var(--panel-2); border: 1px solid var(--accent); color: var(--accent);
+  font-family: var(--serif); font-weight: 700; font-size: 16px;
+  display: flex; align-items: center; justify-content: center;
+}
+.stage-head h2 { font-family: var(--serif); font-size: clamp(19px, 4.2vw, 22px); margin: 0; letter-spacing: -0.2px; }
+.stage-caption { color: var(--ink-dim); font-size: clamp(15px, 3.6vw, 16.5px); max-width: 74ch; margin: 0 0 8px; }
+.stage-caption-apply { color: var(--ink); }
+.stage-headline-text {
+  font-family: var(--serif); font-weight: 700; font-size: clamp(20px, 5vw, 26px);
+  color: var(--accent); margin: 4px 0 4px;
+}
+.stage-charts { margin-top: 14px; }
+.stage-charts .chart:first-child { margin-top: 0; }
+.stage-body { color: var(--ink-dim); font-size: 15px; max-width: 76ch; margin: 14px 0 0; padding-top: 14px; border-top: 1px dotted var(--line); }
+.stage-arrow {
+  text-align: center; color: var(--ink-faint); font-size: 22px; line-height: 1;
+  padding: 6px 0; opacity: 0.7;
+}
+
+/* Interactive two-beat stepper. Hidden by default in markup ([hidden]); JS
+   only ever REMOVES that attribute (progressive enhancement — a broken or
+   blocked script leaves the static panels as the only rendering). */
+.stepper {
+  background: var(--panel); border: 1px solid var(--line); border-radius: 14px;
+  padding: clamp(16px, 4vw, 28px); margin-bottom: 28px;
+}
+.stepper-frame { min-height: 0; }
+.stepper-headline {
+  display: flex; flex-direction: column; gap: 2px; margin-bottom: 14px;
+  opacity: 0; transform: translateY(6px);
+}
+.stepper-headline.stepper-headline-in {
+  animation: stepper-reveal 420ms ease-out forwards;
+}
+@keyframes stepper-reveal { to { opacity: 1; transform: translateY(0); } }
+.stepper-num {
+  font-family: var(--serif); font-weight: 700; color: var(--accent);
+  font-size: clamp(32px, 11vw, 52px); line-height: 1.05; letter-spacing: -0.5px;
+  font-variant-numeric: tabular-nums;
+}
+.stepper-num-band { color: var(--corrected); }
+.stepper-num-held { color: var(--ink-dim); }
+.stepper-num-zero { color: var(--defence); }
+.stepper-num-label { color: var(--ink-faint); font-size: clamp(12.5px, 3.2vw, 14px); max-width: 60ch; }
+.stepper-chart-slot { margin: 4px 0 12px; }
+.stepper-chart-slot .chart { margin: 0; }
+.stepper-caption { color: var(--ink-dim); font-size: clamp(15px, 3.8vw, 17px); max-width: 74ch; margin: 0; min-height: 2.6em; }
+.stepper-source { color: var(--ink-faint); font-size: 12px; margin: 14px 0 0; padding-top: 10px; border-top: 1px solid var(--line); }
+
+.stepper-controls {
+  display: flex; align-items: center; justify-content: space-between; gap: 10px;
+  margin-top: 18px; flex-wrap: wrap;
+}
+.stepper-btn {
+  background: var(--panel-2); color: var(--ink); border: 1px solid var(--line);
+  border-radius: 8px; padding: 12px 18px; font-size: 15px; font-family: var(--sans);
+  cursor: pointer; min-height: 44px; min-width: 44px; touch-action: manipulation;
+}
+.stepper-btn:hover:not(:disabled) { border-color: var(--accent); }
+.stepper-btn:disabled { opacity: 0.35; cursor: default; }
+.stepper-next { background: var(--accent); color: var(--bg); border-color: var(--accent); font-weight: 600; }
+.stepper-next:disabled { background: var(--panel-2); color: var(--ink); }
+.stepper-dots { display: flex; gap: 6px; flex-wrap: wrap; order: 3; flex-basis: 100%; justify-content: center; }
+.stepper-dot-pair { display: flex; gap: 2px; padding: 3px; border-radius: 999px; }
+.stepper-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--line); display: block; }
+.stepper-dot.is-done { background: var(--ink-faint); }
+.stepper-dot.is-current { background: var(--accent); width: 9px; height: 9px; }
+
+/* Beat-driven transitions — the "Apply" click reveals the mechanism.
+   All transform/opacity only: cheap on mobile, no layout thrash. */
+[data-beat="apply"] .rc-claimed { opacity: 0.35; }
+[data-beat="apply"] .rc-reproduced { opacity: 1; }
+[data-beat="setup"] .rc-reproduced { opacity: 0.25; }
+.rc-bar, .rc-bar-label, .rc-claimed-label, .rc-reproduced-label { transition: opacity 380ms ease; }
+
+[data-beat="setup"] .rb-whisker, [data-beat="setup"] .rb-whisker-label { opacity: 0; }
+[data-beat="apply"] .rb-whisker, [data-beat="apply"] .rb-whisker-label { opacity: 1; }
+.rb-whisker, .rb-whisker-label { transition: opacity 420ms ease; }
+
+[data-beat="apply"] .ac-seg[data-comparable="false"] { opacity: 0.18; }
+[data-beat="setup"] .ac-seg[data-comparable="false"] { opacity: 1; }
+.ac-seg { transition: opacity 420ms ease; }
+
+[data-beat="apply"] .cs-seg-remand { transform: translateY(-6px); }
+.cs-seg-remand { transition: transform 320ms ease; transform-box: fill-box; transform-origin: center; }
+
+@media (prefers-reduced-motion: reduce) {
+  .stepper { display: none !important; }
+  .stages-sequence { display: flex !important; }
+  .stepper-headline.stepper-headline-in { animation: none; opacity: 1; transform: none; }
+  .rc-bar, .rc-bar-label, .rc-claimed-label, .rc-reproduced-label,
+  .rb-whisker, .rb-whisker-label, .ac-seg, .cs-seg-remand { transition: none; }
+}
+@media print {
+  .stepper { display: none !important; }
+  .stages-sequence { display: flex !important; }
+}
+
 /* At a glance — chart component additions */
 .chart-label-lg { fill: var(--ink); font-size: 14px; font-weight: 600; font-family: var(--sans); }
 .chart-label-bold { font-weight: 600; }
@@ -345,4 +458,6 @@ tr.row-primary th, tr.row-primary td { background: rgba(217,164,65,.06); }
   .shot-thumb img { height: 180px; }
   .hero h1, #subject-head h1 { font-size: 32px; }
   .nav { flex-wrap: wrap; }
+  .stepper-controls { justify-content: center; }
+  .stepper-back, .stepper-next { flex: 1 1 auto; }
 }

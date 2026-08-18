@@ -17,6 +17,9 @@
   <main class="wrap">
     
 
+
+
+
 <section class="hero briefing-hero">
   <h1>Where are the official UK government statistics on crime broken down by nationality?</h1>
   <p class="lede">Official UK government data on crime and nationality does exist, but it is scattered and easy to miss. The Ministry of Justice publishes the prison population by nationality every quarter: as at 30 June 2026, foreign nationals were 11.8% of the prison population (10,134 of 85,858), and 10.25% of prisoners held for sexual offences specifically — slightly under-represented on that measure. What the government does NOT routinely publish is criminal convictions broken down by nationality: MoJ has confirmed in writing to Parliament that its conviction statistics carry no nationality breakdown, and MoJ is currently appealing an Information Commissioner&#39;s Office order to release fuller conviction-by-nationality data. Full sources, verified figures and archived copies of every spreadsheet: https://bleep.fyi/r/uk-crime-by-nationality</p>
@@ -1248,6 +1251,137 @@ if (!navigator.clipboard) {
   });
 
   applyHash(false);
+})();
+</script>
+
+
+<script>
+(function () {
+  var dataEl = document.getElementById('stages-data');
+  if (!dataEl) return;
+  var stages;
+  try { stages = JSON.parse(dataEl.textContent); } catch (e) { return; }
+  if (!stages || !stages.length) return;
+
+  // Reduced motion (or no JS at all, which never reaches this line) keeps
+  // the static panels as-is — the interactive stepper never activates.
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  var stepper = document.getElementById('stepper');
+  var staticEl = document.getElementById('stages-static');
+  var headlineEl = document.getElementById('stepper-headline');
+  var chartSlot = document.getElementById('stepper-chart-slot');
+  var captionEl = document.getElementById('stepper-caption');
+  var sourceEl = document.getElementById('stepper-source');
+  var frameEl = stepper.querySelector('.stepper-frame');
+  var backBtn = document.getElementById('stepper-back');
+  var nextBtn = document.getElementById('stepper-next');
+  var dotsEl = document.getElementById('stepper-dots');
+  if (!stepper || !staticEl || !headlineEl) return;
+
+  var stageCharts = stages.map(function (s) {
+    var panel = document.getElementById('stage-' + s.id);
+    return panel ? panel.querySelector('.stage-charts') : null;
+  });
+
+  var idx = 0;
+  var beat = 'setup';
+
+  function arrow(direction) {
+    return direction === 'down' ? '↓' : direction === 'up' ? '↑' : '↔';
+  }
+
+  function renderHeadline(h) {
+    headlineEl.innerHTML = '';
+    if (!h) return;
+    var num = document.createElement('span');
+    var label = document.createElement('span');
+    label.className = 'stepper-num-label';
+    if (h.type === 'value') {
+      num.className = 'stepper-num';
+      num.textContent = h.value + h.unit;
+      label.textContent = h.label || '';
+    } else if (h.type === 'band') {
+      num.className = 'stepper-num stepper-num-band';
+      num.textContent = h.low + '–' + h.high + h.unit;
+      label.textContent = h.label || 'a range, not a single point';
+    } else if (h.type === 'held') {
+      num.className = 'stepper-num stepper-num-held';
+      num.textContent = h.band.low + '–' + h.band.high + h.unit + ' ' + arrow(h.direction);
+      label.textContent = h.note || '';
+    } else if (h.type === 'zero') {
+      num.className = 'stepper-num stepper-num-zero';
+      num.textContent = h.band.low + '–' + h.band.high + h.unit + ' ✓';
+      label.textContent = h.note || '';
+    }
+    headlineEl.appendChild(num);
+    headlineEl.appendChild(label);
+    // restart the reveal transition each time
+    headlineEl.classList.remove('stepper-headline-in');
+    void headlineEl.offsetWidth;
+    headlineEl.classList.add('stepper-headline-in');
+  }
+
+  function render() {
+    var stage = stages[idx];
+    var isSetup = beat === 'setup';
+    captionEl.textContent = isSetup ? stage.setup_caption : stage.apply_caption;
+    renderHeadline(stage.headline ? (isSetup ? stage.headline.pre : stage.headline.post) : null);
+
+    chartSlot.innerHTML = '';
+    var chartsWrap = stageCharts[idx];
+    if (chartsWrap) {
+      var clone = chartsWrap.cloneNode(true);
+      chartSlot.appendChild(clone);
+    }
+    frameEl.setAttribute('data-beat', beat);
+
+    var firstChart = (stage.charts || [])[0];
+    sourceEl.textContent = firstChart ? firstChart.source_line : '';
+
+    backBtn.disabled = (idx === 0 && beat === 'setup');
+    var atEnd = (idx === stages.length - 1 && beat === 'apply');
+    nextBtn.textContent = atEnd ? 'Done ✓' : 'Next →';
+    nextBtn.disabled = atEnd;
+
+    renderDots();
+  }
+
+  function renderDots() {
+    dotsEl.innerHTML = '';
+    stages.forEach(function (s, i) {
+      var pair = document.createElement('span');
+      pair.className = 'stepper-dot-pair';
+      ['setup', 'apply'].forEach(function (b) {
+        var dot = document.createElement('span');
+        var passed = i < idx || (i === idx && (beat === 'apply' || b === 'setup'));
+        var current = i === idx && b === beat;
+        dot.className = 'stepper-dot' + (passed ? ' is-done' : '') + (current ? ' is-current' : '');
+        pair.appendChild(dot);
+      });
+      dotsEl.appendChild(pair);
+    });
+  }
+
+  function next() {
+    if (beat === 'setup') { beat = 'apply'; }
+    else if (idx < stages.length - 1) { idx += 1; beat = 'setup'; }
+    else { return; }
+    render();
+  }
+  function back() {
+    if (beat === 'apply') { beat = 'setup'; }
+    else if (idx > 0) { idx -= 1; beat = 'apply'; }
+    else { return; }
+    render();
+  }
+
+  nextBtn.addEventListener('click', next);
+  backBtn.addEventListener('click', back);
+
+  staticEl.setAttribute('data-stepper-active', 'true');
+  stepper.hidden = false;
+  render();
 })();
 </script>
 

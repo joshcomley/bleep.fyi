@@ -1,0 +1,1365 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bleep — Is it true that Albanian nationals in the UK are &#34;16.6 times more likely&#34; to be in prison than British people?</title>
+  <meta name="description" content="Reproducing the &#34;16.6x more likely to be in prison&#34; claim from official data doesn&#39;t make the number smaller — for Albanian and Afghan nationals it comes out bigger. The population figure underneath it is a UK statistical series discontinued in 2021, compared against Britain&#39;s entire population rather than a like-for-like age/sex group, with a big chunk of the gap made up of unconvicted defendants and people later removed from the country. No official body has published the adjustment needed to know what genuinely remains once you correct for that. Full sources and arithmetic: https://bleep.fyi/r/nationality-incarceration-ratios">
+  <link rel="stylesheet" href="/static/bleep.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◼</text></svg>">
+</head>
+<body>
+  <header class="masthead">
+    <div class="wrap masthead-inner">
+      <a class="brand" href="/">bleep<span class="brand-dot">.</span></a>
+    </div>
+  </header>
+  <main class="wrap">
+    
+
+
+<section class="stages-wrap">
+  <p class="stepper-intro">Walk through it step by step for the Albanian claim specifically — the version the operator&#39;s friend actually posted, and the one with the richest published data to check. Each step applies one real, sourced correction. Where a factor&#39;s DIRECTION is known but its SIZE isn&#39;t published for this nationality, the number holds and says so, rather than pretending to compute a figure nobody has published. The same reproduction for Iranian and Afghan nationals is in the full detail below.</p>
+
+  
+  <div class="stepper" id="stepper" hidden>
+    <div class="stepper-frame" data-beat="setup">
+      <div class="stepper-headline" id="stepper-headline"></div>
+      <div class="stepper-chart-slot" id="stepper-chart-slot"></div>
+      <p class="stepper-caption" id="stepper-caption"></p>
+    </div>
+    <p class="stepper-source" id="stepper-source"></p>
+    <div class="stepper-controls">
+      <button type="button" class="stepper-btn stepper-back" id="stepper-back" aria-label="Back">← Back</button>
+      <div class="stepper-dots" id="stepper-dots" aria-hidden="true"></div>
+      <button type="button" class="stepper-btn stepper-next" id="stepper-next" aria-label="Next">Next →</button>
+    </div>
+  </div>
+
+  
+  <div class="stages-sequence" id="stages-static">
+    
+    <article class="stage-panel" id="stage-opening">
+      <div class="stage-head">
+        <span class="stage-num">1</span>
+        <h2>Check the claim yourself</h2>
+      </div>
+      <p class="stage-caption">The claim, as posted: Albanian nationals in the UK are “16.6 times more likely” to be in prison than British people.</p>
+      <p class="stage-caption stage-caption-apply">Reproduce the same kind of sum — MoJ prison count ÷ ONS population estimate — from official data instead of trusting the number, and it comes out HIGHER, not lower.</p>
+      
+      <p class="stage-headline-text">35.9x — reproduced from official data</p>
+      
+      
+      <div class="stage-charts" data-beat="apply"><figure class="chart" id="chart-ratio-compare">
+  <figcaption class="chart-title">Widely-quoted ratio vs. reproduced from official data</figcaption>
+  <div class="chart-svg-wrap"><svg viewBox="0 0 800 230" class="chart-svg chart-svg-ranked" role="img" aria-label="Widely-quoted ratio vs. reproduced from official data"><line x1="90.0" y1="12" x2="90.0" y2="210" class="chart-gridline"/><line x1="245.0" y1="12" x2="245.0" y2="210" class="chart-gridline"/><line x1="400.0" y1="12" x2="400.0" y2="210" class="chart-gridline"/><line x1="555.0" y1="12" x2="555.0" y2="210" class="chart-gridline"/><line x1="710.0" y1="12" x2="710.0" y2="210" class="chart-gridline"/><text x="80" y="44" class="chart-axis" text-anchor="end" style="font-weight:600">Albanian</text><rect class="rc-bar rc-claimed" x="90" y="20" width="205.8" height="22" rx="4" style="fill:#8a8578"><title>Albanian — widely quoted: 16.6 x higher than British</title></rect><text class="rc-bar rc-claimed-label chart-axis" x="303.8" y="36.0">16.6x</text><rect class="rc-bar rc-reproduced" x="90" y="46" width="445.2" height="22" rx="4" style="fill:#d95926"><title>Albanian — reproduced from official data: 35.9 x higher than British</title></rect><text class="rc-bar rc-reproduced-label chart-axis" x="543.2" y="62.0">35.9x</text><text x="80" y="106" class="chart-axis" text-anchor="end" style="font-weight:600">Iranian</text><rect class="rc-bar rc-claimed" x="90" y="82" width="133.9" height="22" rx="4" style="fill:#8a8578"><title>Iranian — widely quoted: 10.8 x higher than British</title></rect><text class="rc-bar rc-claimed-label chart-axis" x="231.9" y="98.0">10.8x</text><rect class="rc-bar rc-reproduced" x="90" y="108" width="83.1" height="22" rx="4" style="fill:#d95926"><title>Iranian — reproduced from official data: 6.7 x higher than British</title></rect><text class="rc-bar rc-reproduced-label chart-axis" x="181.1" y="124.0">6.7x</text><text x="80" y="168" class="chart-axis" text-anchor="end" style="font-weight:600">Afghan</text><rect class="rc-bar rc-claimed" x="90" y="144" width="106.6" height="22" rx="4" style="fill:#8a8578"><title>Afghan — widely quoted: 8.6 x higher than British</title></rect><text class="rc-bar rc-claimed-label chart-axis" x="204.6" y="160.0">8.6x</text><rect class="rc-bar rc-reproduced" x="90" y="170" width="177.3" height="22" rx="4" style="fill:#d95926"><title>Afghan — reproduced from official data: 14.3 x higher than British</title></rect><text class="rc-bar rc-reproduced-label chart-axis" x="275.3" y="186.0">14.3x</text><text x="90.0" y="224" class="chart-axis" text-anchor="middle">0</text><text x="245.0" y="224" class="chart-axis" text-anchor="middle">12.5</text><text x="400.0" y="224" class="chart-axis" text-anchor="middle">25</text><text x="555.0" y="224" class="chart-axis" text-anchor="middle">37.5</text><text x="710.0" y="224" class="chart-axis" text-anchor="middle">50</text></svg><div class="chart-legend"><span class="chart-legend-item"><i class="chart-swatch" style="background:#8a8578"></i>Widely quoted (unverified)</span><span class="chart-legend-item"><i class="chart-swatch" style="background:#d95926"></i>Reproduced from official data</span></div></div>
+  <div class="chart-foot">
+    <p class="chart-source">MoJ prison population by nationality (30 June 2026) ÷ ONS population by nationality (last published edition, July 2020–June 2021), retrieved 2026-08-18</p>
+    <p class="chart-note">The three claimed figures don&#39;t even imply a consistent population source: back-solving them against the same prisoner counts implies an Albanian population of ~41,000 (about double the 2021 official estimate), an Afghan population of ~29,900 (about 1.7x), but an Iranian population of ~22,900 (smaller than the 2021 estimate) — three different, unstated denominators, not one coherent calculation. The interactive walkthrough above follows the Albanian figure specifically; Iranian and Afghan reproductions are in the detail section below.</p>
+    <button type="button" class="copy-btn" data-copy="Widely-quoted ratio vs. reproduced from official data
+Albanian: widely quoted 16.6x, reproduced from official data 35.9x
+Iranian: widely quoted 10.8x, reproduced from official data 6.7x
+Afghan: widely quoted 8.6x, reproduced from official data 14.3x
+
+Source: MoJ prison population by nationality (30 June 2026) ÷ ONS population by nationality (last published edition, July 2020–June 2021), retrieved 2026-08-18">Copy data</button>
+  </div>
+  <div class="card-source-links"><a href="https://www.gov.uk/government/statistics/offender-management-statistics-quarterly-january-to-march-2026" rel="noopener">https://www.gov.uk/government/statistics/offender-management-statistics-quarterly-january-to-march-2026</a></div>
+  <details class="chart-table"><summary>Show as table</summary><table><thead><tr><th>Nationality</th><th>Widely quoted</th><th>Reproduced from official data</th></tr></thead><tbody><tr><td>Albanian</td><td>16.6x</td><td>35.9x</td></tr><tr><td>Iranian</td><td>10.8x</td><td>6.7x</td></tr><tr><td>Afghan</td><td>8.6x</td><td>14.3x</td></tr></tbody></table></details>
+</figure></div>
+      
+      
+    </article>
+    <div class="stage-arrow" aria-hidden="true">↓</div>
+    
+    <article class="stage-panel" id="stage-denominator">
+      <div class="stage-head">
+        <span class="stage-num">2</span>
+        <h2>A population guess, not a count</h2>
+      </div>
+      <p class="stage-caption">That 35.9x rests on a population estimate on the bottom of the sum. Here&#39;s what it actually is.</p>
+      <p class="stage-caption stage-caption-apply">It&#39;s a discontinued 2021 survey figure. Its own published margin of error turns one clean-looking number into a wide range.</p>
+      
+      <p class="stage-headline-text">26.0–57.9x</p>
+      
+      
+      <div class="stage-charts" data-beat="apply"><figure class="chart" id="chart-population-range">
+  <figcaption class="chart-title">ONS population estimate, with 95% confidence interval (July 2020–June 2021, last published edition)</figcaption>
+  <div class="chart-svg-wrap"><svg viewBox="0 0 800 84" class="chart-svg chart-svg-ranked" role="img" aria-label="ONS population estimate, with 95% confidence interval (July 2020–June 2021, last published edition)"><line x1="90.0" y1="12" x2="90.0" y2="64" class="chart-gridline"/><line x1="245.0" y1="12" x2="245.0" y2="64" class="chart-gridline"/><line x1="400.0" y1="12" x2="400.0" y2="64" class="chart-gridline"/><line x1="555.0" y1="12" x2="555.0" y2="64" class="chart-gridline"/><line x1="710.0" y1="12" x2="710.0" y2="64" class="chart-gridline"/><text x="80" y="31.0" class="chart-axis" text-anchor="end" style="font-weight:600">Albanian</text><g class="rb-whisker"><line x1="251.2" y1="27.0" x2="449.6" y2="27.0" stroke="#d95926" stroke-width="3" stroke-linecap="round"/><line x1="251.2" y1="22.0" x2="251.2" y2="32.0" stroke="#d95926" stroke-width="2"/><line x1="449.6" y1="22.0" x2="449.6" y2="32.0" stroke="#d95926" stroke-width="2"/></g><circle class="rb-point" cx="350.4" cy="27.0" r="5" style="fill:#d95926" stroke="var(--panel-2)" stroke-width="2"><title>Albanian: 21,000 (95% CI 13,000–29,000) people</title></circle><text class="rb-whisker-label chart-axis" x="350.4" y="16.0" text-anchor="middle">13,000–29,000</text><text x="90.0" y="78" class="chart-axis" text-anchor="middle">0</text><text x="245.0" y="78" class="chart-axis" text-anchor="middle">12,500</text><text x="400.0" y="78" class="chart-axis" text-anchor="middle">25,000</text><text x="555.0" y="78" class="chart-axis" text-anchor="middle">37,500</text><text x="710.0" y="78" class="chart-axis" text-anchor="middle">50,000</text></svg></div>
+  <div class="chart-foot">
+    <p class="chart-source">ONS, Population of the UK by country of birth and nationality: individual country data, July 2020–June 2021 (discontinued after this edition), Table C, retrieved 2026-08-18</p>
+    <p class="chart-note">For comparison, the British population estimate in the same table is 60,287,000 ± 428,000 — a margin of error of 0.7% of the estimate, versus 38% for Albanian nationals. A bigger sample makes a much narrower estimate; this is a genuine statistical guess, not a count.</p>
+    <button type="button" class="copy-btn" data-copy="ONS population estimate, with 95% confidence interval (July 2020–June 2021, last published edition)
+Albanian: 21,000 (95% CI 13,000-29,000)
+
+Source: ONS, Population of the UK by country of birth and nationality: individual country data, July 2020–June 2021 (discontinued after this edition), Table C, retrieved 2026-08-18">Copy data</button>
+  </div>
+  <div class="card-source-links"><a href="https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/internationalmigration/datasets/populationoftheunitedkingdombycountryofbirthandnationalityunderlyingdatasheets" rel="noopener">https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/internationalmigration/datasets/populationoftheunitedkingdombycountryofbirthandnationalityunderlyingdatasheets</a></div>
+  <details class="chart-table"><summary>Show as table</summary><table><thead><tr><th>Nationality</th><th>Estimate</th><th>95% CI low</th><th>95% CI high</th></tr></thead><tbody><tr><td>Albanian</td><td>21,000</td><td>13,000</td><td>29,000</td></tr></tbody></table></details>
+</figure></div>
+      
+      
+    </article>
+    <div class="stage-arrow" aria-hidden="true">↓</div>
+    
+    <article class="stage-panel" id="stage-age_sex">
+      <div class="stage-head">
+        <span class="stage-num">3</span>
+        <h2>Babies and grannies vs. working-age men</h2>
+      </div>
+      <p class="stage-caption">Line up the two populations being compared, age band by age band, on the same 0–100 axis.</p>
+      <p class="stage-caption stage-caption-apply">“British” spans newborn to pensioner. The migration route most associated with these claims is overwhelmingly young working-age men — grey out the ranges that aren&#39;t like-for-like. The true gap should fall. By how much, nobody has published.</p>
+      
+      <p class="stage-headline-text">26.0–57.9x (still falling, size not published) — direction known — size not quantifiable from published data for this nationality</p>
+      
+      
+      <div class="stage-charts" data-beat="apply"><figure class="chart" id="chart-age-compare">
+  <figcaption class="chart-title">Age structure: British population vs. the small-boat migration route (proxy)</figcaption>
+  <div class="chart-svg-wrap"><svg viewBox="0 0 860 160" class="chart-svg" role="img" aria-label="Age structure: British population vs. the small-boat migration route (proxy)"><text x="4" y="26" class="chart-axis" style="font-weight:600">British population (England &amp; Wales, mid-2025)</text><rect class="ac-seg" data-comparable="false" x="4.0" y="34" width="151.4" height="30" style="fill:#8a8578"><title>Under 16: 17.9 % (not like-for-like)</title></rect><text class="ac-seg-label" x="80.2" y="53.0" text-anchor="middle" style="fill:#fff;font-size:11px;font-family:var(--sans, sans-serif)">17.9%</text><rect class="ac-seg" data-comparable="true" x="157.4" y="34" width="533.4" height="30" style="fill:#d95926"><title>16–64 (working age): 62.9 %</title></rect><text class="ac-seg-label" x="424.0" y="53.0" text-anchor="middle" style="fill:#fff;font-size:11px;font-family:var(--sans, sans-serif)">62.9%</text><rect class="ac-seg" data-comparable="false" x="692.7" y="34" width="163.3" height="30" style="fill:#8a8578"><title>65+: 19.3 % (not like-for-like)</title></rect><text class="ac-seg-label" x="773.9" y="53.0" text-anchor="middle" style="fill:#fff;font-size:11px;font-family:var(--sans, sans-serif)">19.3%</text><text x="4" y="90" class="chart-axis" style="font-weight:600">Small boat arrivals (proxy for the migration route, not a nationality-specific figure)</text><rect class="ac-seg" data-comparable="false" x="4.0" y="98" width="109.8" height="30" style="fill:#8a8578"><title>Children (under 18): 13 % (not like-for-like)</title></rect><text class="ac-seg-label" x="59.4" y="117.0" text-anchor="middle" style="fill:#fff;font-size:11px;font-family:var(--sans, sans-serif)">13%</text><rect class="ac-seg" data-comparable="true" x="115.8" y="98" width="740.2" height="30" style="fill:#d95926"><title>Adults (18+, overwhelmingly working-age): 87 %</title></rect><text class="ac-seg-label" x="485.4" y="117.0" text-anchor="middle" style="fill:#fff;font-size:11px;font-family:var(--sans, sans-serif)">87%</text></svg><div class="chart-legend"><span class="chart-legend-item"><i class="chart-swatch" style="background:#8a8578"></i>Under 16 (not like-for-like)</span><span class="chart-legend-item"><i class="chart-swatch" style="background:#d95926"></i>16–64 (working age) (comparable)</span><span class="chart-legend-item"><i class="chart-swatch" style="background:#8a8578"></i>65+ (not like-for-like)</span><span class="chart-legend-item"><i class="chart-swatch" style="background:#8a8578"></i>Children (under 18) (not like-for-like)</span><span class="chart-legend-item"><i class="chart-swatch" style="background:#d95926"></i>Adults (18+, overwhelmingly working-age) (comparable)</span></div></div>
+  <div class="chart-foot">
+    <p class="chart-source">British: ONS mid-2025 population estimates for England and Wales. Migrant proxy: Home Office, small boat arrivals by age, year ending March 2026. Retrieved 2026-08-18</p>
+    <p class="chart-note">The UK does not publish Albanian nationals&#39; age structure specifically — MoJ&#39;s own prisoner tables don&#39;t even cross-tabulate age against nationality (see the limits below). This uses the age/sex profile of the migration route most associated with two of the three nationalities on this page as the best-evidenced available context for the mechanism, not as a substitute for a missing Albania-specific statistic.</p>
+    <button type="button" class="copy-btn" data-copy="Age structure: British population vs. the small-boat migration route (proxy)
+British population (England &amp; Wales, mid-2025) — Under 16: 17.9%, 16–64 (working age): 62.9%, 65+: 19.3%
+Small boat arrivals (proxy for the migration route, not a nationality-specific figure) — Children (under 18): 13%, Adults (18+, overwhelmingly working-age): 87%
+
+Source: British: ONS mid-2025 population estimates for England and Wales. Migrant proxy: Home Office, small boat arrivals by age, year ending March 2026. Retrieved 2026-08-18">Copy data</button>
+  </div>
+  <div class="card-source-links"><a href="https://www.gov.uk/government/statistics/immigration-system-statistics-year-ending-june-2025/how-many-people-come-to-the-uk-irregularly" rel="noopener">https://www.gov.uk/government/statistics/immigration-system-statistics-year-ending-june-2025/how-many-people-come-to-the-uk-irregularly</a></div>
+  <details class="chart-table"><summary>Show as table</summary><table><tbody><tr><th>British population (England &amp; Wales, mid-2025)</th><td>Under 16: 17.9% (not like-for-like)</td><td>16–64 (working age): 62.9%</td><td>65+: 19.3% (not like-for-like)</td></tr><tr><th>Small boat arrivals (proxy for the migration route, not a nationality-specific figure)</th><td>Children (under 18): 13% (not like-for-like)</td><td>Adults (18+, overwhelmingly working-age): 87%</td></tr></tbody></table></details>
+</figure></div>
+      
+      
+    </article>
+    <div class="stage-arrow" aria-hidden="true">↓</div>
+    
+    <article class="stage-panel" id="stage-remand">
+      <div class="stage-head">
+        <span class="stage-num">4</span>
+        <h2>Convicted, or just accused?</h2>
+      </div>
+      <p class="stage-caption">Split the prison snapshot by whether someone has actually been convicted of anything yet.</p>
+      <p class="stage-caption stage-caption-apply">Foreign nationals overall are on remand — unconvicted, awaiting trial — at more than twice the British rate. Lift that slice out and the true gap should fall further. Albania-specific figures aren&#39;t published.</p>
+      
+      <p class="stage-headline-text">26.0–57.9x (still falling, size not published) — direction known — not computable from published data for Albanian nationals specifically</p>
+      
+      
+      <div class="stage-charts" data-beat="apply"><figure class="chart" id="chart-custody-mix-british">
+  <figcaption class="chart-title">British nationals in prison, by custody type (30 June 2026)</figcaption>
+  <div class="chart-svg-wrap"><svg viewBox="0 0 860 108" class="chart-svg" role="img" aria-label="British nationals in prison, by custody type (30 June 2026)"><rect x="4" y="44" width="852" height="28" rx="6" class="chart-track"/><text x="362.6" y="34" class="chart-label" text-anchor="middle">84.2%</text><text x="788.3" y="34" class="chart-label" text-anchor="middle">15.8%</text><rect class="cs-seg cs-seg-sentenced" x="4.0" y="44" width="716.1" height="28" style="fill:#3987e5"><title>Sentenced: 84.2 %</title></rect><rect class="cs-seg cs-seg-remand" x="722.1" y="44" width="132.4" height="28" style="fill:#d95926"><title>Remand (unconvicted, awaiting trial or sentencing): 15.8 %</title></rect><rect class="cs-seg cs-seg-non_criminal" x="856.5" y="44" width="0.5" height="28" style="fill:#8a8578"><title>Non-criminal (e.g. immigration detention within the prison estate): 0.1 %</title></rect></svg><div class="chart-legend"><span class="chart-legend-item"><i class="chart-swatch" style="background:#3987e5"></i>Sentenced <b>84.2 %</b></span><span class="chart-legend-item"><i class="chart-swatch" style="background:#d95926"></i>Remand (unconvicted, awaiting trial or sentencing) <b>15.8 %</b></span><span class="chart-legend-item"><i class="chart-swatch" style="background:#8a8578"></i>Non-criminal (e.g. immigration detention within the prison estate) <b>0.1 %</b></span></div></div>
+  <div class="chart-foot">
+    <p class="chart-source">Ministry of Justice, Offender management statistics quarterly, Table 1.Q.9, as at 30 June 2026, retrieved 2026-08-18</p>
+    <p class="chart-note">75,494 British nationals in prison as at 30 June 2026.</p>
+    <button type="button" class="copy-btn" data-copy="British nationals in prison, by custody type (30 June 2026)
+Sentenced: 84.2 %
+Remand (unconvicted, awaiting trial or sentencing): 15.8 %
+Non-criminal (e.g. immigration detention within the prison estate): 0.1 %
+
+Source: Ministry of Justice, Offender management statistics quarterly, Table 1.Q.9, as at 30 June 2026, retrieved 2026-08-18">Copy data</button>
+  </div>
+  <div class="card-source-links"><a href="https://www.gov.uk/government/statistics/offender-management-statistics-quarterly-january-to-march-2026" rel="noopener">https://www.gov.uk/government/statistics/offender-management-statistics-quarterly-january-to-march-2026</a></div>
+  <details class="chart-table"><summary>Show as table</summary><table><thead><tr><th>Group</th><th>%</th></tr></thead><tbody><tr><td>Sentenced</td><td>84.2 %</td></tr><tr><td>Remand (unconvicted, awaiting trial or sentencing)</td><td>15.8 %</td></tr><tr><td>Non-criminal (e.g. immigration detention within the prison estate)</td><td>0.1 %</td></tr></tbody></table></details>
+</figure>
+<figure class="chart" id="chart-custody-mix-foreign">
+  <figcaption class="chart-title">Foreign nationals in prison, by custody type (30 June 2026)</figcaption>
+  <div class="chart-svg-wrap"><svg viewBox="0 0 860 108" class="chart-svg" role="img" aria-label="Foreign nationals in prison, by custody type (30 June 2026)"><rect x="4" y="44" width="852" height="28" rx="6" class="chart-track"/><text x="274.4" y="34" class="chart-label" text-anchor="middle">63.5%</text><text x="682.7" y="34" class="chart-label" text-anchor="middle">32.4%</text><rect class="cs-seg cs-seg-sentenced" x="4.0" y="44" width="539.7" height="28" style="fill:#3987e5"><title>Sentenced: 63.5 %</title></rect><rect class="cs-seg cs-seg-remand" x="545.7" y="44" width="274.0" height="28" style="fill:#d95926"><title>Remand (unconvicted, awaiting trial or sentencing): 32.4 %</title></rect><rect class="cs-seg cs-seg-non_criminal" x="821.7" y="44" width="34.3" height="28" style="fill:#8a8578"><title>Non-criminal (e.g. immigration detention within the prison estate): 4.1 %</title></rect></svg><div class="chart-legend"><span class="chart-legend-item"><i class="chart-swatch" style="background:#3987e5"></i>Sentenced <b>63.5 %</b></span><span class="chart-legend-item"><i class="chart-swatch" style="background:#d95926"></i>Remand (unconvicted, awaiting trial or sentencing) <b>32.4 %</b></span><span class="chart-legend-item"><i class="chart-swatch" style="background:#8a8578"></i>Non-criminal (e.g. immigration detention within the prison estate) <b>4.1 %</b></span></div></div>
+  <div class="chart-foot">
+    <p class="chart-source">Ministry of Justice, Offender management statistics quarterly, Table 1.Q.9, as at 30 June 2026, retrieved 2026-08-18</p>
+    <p class="chart-note">10,134 foreign nationals in prison as at 30 June 2026 — a remand rate over twice British nationals&#39; 15.8%. This breakdown exists only at the British/foreign GROUP level; MoJ does not publish it for individual nationalities.</p>
+    <button type="button" class="copy-btn" data-copy="Foreign nationals in prison, by custody type (30 June 2026)
+Sentenced: 63.5 %
+Remand (unconvicted, awaiting trial or sentencing): 32.4 %
+Non-criminal (e.g. immigration detention within the prison estate): 4.1 %
+
+Source: Ministry of Justice, Offender management statistics quarterly, Table 1.Q.9, as at 30 June 2026, retrieved 2026-08-18">Copy data</button>
+  </div>
+  <div class="card-source-links"><a href="https://www.gov.uk/government/statistics/offender-management-statistics-quarterly-january-to-march-2026" rel="noopener">https://www.gov.uk/government/statistics/offender-management-statistics-quarterly-january-to-march-2026</a></div>
+  <details class="chart-table"><summary>Show as table</summary><table><thead><tr><th>Group</th><th>%</th></tr></thead><tbody><tr><td>Sentenced</td><td>63.5 %</td></tr><tr><td>Remand (unconvicted, awaiting trial or sentencing)</td><td>32.4 %</td></tr><tr><td>Non-criminal (e.g. immigration detention within the prison estate)</td><td>4.1 %</td></tr></tbody></table></details>
+</figure></div>
+      
+      
+    </article>
+    <div class="stage-arrow" aria-hidden="true">↓</div>
+    
+    <article class="stage-panel" id="stage-immigration_offences">
+      <div class="stage-head">
+        <span class="stage-num">5</span>
+        <h2>Crimes only a foreign national can commit</h2>
+      </div>
+      <p class="stage-caption">Check whether offences that, by definition, only a non-citizen can commit — illegal entry, overstaying — are inflating the count.</p>
+      <p class="stage-caption stage-caption-apply">They aren&#39;t. As of today, zero people are serving a sentence purely for an immigration offence in England and Wales. This factor is checked and doesn&#39;t move the number at all.</p>
+      
+      <p class="stage-headline-text">26.0–57.9x (unmoved — checked and confirmed) — checked against MoJ&#39;s own offence codes — contributes 0, doesn&#39;t move this number</p>
+      
+      
+      
+    </article>
+    <div class="stage-arrow" aria-hidden="true">↓</div>
+    
+    <article class="stage-panel" id="stage-deportation">
+      <div class="stage-head">
+        <span class="stage-num">6</span>
+        <h2>Removed before they&#39;d ever be recounted</h2>
+      </div>
+      <p class="stage-caption">Some convicted foreign offenders don&#39;t stay in the country to be recounted next quarter.</p>
+      <p class="stage-caption stage-caption-apply">Over 1,500 Albanians a year are removed from the UK — more than the entire Albanian prison headcount at any single snapshot. That pushes the true picture the OTHER way: this snapshot undercounts how many pass through the system. Size not precisely knowable.</p>
+      
+      <p class="stage-headline-text">26.0–57.9x (still rising, size not published) — pushes the raw number the OTHER way — size not precisely knowable</p>
+      
+      
+      <div class="stage-charts" data-beat="apply"><figure class="chart" id="chart-deport-vs-snapshot">
+  <figcaption class="chart-title">Albanian nationals: prison snapshot vs. annual removals</figcaption>
+  <div class="chart-svg-wrap"><svg viewBox="0 0 870 108" class="chart-svg chart-svg-ranked" role="img" aria-label="Albanian nationals: prison snapshot vs. annual removals"><line x1="150.0" y1="16" x2="150.0" y2="88" class="chart-gridline"/><line x1="315.0" y1="16" x2="315.0" y2="88" class="chart-gridline"/><line x1="480.0" y1="16" x2="480.0" y2="88" class="chart-gridline"/><line x1="645.0" y1="16" x2="645.0" y2="88" class="chart-gridline"/><line x1="810.0" y1="16" x2="810.0" y2="88" class="chart-gridline"/><text x="140" y="38" class="chart-axis" text-anchor="end">In prison at any one snapshot (30 June 2026)</text><rect x="150" y="24" width="311.2" height="18" rx="4" style="fill:#d95926"><title>In prison at any one snapshot (30 June 2026): 943 people</title></rect><text x="469.2" y="38" class="chart-axis">943</text><text x="140" y="68" class="chart-axis" text-anchor="end">Removed from the UK in one year (year ending March 2026)</text><rect x="150" y="54" width="513.8" height="18" rx="4" style="fill:#d95926"><title>Removed from the UK in one year (year ending March 2026): 1,557 people</title></rect><text x="671.8" y="68" class="chart-axis">1,557</text><text x="150.0" y="102" class="chart-axis" text-anchor="middle">0</text><text x="315.0" y="102" class="chart-axis" text-anchor="middle">500</text><text x="480.0" y="102" class="chart-axis" text-anchor="middle">1,000</text><text x="645.0" y="102" class="chart-axis" text-anchor="middle">1,500</text><text x="810.0" y="102" class="chart-axis" text-anchor="middle">2,000</text></svg></div>
+  <div class="chart-foot">
+    <p class="chart-source">MoJ prison population (Table 1.Q.12, 30 June 2026) vs. Home Office FNO returns (Ret_02b, year ending March 2026), retrieved 2026-08-18</p>
+    <p class="chart-note">More Albanians are removed from the UK in a single year than are ever in prison at one time — removal is a continuous flow, not a one-off event.</p>
+    <button type="button" class="copy-btn" data-copy="Albanian nationals: prison snapshot vs. annual removals
+In prison at any one snapshot (30 June 2026): 943 people
+Removed from the UK in one year (year ending March 2026): 1,557 people
+
+Source: MoJ prison population (Table 1.Q.12, 30 June 2026) vs. Home Office FNO returns (Ret_02b, year ending March 2026), retrieved 2026-08-18">Copy data</button>
+  </div>
+  <div class="card-source-links"><a href="https://www.gov.uk/government/statistics/immigration-system-statistics-year-ending-march-2026" rel="noopener">https://www.gov.uk/government/statistics/immigration-system-statistics-year-ending-march-2026</a></div>
+  <details class="chart-table"><summary>Show as table</summary><table><thead><tr><th>Nationality</th><th>people</th></tr></thead><tbody><tr><td>In prison at any one snapshot (30 June 2026)</td><td>943 people</td></tr><tr><td>Removed from the UK in one year (year ending March 2026)</td><td>1,557 people</td></tr></tbody></table></details>
+</figure></div>
+      
+      
+    </article>
+    <div class="stage-arrow" aria-hidden="true">↓</div>
+    
+    <article class="stage-panel" id="stage-enforcement">
+      <div class="stage-head">
+        <span class="stage-num">7</span>
+        <h2>Who gets watched more closely</h2>
+      </div>
+      <p class="stage-caption">Check whether migrants face enforcement exposure that simply doesn&#39;t exist for British nationals.</p>
+      <p class="stage-caption stage-caption-apply">They do — rough sleeping alone can void a non-citizen&#39;s immigration permission, a rule with no British equivalent, and over half of London&#39;s rough sleepers with a known nationality are non-UK. But this doesn&#39;t let us move the headline number: nobody has published how much of THIS ratio it explains.</p>
+      
+      <p class="stage-headline-text">26.0–57.9x (unmoved, size not published) — real, nationality-specific mechanism — size unquantifiable from published data; the number does not move</p>
+      
+      
+      <div class="stage-charts" data-beat="apply"><figure class="chart" id="chart-chain-nationality-share-stage">
+  <figcaption class="chart-title">People seen rough sleeping in London, by nationality (2025/26)</figcaption>
+  <div class="chart-svg-wrap"><svg viewBox="0 0 860 108" class="chart-svg" role="img" aria-label="People seen rough sleeping in London, by nationality (2025/26)"><rect x="4" y="44" width="852" height="28" rx="6" class="chart-track"/><text x="213.2" y="34" class="chart-label" text-anchor="middle">49.1%</text><text x="639.2" y="34" class="chart-label" text-anchor="middle">50.9%</text><rect x="4.0" y="44" width="417.3" height="28" style="fill:#3987e5"><title>UK national: 49.1 %</title></rect><rect x="423.3" y="44" width="432.7" height="28" style="fill:#d95926"><title>Non-UK national: 50.9 %</title></rect></svg><div class="chart-legend"><span class="chart-legend-item"><i class="chart-swatch" style="background:#3987e5"></i>UK national <b>49.1 %</b></span><span class="chart-legend-item"><i class="chart-swatch" style="background:#d95926"></i>Non-UK national <b>50.9 %</b></span></div></div>
+  <div class="chart-foot">
+    <p class="chart-source">GLA/CHAIN, Annual Report Greater London 2025/26, page 34, retrieved 2026-08-18</p>
+    <p class="chart-note">Base: 11,142 people with a known nationality. Rough sleeping is grounds for refusing or cancelling a non-British national&#39;s immigration permission since 1 December 2020 — an exposure that cannot exist for a British national, by legal definition.</p>
+    <button type="button" class="copy-btn" data-copy="People seen rough sleeping in London, by nationality (2025/26)
+UK national: 49.1 %
+Non-UK national: 50.9 %
+
+Source: GLA/CHAIN, Annual Report Greater London 2025/26, page 34, retrieved 2026-08-18">Copy data</button>
+  </div>
+  <div class="card-source-links"><a href="https://data.london.gov.uk/dataset/chain-reports" rel="noopener">https://data.london.gov.uk/dataset/chain-reports</a></div>
+  <details class="chart-table"><summary>Show as table</summary><table><thead><tr><th>Group</th><th>%</th></tr></thead><tbody><tr><td>UK national</td><td>49.1 %</td></tr><tr><td>Non-UK national</td><td>50.9 %</td></tr></tbody></table></details>
+</figure></div>
+      
+      
+    </article>
+    <div class="stage-arrow" aria-hidden="true">↓</div>
+    
+    <article class="stage-panel" id="stage-remains">
+      <div class="stage-head">
+        <span class="stage-num">8</span>
+        <h2>What actually remains</h2>
+      </div>
+      <p class="stage-caption">Put it together: after every real, checked correction, where does the honest number actually land?</p>
+      <p class="stage-caption stage-caption-apply">Right where it started — 26.0x to 57.9x for Albanian nationals — because none of the further factors were precisely quantifiable for this nationality. What changed is what you now know that number does and doesn&#39;t mean.</p>
+      
+      <p class="stage-headline-text">26.0–57.9x — the honest, still-uncertain answer</p>
+      
+      
+      
+      <p class="stage-body">Reproducing the raw calculation from official data does not make the headline number smaller — if anything, the best available (though five-year-stale) population denominator gives a HIGHER ratio than the widely quoted one for Albanian and Afghan nationals. What the raw number can&#39;t do is stand as a precise, settled fact: it swings by a factor of two depending on which equally “official” population estimate you plug in, it compares an entire national population against a heavily age/sex-skewed migrant population, and a meaningful share of the foreign-national prison count is unconvicted defendants and people who will be removed from the country long before any long-run reoffending count could capture them. The Migration Observatory&#39;s analysis of ALL non-citizens together — the only published like-for-like adjustment that exists — finds that once age and sex are controlled for, non-citizens are actually under-represented in the prison population overall, though this varies by offence type. Whether Albanian, Iranian or Afghan nationals specifically would show the same pattern, a smaller elevation, or something else again is a genuine, currently unanswerable question: no UK statistical body publishes an age/sex-adjusted incarceration rate for individual nationalities. That gap in the public record — not a hidden “true” number we&#39;re not telling you — is the honest bottom line. One more honesty note: the ORDER these corrections were applied in is one reasonable choice, not the only one — applying them in a different sequence changes the intermediate numbers shown at each step, though not the final honest range, since every step that couldn&#39;t be precisely quantified left the range unchanged regardless of where it sat in the sequence.</p>
+      
+    </article>
+    
+    
+  </div>
+
+  <script type="application/json" id="stages-data">[{"apply_caption": "Reproduce the same kind of sum \u2014 MoJ prison count \u00f7 ONS population estimate \u2014 from official data instead of trusting the number, and it comes out HIGHER, not lower.", "charts": [{"id": "ratio-compare", "kind": "ratio_compare", "note": "The three claimed figures don\u0027t even imply a consistent population source: back-solving them against the same prisoner counts implies an Albanian population of ~41,000 (about double the 2021 official estimate), an Afghan population of ~29,900 (about 1.7x), but an Iranian population of ~22,900 (smaller than the 2021 estimate) \u2014 three different, unstated denominators, not one coherent calculation. The interactive walkthrough above follows the Albanian figure specifically; Iranian and Afghan reproductions are in the detail section below.", "series": [{"claimed": 16.6, "label": "Albanian", "reproduced": 35.9}, {"claimed": 10.8, "label": "Iranian", "reproduced": 6.7}, {"claimed": 8.6, "label": "Afghan", "reproduced": 14.3}], "source_id": "s1", "source_line": "MoJ prison population by nationality (30 June 2026) \u00f7 ONS population by nationality (last published edition, July 2020\u2013June 2021), retrieved 2026-08-18", "title": "Widely-quoted ratio vs. reproduced from official data", "unit": "x higher than British"}], "headline": {"post": {"label": "reproduced from official data", "type": "value", "unit": "x", "value": 35.9}, "pre": {"label": "widely quoted (unverified)", "type": "value", "unit": "x", "value": 16.6}}, "id": "opening", "setup_caption": "The claim, as posted: Albanian nationals in the UK are \u201c16.6 times more likely\u201d to be in prison than British people.", "step": 1, "title": "Check the claim yourself"}, {"apply_caption": "It\u0027s a discontinued 2021 survey figure. Its own published margin of error turns one clean-looking number into a wide range.", "charts": [{"id": "population-range", "kind": "range_bar", "note": "For comparison, the British population estimate in the same table is 60,287,000 \u00b1 428,000 \u2014 a margin of error of 0.7% of the estimate, versus 38% for Albanian nationals. A bigger sample makes a much narrower estimate; this is a genuine statistical guess, not a count.", "series": [{"estimate": 21000, "high": 29000, "label": "Albanian", "low": 13000}], "source_id": "s2", "source_line": "ONS, Population of the UK by country of birth and nationality: individual country data, July 2020\u2013June 2021 (discontinued after this edition), Table C, retrieved 2026-08-18", "title": "ONS population estimate, with 95% confidence interval (July 2020\u2013June 2021, last published edition)", "unit": "people"}], "headline": {"post": {"high": 57.9, "low": 26.0, "point": 35.9, "type": "band", "unit": "x"}, "pre": {"label": "point estimate", "type": "value", "unit": "x", "value": 35.9}}, "id": "denominator", "setup_caption": "That 35.9x rests on a population estimate on the bottom of the sum. Here\u0027s what it actually is.", "step": 2, "title": "A population guess, not a count"}, {"apply_caption": "\u201cBritish\u201d spans newborn to pensioner. The migration route most associated with these claims is overwhelmingly young working-age men \u2014 grey out the ranges that aren\u0027t like-for-like. The true gap should fall. By how much, nobody has published.", "charts": [{"id": "age-compare", "kind": "age_compare", "note": "The UK does not publish Albanian nationals\u0027 age structure specifically \u2014 MoJ\u0027s own prisoner tables don\u0027t even cross-tabulate age against nationality (see the limits below). This uses the age/sex profile of the migration route most associated with two of the three nationalities on this page as the best-evidenced available context for the mechanism, not as a substitute for a missing Albania-specific statistic.", "rows": [{"label": "British population (England \u0026 Wales, mid-2025)", "segments": [{"comparable": false, "key": "under16", "label": "Under 16", "value": 17.9}, {"comparable": true, "key": "working", "label": "16\u201364 (working age)", "value": 62.9}, {"comparable": false, "key": "over65", "label": "65+", "value": 19.3}]}, {"label": "Small boat arrivals (proxy for the migration route, not a nationality-specific figure)", "segments": [{"comparable": false, "key": "children", "label": "Children (under 18)", "value": 13}, {"comparable": true, "key": "adults", "label": "Adults (18+, overwhelmingly working-age)", "value": 87}]}], "source_id": "s5", "source_line": "British: ONS mid-2025 population estimates for England and Wales. Migrant proxy: Home Office, small boat arrivals by age, year ending March 2026. Retrieved 2026-08-18", "title": "Age structure: British population vs. the small-boat migration route (proxy)", "unit": "%"}], "headline": {"post": {"band": {"high": 57.9, "low": 26.0}, "direction": "down", "note": "direction known \u2014 size not quantifiable from published data for this nationality", "type": "held", "unit": "x"}, "pre": {"high": 57.9, "low": 26.0, "type": "band", "unit": "x"}}, "id": "age_sex", "setup_caption": "Line up the two populations being compared, age band by age band, on the same 0\u2013100 axis.", "step": 3, "title": "Babies and grannies vs. working-age men"}, {"apply_caption": "Foreign nationals overall are on remand \u2014 unconvicted, awaiting trial \u2014 at more than twice the British rate. Lift that slice out and the true gap should fall further. Albania-specific figures aren\u0027t published.", "charts": [{"id": "custody-mix-british", "kind": "custody_share", "note": "75,494 British nationals in prison as at 30 June 2026.", "series": [{"key": "sentenced", "label": "Sentenced", "value": 84.16}, {"key": "remand", "label": "Remand (unconvicted, awaiting trial or sentencing)", "value": 15.77}, {"key": "non_criminal", "label": "Non-criminal (e.g. immigration detention within the prison estate)", "value": 0.06}], "source_id": "s1", "source_line": "Ministry of Justice, Offender management statistics quarterly, Table 1.Q.9, as at 30 June 2026, retrieved 2026-08-18", "title": "British nationals in prison, by custody type (30 June 2026)", "unit": "%"}, {"id": "custody-mix-foreign", "kind": "custody_share", "note": "10,134 foreign nationals in prison as at 30 June 2026 \u2014 a remand rate over twice British nationals\u0027 15.8%. This breakdown exists only at the British/foreign GROUP level; MoJ does not publish it for individual nationalities.", "series": [{"key": "sentenced", "label": "Sentenced", "value": 63.47}, {"key": "remand", "label": "Remand (unconvicted, awaiting trial or sentencing)", "value": 32.4}, {"key": "non_criminal", "label": "Non-criminal (e.g. immigration detention within the prison estate)", "value": 4.14}], "source_id": "s1", "source_line": "Ministry of Justice, Offender management statistics quarterly, Table 1.Q.9, as at 30 June 2026, retrieved 2026-08-18", "title": "Foreign nationals in prison, by custody type (30 June 2026)", "unit": "%"}], "headline": {"post": {"band": {"high": 57.9, "low": 26.0}, "direction": "down", "note": "direction known \u2014 not computable from published data for Albanian nationals specifically", "type": "held", "unit": "x"}, "pre": {"band": {"high": 57.9, "low": 26.0}, "type": "held", "unit": "x"}}, "id": "remand", "setup_caption": "Split the prison snapshot by whether someone has actually been convicted of anything yet.", "step": 4, "title": "Convicted, or just accused?"}, {"apply_caption": "They aren\u0027t. As of today, zero people are serving a sentence purely for an immigration offence in England and Wales. This factor is checked and doesn\u0027t move the number at all.", "charts": [], "headline": {"post": {"band": {"high": 57.9, "low": 26.0}, "note": "checked against MoJ\u0027s own offence codes \u2014 contributes 0, doesn\u0027t move this number", "type": "zero", "unit": "x"}, "pre": {"band": {"high": 57.9, "low": 26.0}, "type": "held", "unit": "x"}}, "id": "immigration_offences", "setup_caption": "Check whether offences that, by definition, only a non-citizen can commit \u2014 illegal entry, overstaying \u2014 are inflating the count.", "step": 5, "title": "Crimes only a foreign national can commit"}, {"apply_caption": "Over 1,500 Albanians a year are removed from the UK \u2014 more than the entire Albanian prison headcount at any single snapshot. That pushes the true picture the OTHER way: this snapshot undercounts how many pass through the system. Size not precisely knowable.", "charts": [{"id": "deport-vs-snapshot", "kind": "ranked_bar", "note": "More Albanians are removed from the UK in a single year than are ever in prison at one time \u2014 removal is a continuous flow, not a one-off event.", "series": [{"label": "In prison at any one snapshot (30 June 2026)", "value": 943}, {"label": "Removed from the UK in one year (year ending March 2026)", "value": 1557}], "source_id": "s4", "source_line": "MoJ prison population (Table 1.Q.12, 30 June 2026) vs. Home Office FNO returns (Ret_02b, year ending March 2026), retrieved 2026-08-18", "title": "Albanian nationals: prison snapshot vs. annual removals", "unit": "people"}], "headline": {"post": {"band": {"high": 57.9, "low": 26.0}, "direction": "up", "note": "pushes the raw number the OTHER way \u2014 size not precisely knowable", "type": "held", "unit": "x"}, "pre": {"band": {"high": 57.9, "low": 26.0}, "type": "held", "unit": "x"}}, "id": "deportation", "setup_caption": "Some convicted foreign offenders don\u0027t stay in the country to be recounted next quarter.", "step": 6, "title": "Removed before they\u0027d ever be recounted"}, {"apply_caption": "They do \u2014 rough sleeping alone can void a non-citizen\u0027s immigration permission, a rule with no British equivalent, and over half of London\u0027s rough sleepers with a known nationality are non-UK. But this doesn\u0027t let us move the headline number: nobody has published how much of THIS ratio it explains.", "charts": [{"id": "chain-nationality-share-stage", "kind": "share_bar", "note": "Base: 11,142 people with a known nationality. Rough sleeping is grounds for refusing or cancelling a non-British national\u0027s immigration permission since 1 December 2020 \u2014 an exposure that cannot exist for a British national, by legal definition.", "series": [{"key": "british", "label": "UK national", "value": 49.1}, {"key": "foreign", "label": "Non-UK national", "value": 50.9}], "source_id": "s7", "source_line": "GLA/CHAIN, Annual Report Greater London 2025/26, page 34, retrieved 2026-08-18", "title": "People seen rough sleeping in London, by nationality (2025/26)", "unit": "%"}], "headline": {"post": {"band": {"high": 57.9, "low": 26.0}, "direction": "unknown", "note": "real, nationality-specific mechanism \u2014 size unquantifiable from published data; the number does not move", "type": "held", "unit": "x"}, "pre": {"band": {"high": 57.9, "low": 26.0}, "type": "held", "unit": "x"}}, "id": "enforcement", "setup_caption": "Check whether migrants face enforcement exposure that simply doesn\u0027t exist for British nationals.", "step": 7, "title": "Who gets watched more closely"}, {"apply_caption": "Right where it started \u2014 26.0x to 57.9x for Albanian nationals \u2014 because none of the further factors were precisely quantifiable for this nationality. What changed is what you now know that number does and doesn\u0027t mean.", "body": "Reproducing the raw calculation from official data does not make the headline number smaller \u2014 if anything, the best available (though five-year-stale) population denominator gives a HIGHER ratio than the widely quoted one for Albanian and Afghan nationals. What the raw number can\u0027t do is stand as a precise, settled fact: it swings by a factor of two depending on which equally \u201cofficial\u201d population estimate you plug in, it compares an entire national population against a heavily age/sex-skewed migrant population, and a meaningful share of the foreign-national prison count is unconvicted defendants and people who will be removed from the country long before any long-run reoffending count could capture them. The Migration Observatory\u0027s analysis of ALL non-citizens together \u2014 the only published like-for-like adjustment that exists \u2014 finds that once age and sex are controlled for, non-citizens are actually under-represented in the prison population overall, though this varies by offence type. Whether Albanian, Iranian or Afghan nationals specifically would show the same pattern, a smaller elevation, or something else again is a genuine, currently unanswerable question: no UK statistical body publishes an age/sex-adjusted incarceration rate for individual nationalities. That gap in the public record \u2014 not a hidden \u201ctrue\u201d number we\u0027re not telling you \u2014 is the honest bottom line. One more honesty note: the ORDER these corrections were applied in is one reasonable choice, not the only one \u2014 applying them in a different sequence changes the intermediate numbers shown at each step, though not the final honest range, since every step that couldn\u0027t be precisely quantified left the range unchanged regardless of where it sat in the sequence.", "charts": [], "headline": {"post": {"high": 57.9, "label": "the honest, still-uncertain answer", "low": 26.0, "type": "band", "unit": "x"}, "pre": {"band": {"high": 57.9, "low": 26.0}, "type": "held", "unit": "x"}}, "id": "remains", "setup_caption": "Put it together: after every real, checked correction, where does the honest number actually land?", "step": 8, "title": "What actually remains"}]</script>
+</section>
+
+
+
+<section class="hero briefing-hero">
+  <h1>Is it true that Albanian nationals in the UK are &#34;16.6 times more likely&#34; to be in prison than British people?</h1>
+  <p class="lede">Reproducing the &#34;16.6x more likely to be in prison&#34; calculation from official data — the same kind of prison count divided by the same kind of population estimate — does not make the number smaller. For Albanian and Afghan nationals it comes out larger. The real problem is what a raw ratio like this leaves out. The population figure on the bottom of the sum is a UK statistical series that was discontinued in 2021, with a margin of error of roughly a third even then. &#34;British&#34; in the comparison means the UK&#39;s entire population, newborns to pensioners, while migrant nationality groups are overwhelmingly young working-age adults — the highest-imprisonment group for every nationality, not just some. And foreign nationals in the prison count are twice as likely as British nationals to be unconvicted and awaiting trial rather than sentenced, while thousands of convicted foreign offenders are removed from the country each year, before a longer-run count would ever catch them. None of that proves the true, fully corrected gap is zero — for these specific nationalities, no official body has published the like-for-like adjustment needed to know either way. Full sources, the arithmetic and every caveat: https://bleep.fyi/r/nationality-incarceration-ratios</p>
+  <div class="share-block">
+    <div class="share-actions">
+      <button type="button" class="copy-btn copy-btn-prominent" data-copy="Reproducing the &#34;16.6x more likely to be in prison&#34; calculation from official data — the same kind of prison count divided by the same kind of population estimate — does not make the number smaller. For Albanian and Afghan nationals it comes out larger. The real problem is what a raw ratio like this leaves out. The population figure on the bottom of the sum is a UK statistical series that was discontinued in 2021, with a margin of error of roughly a third even then. &#34;British&#34; in the comparison means the UK&#39;s entire population, newborns to pensioners, while migrant nationality groups are overwhelmingly young working-age adults — the highest-imprisonment group for every nationality, not just some. And foreign nationals in the prison count are twice as likely as British nationals to be unconvicted and awaiting trial rather than sentenced, while thousands of convicted foreign offenders are removed from the country each year, before a longer-run count would ever catch them. None of that proves the true, fully corrected gap is zero — for these specific nationalities, no official body has published the like-for-like adjustment needed to know either way. Full sources, the arithmetic and every caveat: https://bleep.fyi/r/nationality-incarceration-ratios">Copy to clipboard to share</button>
+      <button type="button" class="copy-btn" data-copy="Reproducing the &#34;16.6x more likely to be in prison&#34; claim from official data doesn&#39;t make the number smaller — for Albanian and Afghan nationals it comes out bigger. The population figure underneath it is a UK statistical series discontinued in 2021, compared against Britain&#39;s entire population rather than a like-for-like age/sex group, with a big chunk of the gap made up of unconvicted defendants and people later removed from the country. No official body has published the adjustment needed to know what genuinely remains once you correct for that. Full sources and arithmetic: https://bleep.fyi/r/nationality-incarceration-ratios">Copy short version</button>
+      <span class="page-link">https://bleep.fyi/r/nationality-incarceration-ratios/ <button type="button" class="copy-btn" data-copy="https://bleep.fyi/r/nationality-incarceration-ratios/">Copy</button></span>
+    </div>
+    <p class="share-caption">This is something you can copy and paste if you see this misinformation online elsewhere — in a comment thread, a forum, anywhere it comes up.</p>
+  </div>
+  <p class="briefing-updated">Updated 2026-08-18 · every figure below is traced to an official document, archived on this page — see
+  <a href="#limits">what this data can and cannot tell you</a>.</p>
+</section>
+
+<nav class="glance-tabs" aria-label="Briefing view" id="glance-tabs-nav">
+  <a href="#glance" id="tab-glance" aria-selected="true">At a glance</a>
+  <a href="#detail" id="tab-detail" aria-selected="false">Full detail</a>
+</nav>
+
+<section id="glance" class="tab-panel" aria-labelledby="tab-glance">
+  
+  
+  
+
+  
+
+  <div class="glance-grid">
+    
+    
+  </div>
+
+  <section class="ysk-panel" aria-labelledby="ysk-heading">
+  <h2 id="ysk-heading">You should know</h2>
+  <div class="ysk-grid"><div class="ysk-card"><p class="ysk-text">Redoing the sum with official data doesn&#39;t make the number smaller. For Albanian and Afghan nationals it comes out bigger — the problem is treating any single ratio as precise, not that this one is inflated.</p><a class="ysk-jump" href="#stage-opening">Read more in Full detail ↓</a><div class="card-source-links"><a href="https://www.gov.uk/government/statistics/offender-management-statistics-quarterly-january-to-march-2026" rel="noopener">https://www.gov.uk/government/statistics/offender-management-statistics-quarterly-january-to-march-2026</a><a href="https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/internationalmigration/datasets/populationoftheunitedkingdombycountryofbirthandnationalityunderlyingdatasheets" rel="noopener">https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/internationalmigration/datasets/populationoftheunitedkingdombycountryofbirthandnationalityunderlyingdatasheets</a></div></div><div class="ysk-card"><p class="ysk-text">The population figure on the bottom of the sum is a UK statistical series Britain stopped publishing in 2021 — and even then it carried a margin of error of roughly a third for a group this size.</p><a class="ysk-jump" href="#stage-denominator">Read more in Full detail ↓</a><div class="card-source-links"><a href="https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/internationalmigration/datasets/populationoftheunitedkingdombycountryofbirthandnationalityunderlyingdatasheets" rel="noopener">https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/internationalmigration/datasets/populationoftheunitedkingdombycountryofbirthandnationalityunderlyingdatasheets</a></div></div><div class="ysk-card"><p class="ysk-text">&quot;British&quot; means every Briton, newborn to pensioner. The nationalities being compared are overwhelmingly young working-age men — the highest-imprisonment group everywhere, for every nationality.</p><a class="ysk-jump" href="#stage-age_sex">Read more in Full detail ↓</a><div class="card-source-links"><a href="https://www.gov.uk/government/statistics/immigration-system-statistics-year-ending-june-2025/how-many-people-come-to-the-uk-irregularly" rel="noopener">https://www.gov.uk/government/statistics/immigration-system-statistics-year-ending-june-2025/how-many-people-come-to-the-uk-irregularly</a><a href="https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/datasets/estimatesofthepopulationforenglandandwales" rel="noopener">https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/datasets/estimatesofthepopulationforenglandandwales</a></div></div><div class="ysk-card"><p class="ysk-text">A foreign national in the prison count is twice as likely as a British one to be unconvicted and awaiting trial — and over 1,500 Albanians a year are removed from the UK before a longer-run count would ever catch them.</p><a class="ysk-jump" href="#stage-remand">Read more in Full detail ↓</a><div class="card-source-links"><a href="https://www.gov.uk/government/statistics/offender-management-statistics-quarterly-january-to-march-2026" rel="noopener">https://www.gov.uk/government/statistics/offender-management-statistics-quarterly-january-to-march-2026</a><a href="https://www.gov.uk/government/statistics/immigration-system-statistics-year-ending-march-2026" rel="noopener">https://www.gov.uk/government/statistics/immigration-system-statistics-year-ending-march-2026</a></div></div><div class="ysk-card"><p class="ysk-text">We checked whether immigration-only offences or sex-work enforcement inflate these prison figures. As of today, neither does: zero people are serving a sentence purely for an immigration offence, and soliciting for prostitution accounts for zero sentenced prisoners.</p><a class="ysk-jump" href="#s1">Read more in Full detail ↓</a><div class="card-source-links"><a href="https://www.gov.uk/government/statistics/offender-management-statistics-quarterly-january-to-march-2026" rel="noopener">https://www.gov.uk/government/statistics/offender-management-statistics-quarterly-january-to-march-2026</a></div></div><div class="ysk-card"><p class="ysk-text">The best published like-for-like check (age/sex-adjusted, all foreign nationals pooled) finds the overall gap shrinks to nothing or reverses. Nobody has published that same check for Albanian, Iranian or Afghan nationals specifically.</p><a class="ysk-jump" href="#stage-remains">Read more in Full detail ↓</a><div class="card-source-links"><a href="https://migrationobservatory.ox.ac.uk/resources/commentaries/migrant-convictions-and-prison-population/" rel="noopener">https://migrationobservatory.ox.ac.uk/resources/commentaries/migrant-convictions-and-prison-population/</a></div></div></div>
+</section>
+
+  
+
+  
+
+  <p class="glance-more"><a href="#detail">See every source, figure and caveat in full detail ↓</a></p>
+</section>
+
+<section id="detail" class="tab-panel" aria-labelledby="tab-detail">
+
+<section class="briefing-sources">
+<h2>What the UK government publishes, by nationality</h2>
+
+<article class="source-card" id="s1">
+  <h3>Offender management statistics quarterly: January to March 2026</h3>
+  <p class="source-meta">Ministry of Justice and HM Prison and Probation Service · published 2026-07-30 · retrieved 2026-08-18</p>
+  <p class="source-contains">The same MoJ release used by this site&#39;s companion briefing on UK crime by nationality, reused here for the numerator side of the ratio and for two further tables not used there: Table 1.Q.9 (prison population by nationality GROUP and custody type — the remand comparison in step 4) and the detailed offence-code tables (1.A.8, 1.A.14, 1.A.15), consulted to check two specific hypotheses about what inflates the foreign-national prisoner count (see limits below).</p>
+
+  
+  <div class="key-figures">
+    
+    
+    <div class="key-figure">
+      <p class="kf-figure"><strong>Albanian nationals in prison:</strong> 943 (940 male, 3 female)</p>
+      <p class="kf-caveat">England and Wales only.</p>
+      <p class="kf-ref">prison-population-30-June-2026.ods, sheet Table_1_Q_12, as at 30 June 2026</p>
+      <button type="button" class="copy-btn" data-copy="Albanian nationals in prison: 943 (940 male, 3 female)
+England and Wales only.
+
+Source: Offender management statistics quarterly: January to March 2026, Ministry of Justice and HM Prison and Probation Service — https://www.gov.uk/government/statistics/offender-management-statistics-quarterly-january-to-march-2026">Copy</button>
+      <div class="card-source-links"><a href="https://www.gov.uk/government/statistics/offender-management-statistics-quarterly-january-to-march-2026" rel="noopener">https://www.gov.uk/government/statistics/offender-management-statistics-quarterly-january-to-march-2026</a></div>
+    </div>
+    
+    
+    <div class="key-figure">
+      <p class="kf-figure"><strong>Iranian nationals in prison:</strong> 310 (307 male, 3 female)</p>
+      <p class="kf-caveat">England and Wales only.</p>
+      <p class="kf-ref">prison-population-30-June-2026.ods, sheet Table_1_Q_12, as at 30 June 2026</p>
+      <button type="button" class="copy-btn" data-copy="Iranian nationals in prison: 310 (307 male, 3 female)
+England and Wales only.
+
+Source: Offender management statistics quarterly: January to March 2026, Ministry of Justice and HM Prison and Probation Service — https://www.gov.uk/government/statistics/offender-management-statistics-quarterly-january-to-march-2026">Copy</button>
+      <div class="card-source-links"><a href="https://www.gov.uk/government/statistics/offender-management-statistics-quarterly-january-to-march-2026" rel="noopener">https://www.gov.uk/government/statistics/offender-management-statistics-quarterly-january-to-march-2026</a></div>
+    </div>
+    
+    
+    <div class="key-figure">
+      <p class="kf-figure"><strong>Afghan nationals in prison:</strong> 322 (321 male, 1 female)</p>
+      <p class="kf-caveat">England and Wales only.</p>
+      <p class="kf-ref">prison-population-30-June-2026.ods, sheet Table_1_Q_12, as at 30 June 2026</p>
+      <button type="button" class="copy-btn" data-copy="Afghan nationals in prison: 322 (321 male, 1 female)
+England and Wales only.
+
+Source: Offender management statistics quarterly: January to March 2026, Ministry of Justice and HM Prison and Probation Service — https://www.gov.uk/government/statistics/offender-management-statistics-quarterly-january-to-march-2026">Copy</button>
+      <div class="card-source-links"><a href="https://www.gov.uk/government/statistics/offender-management-statistics-quarterly-january-to-march-2026" rel="noopener">https://www.gov.uk/government/statistics/offender-management-statistics-quarterly-january-to-march-2026</a></div>
+    </div>
+    
+    
+    <div class="key-figure">
+      <p class="kf-figure"><strong>British nationals in prison:</strong> 75,494 (72,444 male, 3,050 female)</p>
+      <p class="kf-caveat">England and Wales only.</p>
+      <p class="kf-ref">prison-population-30-June-2026.ods, sheet Table_1_Q_12, as at 30 June 2026</p>
+      <button type="button" class="copy-btn" data-copy="British nationals in prison: 75,494 (72,444 male, 3,050 female)
+England and Wales only.
+
+Source: Offender management statistics quarterly: January to March 2026, Ministry of Justice and HM Prison and Probation Service — https://www.gov.uk/government/statistics/offender-management-statistics-quarterly-january-to-march-2026">Copy</button>
+      <div class="card-source-links"><a href="https://www.gov.uk/government/statistics/offender-management-statistics-quarterly-january-to-march-2026" rel="noopener">https://www.gov.uk/government/statistics/offender-management-statistics-quarterly-january-to-march-2026</a></div>
+    </div>
+    
+    
+    <div class="key-figure">
+      <p class="kf-figure"><strong>British nationals, custody type:</strong> 84.16% sentenced, 15.77% remand, 0.06% non-criminal</p>
+      <p class="kf-caveat">Group-level only — a British-specific figure this precise is possible because British is the whole comparator group, not a subdivision of it.</p>
+      <p class="kf-ref">prison-population-30-June-2026.ods, sheet Table_1_Q_9, as at 30 June 2026</p>
+      <button type="button" class="copy-btn" data-copy="British nationals, custody type: 84.16% sentenced, 15.77% remand, 0.06% non-criminal
+Group-level only — a British-specific figure this precise is possible because British is the whole comparator group, not a subdivision of it.
+
+Source: Offender management statistics quarterly: January to March 2026, Ministry of Justice and HM Prison and Probation Service — https://www.gov.uk/government/statistics/offender-management-statistics-quarterly-january-to-march-2026">Copy</button>
+      <div class="card-source-links"><a href="https://www.gov.uk/government/statistics/offender-management-statistics-quarterly-january-to-march-2026" rel="noopener">https://www.gov.uk/government/statistics/offender-management-statistics-quarterly-january-to-march-2026</a></div>
+    </div>
+    
+    
+    <div class="key-figure">
+      <p class="kf-figure"><strong>Foreign nationals, custody type:</strong> 63.47% sentenced, 32.40% remand, 4.14% non-criminal</p>
+      <p class="kf-caveat">Group-level (all foreign nationals pooled) only — no published MoJ table breaks custody type down by individual nationality, so an Albania/Iran/Afghanistan-specific remand rate is not computable from published data.</p>
+      <p class="kf-ref">prison-population-30-June-2026.ods, sheet Table_1_Q_9, as at 30 June 2026</p>
+      <button type="button" class="copy-btn" data-copy="Foreign nationals, custody type: 63.47% sentenced, 32.40% remand, 4.14% non-criminal
+Group-level (all foreign nationals pooled) only — no published MoJ table breaks custody type down by individual nationality, so an Albania/Iran/Afghanistan-specific remand rate is not computable from published data.
+
+Source: Offender management statistics quarterly: January to March 2026, Ministry of Justice and HM Prison and Probation Service — https://www.gov.uk/government/statistics/offender-management-statistics-quarterly-january-to-march-2026">Copy</button>
+      <div class="card-source-links"><a href="https://www.gov.uk/government/statistics/offender-management-statistics-quarterly-january-to-march-2026" rel="noopener">https://www.gov.uk/government/statistics/offender-management-statistics-quarterly-january-to-march-2026</a></div>
+    </div>
+    
+    
+    <div class="key-figure">
+      <p class="kf-figure"><strong>Sentenced prisoners for “Soliciting for prostitution”, all nationalities:</strong> 0</p>
+      <p class="kf-caveat">Checked against the hypothesis that sex-work enforcement inflates the “sexual offences” prisoner count used elsewhere on this site; it does not — soliciting contributes zero sentenced prisoners. “Brothel Keeping” (a summary offence, sheet Table_1_A_15) is also 0; “Exploitation of prostitution” is 13 sentenced prisoners nationally but is classified under Miscellaneous crimes against society, not Sexual offences at all.</p>
+      <p class="kf-ref">prison-population-by-nationality-and-offence-2026.ods, sheet Table_1_A_8, “Other sexual offences” sub-group, 30 June 2026</p>
+      <button type="button" class="copy-btn" data-copy="Sentenced prisoners for “Soliciting for prostitution”, all nationalities: 0
+Checked against the hypothesis that sex-work enforcement inflates the “sexual offences” prisoner count used elsewhere on this site; it does not — soliciting contributes zero sentenced prisoners. “Brothel Keeping” (a summary offence, sheet Table_1_A_15) is also 0; “Exploitation of prostitution” is 13 sentenced prisoners nationally but is classified under Miscellaneous crimes against society, not Sexual offences at all.
+
+Source: Offender management statistics quarterly: January to March 2026, Ministry of Justice and HM Prison and Probation Service — https://www.gov.uk/government/statistics/offender-management-statistics-quarterly-january-to-march-2026">Copy</button>
+      <div class="card-source-links"><a href="https://www.gov.uk/government/statistics/offender-management-statistics-quarterly-january-to-march-2026" rel="noopener">https://www.gov.uk/government/statistics/offender-management-statistics-quarterly-january-to-march-2026</a></div>
+    </div>
+    
+    
+    <div class="key-figure">
+      <p class="kf-figure"><strong>Sentenced prisoners for “Immigration Offence” (a detailed offence code covering breaches of immigration law itself), all nationalities:</strong> 0</p>
+      <p class="kf-caveat">Checked against the hypothesis that a material share of foreign-national imprisonment is for immigration-status offences a British national could not commit; as of this snapshot it is not — this specific offence code contributes zero SENTENCED prisoners (a small, not separately attributable number may be on remand awaiting trial; the offence code itself is not otherwise tracked as inflating the count).</p>
+      <p class="kf-ref">prison-population-by-nationality-and-offence-2026.ods, sheet Table_1_A_15 (Summary non-motoring offences), 30 June 2026</p>
+      <button type="button" class="copy-btn" data-copy="Sentenced prisoners for “Immigration Offence” (a detailed offence code covering breaches of immigration law itself), all nationalities: 0
+Checked against the hypothesis that a material share of foreign-national imprisonment is for immigration-status offences a British national could not commit; as of this snapshot it is not — this specific offence code contributes zero SENTENCED prisoners (a small, not separately attributable number may be on remand awaiting trial; the offence code itself is not otherwise tracked as inflating the count).
+
+Source: Offender management statistics quarterly: January to March 2026, Ministry of Justice and HM Prison and Probation Service — https://www.gov.uk/government/statistics/offender-management-statistics-quarterly-january-to-march-2026">Copy</button>
+      <div class="card-source-links"><a href="https://www.gov.uk/government/statistics/offender-management-statistics-quarterly-january-to-march-2026" rel="noopener">https://www.gov.uk/government/statistics/offender-management-statistics-quarterly-january-to-march-2026</a></div>
+    </div>
+    
+    
+    <div class="key-figure">
+      <p class="kf-figure"><strong>Detailed offence lines resembling begging or vagrancy enforcement:</strong> None found</p>
+      <p class="kf-caveat">Checked against the hypothesis that anti-homelessness enforcement inflates the prison count; it is not separately tracked at all, consistent with begging/rough-sleeping enforcement almost never reaching a custodial sentence — see S6 for where its real effect (immigration permission, not imprisonment) shows up.</p>
+      <p class="kf-ref">prison-population-by-nationality-and-offence-2026.ods, sheet Table_1_A_15 (Summary non-motoring offences), full list of ~30 detailed offence codes, 30 June 2026</p>
+      <button type="button" class="copy-btn" data-copy="Detailed offence lines resembling begging or vagrancy enforcement: None found
+Checked against the hypothesis that anti-homelessness enforcement inflates the prison count; it is not separately tracked at all, consistent with begging/rough-sleeping enforcement almost never reaching a custodial sentence — see S6 for where its real effect (immigration permission, not imprisonment) shows up.
+
+Source: Offender management statistics quarterly: January to March 2026, Ministry of Justice and HM Prison and Probation Service — https://www.gov.uk/government/statistics/offender-management-statistics-quarterly-january-to-march-2026">Copy</button>
+      <div class="card-source-links"><a href="https://www.gov.uk/government/statistics/offender-management-statistics-quarterly-january-to-march-2026" rel="noopener">https://www.gov.uk/government/statistics/offender-management-statistics-quarterly-january-to-march-2026</a></div>
+    </div>
+    
+  </div>
+  
+
+  
+
+  
+  
+
+  <div class="source-links">
+    <p><a href="https://www.gov.uk/government/statistics/offender-management-statistics-quarterly-january-to-march-2026" target="_blank" rel="noopener noreferrer">Official page ↗</a> <button type="button" class="copy-btn" data-copy="https://www.gov.uk/government/statistics/offender-management-statistics-quarterly-january-to-march-2026">Copy</button></p>
+    
+    <p><a href="https://assets.publishing.service.gov.uk/media/6a69e0c216bc92f51e1a430f/prison-population-30-June-2026.ods" target="_blank" rel="noopener noreferrer">Direct spreadsheet download ↗</a> <button type="button" class="copy-btn" data-copy="https://assets.publishing.service.gov.uk/media/6a69e0c216bc92f51e1a430f/prison-population-30-June-2026.ods">Copy</button></p>
+    
+    <p><a href="https://assets.publishing.service.gov.uk/media/6a69e0e116bc92f51e1a4310/prison-population-2026.ods" target="_blank" rel="noopener noreferrer">Direct spreadsheet download ↗</a> <button type="button" class="copy-btn" data-copy="https://assets.publishing.service.gov.uk/media/6a69e0e116bc92f51e1a4310/prison-population-2026.ods">Copy</button></p>
+    
+    
+    
+    <p><a href="/r/nationality-incarceration-ratios/evidence/moj-prison-population-30-jun-2026.ods">Archived copy: moj-prison-population-30-jun-2026.ods ↗</a></p>
+    
+    
+    
+    <p><a href="/r/nationality-incarceration-ratios/evidence/moj-prison-population-by-nationality-and-offence-2026.ods">Archived copy: moj-prison-population-by-nationality-and-offence-2026.ods ↗</a></p>
+    
+    
+    
+    
+    
+    
+  </div>
+  
+  
+    
+  
+    
+  
+    
+  
+    
+  
+  
+  <details class="source-shots">
+    <summary>Archived screenshots of this source, as retrieved</summary>
+    
+    <a href="/r/nationality-incarceration-ratios/evidence/moj-omsq-jan-mar-2026-release-full-2026-08-17.png" target="_blank" rel="noopener noreferrer" class="shot-link">
+      <img src="/r/nationality-incarceration-ratios/evidence/moj-omsq-jan-mar-2026-release-full-2026-08-17.png" alt="Archived screenshot of Offender management statistics quarterly: January to March 2026" loading="lazy">
+    </a>
+    
+    <a href="/r/nationality-incarceration-ratios/evidence/moj-omsq-collection-landing-2026-08-17.png" target="_blank" rel="noopener noreferrer" class="shot-link">
+      <img src="/r/nationality-incarceration-ratios/evidence/moj-omsq-collection-landing-2026-08-17.png" alt="Archived screenshot of Offender management statistics quarterly: January to March 2026" loading="lazy">
+    </a>
+    
+  </details>
+  
+</article>
+
+<article class="source-card" id="s2">
+  <h3>Population of the UK by country of birth and nationality: individual country data</h3>
+  <p class="source-meta">Office for National Statistics · published 2021-11-25 · retrieved 2026-08-18</p>
+  <p class="source-contains">The denominator for the whole page: the ONLY official UK series that estimates population by INDIVIDUAL nationality (Annual Population Survey, International Passenger Survey-based confidence intervals). Its dataset page is titled, verbatim, “individual country data (Discontinued after June 2021)” — the July 2020–June 2021 edition used here is the LAST one ever published; the “next release” field on ONS&#39;s own page reads “Discontinued”. This is not a rounding-error staleness: it means nobody currently has a routinely-updated, methodologically-robust official estimate of the UK&#39;s Albanian, Iranian or Afghan national population at all, five years on.</p>
+
+  
+  <div class="key-figures">
+    
+    
+    <div class="key-figure">
+      <p class="kf-figure"><strong>British nationals, UK-wide:</strong> 60,287,000</p>
+      <p class="kf-caveat">95% CI ±428,000 (0.7% of the estimate) — tight, because the underlying survey sample of British respondents is huge.</p>
+      <p class="kf-ref">underlyingdatasheets...jul20tojun21.xls, sheet Table C, row “UNITED KINGDOM”, column “British”</p>
+      <button type="button" class="copy-btn" data-copy="British nationals, UK-wide: 60,287,000
+95% CI ±428,000 (0.7% of the estimate) — tight, because the underlying survey sample of British respondents is huge.
+
+Source: Population of the UK by country of birth and nationality: individual country data, Office for National Statistics — https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/internationalmigration/datasets/populationoftheunitedkingdombycountryofbirthandnationalityunderlyingdatasheets">Copy</button>
+      <div class="card-source-links"><a href="https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/internationalmigration/datasets/populationoftheunitedkingdombycountryofbirthandnationalityunderlyingdatasheets" rel="noopener">https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/internationalmigration/datasets/populationoftheunitedkingdombycountryofbirthandnationalityunderlyingdatasheets</a></div>
+    </div>
+    
+    
+    <div class="key-figure">
+      <p class="kf-figure"><strong>Albanian nationals, UK-wide:</strong> 21,000</p>
+      <p class="kf-caveat">95% CI ±8,000 (38% of the estimate, range 13,000–29,000) — and this is the 2021 figure; Albanian migration to the UK rose substantially in 2022–2023 (see S5), so the true 2026 population is very likely larger, which would make the true current ratio LOWER than reproduced in step 1, by an amount nobody can currently quantify.</p>
+      <p class="kf-ref">underlyingdatasheets...jul20tojun21.xls, sheet Table C, row “UNITED KINGDOM”, column “Albania”</p>
+      <button type="button" class="copy-btn" data-copy="Albanian nationals, UK-wide: 21,000
+95% CI ±8,000 (38% of the estimate, range 13,000–29,000) — and this is the 2021 figure; Albanian migration to the UK rose substantially in 2022–2023 (see S5), so the true 2026 population is very likely larger, which would make the true current ratio LOWER than reproduced in step 1, by an amount nobody can currently quantify.
+
+Source: Population of the UK by country of birth and nationality: individual country data, Office for National Statistics — https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/internationalmigration/datasets/populationoftheunitedkingdombycountryofbirthandnationalityunderlyingdatasheets">Copy</button>
+      <div class="card-source-links"><a href="https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/internationalmigration/datasets/populationoftheunitedkingdombycountryofbirthandnationalityunderlyingdatasheets" rel="noopener">https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/internationalmigration/datasets/populationoftheunitedkingdombycountryofbirthandnationalityunderlyingdatasheets</a></div>
+    </div>
+    
+    
+    <div class="key-figure">
+      <p class="kf-figure"><strong>Iranian nationals, UK-wide:</strong> 37,000</p>
+      <p class="kf-caveat">95% CI ±11,000 (30% of the estimate, range 26,000–48,000).</p>
+      <p class="kf-ref">underlyingdatasheets...jul20tojun21.xls, sheet Table C, row “UNITED KINGDOM”, column “Iran”</p>
+      <button type="button" class="copy-btn" data-copy="Iranian nationals, UK-wide: 37,000
+95% CI ±11,000 (30% of the estimate, range 26,000–48,000).
+
+Source: Population of the UK by country of birth and nationality: individual country data, Office for National Statistics — https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/internationalmigration/datasets/populationoftheunitedkingdombycountryofbirthandnationalityunderlyingdatasheets">Copy</button>
+      <div class="card-source-links"><a href="https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/internationalmigration/datasets/populationoftheunitedkingdombycountryofbirthandnationalityunderlyingdatasheets" rel="noopener">https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/internationalmigration/datasets/populationoftheunitedkingdombycountryofbirthandnationalityunderlyingdatasheets</a></div>
+    </div>
+    
+    
+    <div class="key-figure">
+      <p class="kf-figure"><strong>Afghan nationals, UK-wide:</strong> 18,000</p>
+      <p class="kf-caveat">95% CI ±7,000 (39% of the estimate, range 11,000–25,000).</p>
+      <p class="kf-ref">underlyingdatasheets...jul20tojun21.xls, sheet Table C, row “UNITED KINGDOM”, column “Afghanistan”</p>
+      <button type="button" class="copy-btn" data-copy="Afghan nationals, UK-wide: 18,000
+95% CI ±7,000 (39% of the estimate, range 11,000–25,000).
+
+Source: Population of the UK by country of birth and nationality: individual country data, Office for National Statistics — https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/internationalmigration/datasets/populationoftheunitedkingdombycountryofbirthandnationalityunderlyingdatasheets">Copy</button>
+      <div class="card-source-links"><a href="https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/internationalmigration/datasets/populationoftheunitedkingdombycountryofbirthandnationalityunderlyingdatasheets" rel="noopener">https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/internationalmigration/datasets/populationoftheunitedkingdombycountryofbirthandnationalityunderlyingdatasheets</a></div>
+    </div>
+    
+    
+    <div class="key-figure">
+      <p class="kf-figure"><strong>Albanian ratio vs. British, propagating the population&#39;s own 95% CI:</strong> 26.0x–57.9x (point estimate 35.9x)</p>
+      <p class="kf-caveat">The prisoner count itself is essentially exact; almost all of this range comes from the population denominator&#39;s own uncertainty.</p>
+      <p class="kf-ref">Derived: MoJ Table_1_Q_12 prisoner count (943, ~0 uncertainty as an administrative count) ÷ this table&#39;s Albania population estimate at its lower/upper 95% confidence bound (13,000/29,000)</p>
+      <button type="button" class="copy-btn" data-copy="Albanian ratio vs. British, propagating the population&#39;s own 95% CI: 26.0x–57.9x (point estimate 35.9x)
+The prisoner count itself is essentially exact; almost all of this range comes from the population denominator&#39;s own uncertainty.
+
+Source: Population of the UK by country of birth and nationality: individual country data, Office for National Statistics — https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/internationalmigration/datasets/populationoftheunitedkingdombycountryofbirthandnationalityunderlyingdatasheets">Copy</button>
+      <div class="card-source-links"><a href="https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/internationalmigration/datasets/populationoftheunitedkingdombycountryofbirthandnationalityunderlyingdatasheets" rel="noopener">https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/internationalmigration/datasets/populationoftheunitedkingdombycountryofbirthandnationalityunderlyingdatasheets</a></div>
+    </div>
+    
+    
+    <div class="key-figure">
+      <p class="kf-figure"><strong>Iranian ratio vs. British, propagating the population&#39;s own 95% CI:</strong> 5.2x–9.5x (point estimate 6.7x)</p>
+      
+      <p class="kf-ref">Derived: MoJ Table_1_Q_12 prisoner count (310) ÷ this table&#39;s Iran population estimate at its lower/upper 95% confidence bound (26,000/48,000)</p>
+      <button type="button" class="copy-btn" data-copy="Iranian ratio vs. British, propagating the population&#39;s own 95% CI: 5.2x–9.5x (point estimate 6.7x)
+
+Source: Population of the UK by country of birth and nationality: individual country data, Office for National Statistics — https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/internationalmigration/datasets/populationoftheunitedkingdombycountryofbirthandnationalityunderlyingdatasheets">Copy</button>
+      <div class="card-source-links"><a href="https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/internationalmigration/datasets/populationoftheunitedkingdombycountryofbirthandnationalityunderlyingdatasheets" rel="noopener">https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/internationalmigration/datasets/populationoftheunitedkingdombycountryofbirthandnationalityunderlyingdatasheets</a></div>
+    </div>
+    
+    
+    <div class="key-figure">
+      <p class="kf-figure"><strong>Afghan ratio vs. British, propagating the population&#39;s own 95% CI:</strong> 10.3x–23.4x (point estimate 14.3x)</p>
+      
+      <p class="kf-ref">Derived: MoJ Table_1_Q_12 prisoner count (322) ÷ this table&#39;s Afghanistan population estimate at its lower/upper 95% confidence bound (11,000/25,000)</p>
+      <button type="button" class="copy-btn" data-copy="Afghan ratio vs. British, propagating the population&#39;s own 95% CI: 10.3x–23.4x (point estimate 14.3x)
+
+Source: Population of the UK by country of birth and nationality: individual country data, Office for National Statistics — https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/internationalmigration/datasets/populationoftheunitedkingdombycountryofbirthandnationalityunderlyingdatasheets">Copy</button>
+      <div class="card-source-links"><a href="https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/internationalmigration/datasets/populationoftheunitedkingdombycountryofbirthandnationalityunderlyingdatasheets" rel="noopener">https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/internationalmigration/datasets/populationoftheunitedkingdombycountryofbirthandnationalityunderlyingdatasheets</a></div>
+    </div>
+    
+  </div>
+  
+
+  
+  <div class="source-limits-context">
+    <p>ONS&#39;s own “previous releases” page for this bulletin series lists its final edition as “year ending June 2021, released 25 November 2021”, with no successor in the ordinary series since. The nearest thing to a replacement — an ad hoc user request (reference 3063, released 13 October 2025, using 2024 survey data) — only publishes population by BROAD REGIONAL GROUP (e.g. “Other Europe”, “Middle East and Central Asia”), not individual countries, so it cannot answer this question, and it carries ONS&#39;s own written caution: “The total population used for the APS...does not take into account any changes in migration, birth rates, death rates...since June 2021, and hence level estimates may be under- or over-estimating the true values and should be used with caution.” ONS is separately running a methodology research project, “Research update on population estimates by country of birth for England and Wales: 2026”, with new statistics not due until November–December 2026 — after this page&#39;s retrieval date. In short: as of today, there is no current, routinely-published, individual-nationality UK population estimate for anyone to compute this ratio from, official or otherwise.</p>
+  </div>
+  
+
+  
+  
+
+  <div class="source-links">
+    <p><a href="https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/internationalmigration/datasets/populationoftheunitedkingdombycountryofbirthandnationalityunderlyingdatasheets" target="_blank" rel="noopener noreferrer">Official page ↗</a> <button type="button" class="copy-btn" data-copy="https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/internationalmigration/datasets/populationoftheunitedkingdombycountryofbirthandnationalityunderlyingdatasheets">Copy</button></p>
+    
+    <p><a href="https://www.ons.gov.uk/file?uri=/peoplepopulationandcommunity/populationandmigration/internationalmigration/datasets/populationoftheunitedkingdombycountryofbirthandnationalityunderlyingdatasheets/july2020tojune2021/underlyingdatasheetsforpopulationbycountryofbirthandnationalityjul20tojun21.xls" target="_blank" rel="noopener noreferrer">Direct spreadsheet download ↗</a> <button type="button" class="copy-btn" data-copy="https://www.ons.gov.uk/file?uri=/peoplepopulationandcommunity/populationandmigration/internationalmigration/datasets/populationoftheunitedkingdombycountryofbirthandnationalityunderlyingdatasheets/july2020tojune2021/underlyingdatasheetsforpopulationbycountryofbirthandnationalityjul20tojun21.xls">Copy</button></p>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <p><a href="/r/nationality-incarceration-ratios/evidence/ons-pop-grouped-cob-nationality-2024-adhoc3063.xlsx">Archived copy: ons-pop-grouped-cob-nationality-2024-adhoc3063.xlsx ↗</a></p>
+    
+    
+    
+    
+    
+    
+  </div>
+  
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+  
+  <details class="source-shots">
+    <summary>Archived screenshots of this source, as retrieved</summary>
+    
+    <a href="/r/nationality-incarceration-ratios/evidence/ons-pop-cob-nationality-underlying-datasheets-discontinued-2026-08-18.png" target="_blank" rel="noopener noreferrer" class="shot-link">
+      <img src="/r/nationality-incarceration-ratios/evidence/ons-pop-cob-nationality-underlying-datasheets-discontinued-2026-08-18.png" alt="Archived screenshot of Population of the UK by country of birth and nationality: individual country data" loading="lazy">
+    </a>
+    
+    <a href="/r/nationality-incarceration-ratios/evidence/ons-pop-cob-nationality-previous-releases-2026-08-18.png" target="_blank" rel="noopener noreferrer" class="shot-link">
+      <img src="/r/nationality-incarceration-ratios/evidence/ons-pop-cob-nationality-previous-releases-2026-08-18.png" alt="Archived screenshot of Population of the UK by country of birth and nationality: individual country data" loading="lazy">
+    </a>
+    
+    <a href="/r/nationality-incarceration-ratios/evidence/ons-pop-grouped-cob-nationality-2024-adhoc3063-landing-2026-08-18.png" target="_blank" rel="noopener noreferrer" class="shot-link">
+      <img src="/r/nationality-incarceration-ratios/evidence/ons-pop-grouped-cob-nationality-2024-adhoc3063-landing-2026-08-18.png" alt="Archived screenshot of Population of the UK by country of birth and nationality: individual country data" loading="lazy">
+    </a>
+    
+    <a href="/r/nationality-incarceration-ratios/evidence/ons-research-update-cob-2026-announcement-2026-08-18.png" target="_blank" rel="noopener noreferrer" class="shot-link">
+      <img src="/r/nationality-incarceration-ratios/evidence/ons-research-update-cob-2026-announcement-2026-08-18.png" alt="Archived screenshot of Population of the UK by country of birth and nationality: individual country data" loading="lazy">
+    </a>
+    
+  </details>
+  
+</article>
+
+<article class="source-card" id="s3">
+  <h3>How do conviction rates and prison populations differ between British and foreign nationals?</h3>
+  <p class="source-meta">Migration Observatory, University of Oxford · published 2025-09-30 · retrieved 2026-08-18</p>
+  <p class="source-contains">The same academic analysis cited by this site&#39;s companion briefing (as S5b there), reused here because it is the ONLY published age/sex-adjusted comparison of foreign-national and British incarceration that exists. It analyses non-citizens as ONE pooled group against citizens; it does not, and does not claim to, break the adjustment down by individual nationality.</p>
+
+  
+
+  
+  <div class="source-limits-context">
+    <p>Quoted directly: “If we control for age and sex, non-citizens are underrepresented in the prison population” (against a raw, unadjusted picture where citizen and non-citizen shares looked roughly similar). Also: “Convictions and incarceration rates vary by offence type...Non-citizens are overrepresented among convicted or incarcerated offenders for drug offences, for example, while underrepresented...for robbery or violence against the person” — meaning the pooled result can and does mask real variation between sub-groups, which is exactly why it cannot be extrapolated to say what an Albanian-, Iranian- or Afghan-specific adjusted rate would show. We searched the Migration Observatory&#39;s own site for nationality-specific incarceration analysis (e.g. an Albania-specific piece, given its published Albania-specific work on asylum and Channel crossings) and found none as of the retrieved date — archived as a negative-finding screenshot alongside this source. This is the honest ceiling of what&#39;s publicly available: the best evidence says the OVERALL gap shrinks or reverses after adjustment; whether these three specific nationalities follow that pattern is not publicly known.</p>
+  </div>
+  
+
+  
+  
+
+  <div class="source-links">
+    <p><a href="https://migrationobservatory.ox.ac.uk/resources/commentaries/migrant-convictions-and-prison-population/" target="_blank" rel="noopener noreferrer">Official page ↗</a> <button type="button" class="copy-btn" data-copy="https://migrationobservatory.ox.ac.uk/resources/commentaries/migrant-convictions-and-prison-population/">Copy</button></p>
+    
+    
+    
+    
+    
+    
+  </div>
+  
+  
+    
+  
+    
+  
+  
+  <details class="source-shots">
+    <summary>Archived screenshots of this source, as retrieved</summary>
+    
+    <a href="/r/nationality-incarceration-ratios/evidence/migration-observatory-commentary-2026-08-17.png" target="_blank" rel="noopener noreferrer" class="shot-link">
+      <img src="/r/nationality-incarceration-ratios/evidence/migration-observatory-commentary-2026-08-17.png" alt="Archived screenshot of How do conviction rates and prison populations differ between British and foreign nationals?" loading="lazy">
+    </a>
+    
+    <a href="/r/nationality-incarceration-ratios/evidence/migobs-albania-crime-search-noresults-2026-08-18.png" target="_blank" rel="noopener noreferrer" class="shot-link">
+      <img src="/r/nationality-incarceration-ratios/evidence/migobs-albania-crime-search-noresults-2026-08-18.png" alt="Archived screenshot of How do conviction rates and prison populations differ between British and foreign nationals?" loading="lazy">
+    </a>
+    
+  </details>
+  
+</article>
+
+<article class="source-card" id="s4">
+  <h3>Immigration system statistics, year ending March 2026</h3>
+  <p class="source-meta">Home Office · published 2026-05-21 · retrieved 2026-08-18</p>
+  <p class="source-contains">Reused from this site&#39;s companion briefing (as its S2): official returns of Foreign National Offenders (convicted non-British nationals with no right to remain, then removed) by nationality. Used here for the deportation-attrition side of step 6 — people this process removes from the UK before they&#39;d ever appear in a longer-run reoffending or population count.</p>
+
+  
+  <div class="key-figures">
+    
+    
+    <div class="key-figure">
+      <p class="kf-figure"><strong>Albanian Foreign National Offenders returned from the UK, year ending March 2026:</strong> 1,557</p>
+      <p class="kf-caveat">More than the ENTIRE Albanian prison population at any single snapshot (943, see S1) — illustrating that removal is a continuous flow, not a one-off event, and that a snapshot prisoner count structurally understates how many Albanian nationals pass through the system in a given year.</p>
+      <p class="kf-ref">homeoffice-returns-summary-tables-ye-mar-2026.ods, sheet Ret_02b</p>
+      <button type="button" class="copy-btn" data-copy="Albanian Foreign National Offenders returned from the UK, year ending March 2026: 1,557
+More than the ENTIRE Albanian prison population at any single snapshot (943, see S1) — illustrating that removal is a continuous flow, not a one-off event, and that a snapshot prisoner count structurally understates how many Albanian nationals pass through the system in a given year.
+
+Source: Immigration system statistics, year ending March 2026, Home Office — https://www.gov.uk/government/statistics/immigration-system-statistics-year-ending-march-2026">Copy</button>
+      <div class="card-source-links"><a href="https://www.gov.uk/government/statistics/immigration-system-statistics-year-ending-march-2026" rel="noopener">https://www.gov.uk/government/statistics/immigration-system-statistics-year-ending-march-2026</a></div>
+    </div>
+    
+  </div>
+  
+
+  
+
+  
+  
+
+  <div class="source-links">
+    <p><a href="https://www.gov.uk/government/statistics/immigration-system-statistics-year-ending-march-2026" target="_blank" rel="noopener noreferrer">Official page ↗</a> <button type="button" class="copy-btn" data-copy="https://www.gov.uk/government/statistics/immigration-system-statistics-year-ending-march-2026">Copy</button></p>
+    
+    
+    
+    <p><a href="/r/nationality-incarceration-ratios/evidence/homeoffice-returns-summary-tables-ye-mar-2026.ods">Archived copy: homeoffice-returns-summary-tables-ye-mar-2026.ods ↗</a></p>
+    
+    
+    
+    <p><a href="/r/nationality-incarceration-ratios/evidence/homeoffice-detention-summary-tables-ye-mar-2026.ods">Archived copy: homeoffice-detention-summary-tables-ye-mar-2026.ods ↗</a></p>
+    
+    
+    
+    
+  </div>
+  
+  
+    
+  
+    
+  
+    
+  
+  
+  <details class="source-shots">
+    <summary>Archived screenshot of this source, as retrieved</summary>
+    
+    <a href="/r/nationality-incarceration-ratios/evidence/homeoffice-immigration-stats-ye-mar-2026-release-landing-2026-08-17.png" target="_blank" rel="noopener noreferrer" class="shot-link">
+      <img src="/r/nationality-incarceration-ratios/evidence/homeoffice-immigration-stats-ye-mar-2026-release-landing-2026-08-17.png" alt="Archived screenshot of Immigration system statistics, year ending March 2026" loading="lazy">
+    </a>
+    
+  </details>
+  
+</article>
+
+<article class="source-card" id="s5">
+  <h3>How many people come to the UK irregularly?</h3>
+  <p class="source-meta">Home Office · published 2025-08-28 · retrieved 2026-08-18</p>
+  <p class="source-contains">The Home Office&#39;s own commentary chapter on irregular (small boat and other) arrivals, cross-checked against the House of Commons Library&#39;s independent research briefing on the same underlying data (both archived). Used for the age/sex profile in step 3, and to establish which nationalities dominate this migration route.</p>
+
+  
+  <div class="key-figures">
+    
+    
+    <div class="key-figure">
+      <p class="kf-figure"><strong>Small boat arrivals who were adult men (18+), year ending March 2026:</strong> 75%</p>
+      <p class="kf-caveat">12% adult women, 13% children. “These proportions have remained broadly similar since 2018”, per the same source.</p>
+      <p class="kf-ref">gov.uk “How many people come to the UK irregularly?”, section “Age and sex”</p>
+      <button type="button" class="copy-btn" data-copy="Small boat arrivals who were adult men (18+), year ending March 2026: 75%
+12% adult women, 13% children. “These proportions have remained broadly similar since 2018”, per the same source.
+
+Source: How many people come to the UK irregularly?, Home Office — https://www.gov.uk/government/statistics/immigration-system-statistics-year-ending-june-2025/how-many-people-come-to-the-uk-irregularly">Copy</button>
+      <div class="card-source-links"><a href="https://www.gov.uk/government/statistics/immigration-system-statistics-year-ending-june-2025/how-many-people-come-to-the-uk-irregularly" rel="noopener">https://www.gov.uk/government/statistics/immigration-system-statistics-year-ending-june-2025/how-many-people-come-to-the-uk-irregularly</a></div>
+    </div>
+    
+    
+    <div class="key-figure">
+      <p class="kf-figure"><strong>Top 5 nationalities among irregular UK arrivals, year ending June 2025:</strong> Afghan, Eritrean, Iranian, Sudanese, Syrian — 55% of all detected irregular arrivals combined</p>
+      <p class="kf-caveat">Afghan and Iranian nationals are both on this list; Albanian nationals are not — Albanian small-boat crossings fell sharply after a UK–Albania returns agreement took effect in 2023, per Migration Observatory reporting (S3), which is part of why this page uses arrivals data as context for age/sex structure rather than as a population estimate for any one nationality.</p>
+      <p class="kf-ref">gov.uk “How many people come to the UK irregularly?”, section “1.1 Nationalities and demographics of arrivals”</p>
+      <button type="button" class="copy-btn" data-copy="Top 5 nationalities among irregular UK arrivals, year ending June 2025: Afghan, Eritrean, Iranian, Sudanese, Syrian — 55% of all detected irregular arrivals combined
+Afghan and Iranian nationals are both on this list; Albanian nationals are not — Albanian small-boat crossings fell sharply after a UK–Albania returns agreement took effect in 2023, per Migration Observatory reporting (S3), which is part of why this page uses arrivals data as context for age/sex structure rather than as a population estimate for any one nationality.
+
+Source: How many people come to the UK irregularly?, Home Office — https://www.gov.uk/government/statistics/immigration-system-statistics-year-ending-june-2025/how-many-people-come-to-the-uk-irregularly">Copy</button>
+      <div class="card-source-links"><a href="https://www.gov.uk/government/statistics/immigration-system-statistics-year-ending-june-2025/how-many-people-come-to-the-uk-irregularly" rel="noopener">https://www.gov.uk/government/statistics/immigration-system-statistics-year-ending-june-2025/how-many-people-come-to-the-uk-irregularly</a></div>
+    </div>
+    
+  </div>
+  
+
+  
+
+  
+  
+
+  <div class="source-links">
+    <p><a href="https://www.gov.uk/government/statistics/immigration-system-statistics-year-ending-june-2025/how-many-people-come-to-the-uk-irregularly" target="_blank" rel="noopener noreferrer">Official page ↗</a> <button type="button" class="copy-btn" data-copy="https://www.gov.uk/government/statistics/immigration-system-statistics-year-ending-june-2025/how-many-people-come-to-the-uk-irregularly">Copy</button></p>
+    
+    
+    
+    
+    
+    
+  </div>
+  
+  
+    
+  
+    
+  
+  
+  <details class="source-shots">
+    <summary>Archived screenshots of this source, as retrieved</summary>
+    
+    <a href="/r/nationality-incarceration-ratios/evidence/commonslibrary-small-boats-statistics-2026-08-18.png" target="_blank" rel="noopener noreferrer" class="shot-link">
+      <img src="/r/nationality-incarceration-ratios/evidence/commonslibrary-small-boats-statistics-2026-08-18.png" alt="Archived screenshot of How many people come to the UK irregularly?" loading="lazy">
+    </a>
+    
+    <a href="/r/nationality-incarceration-ratios/evidence/homeoffice-irregular-migration-age-sex-2026-08-18.png" target="_blank" rel="noopener noreferrer" class="shot-link">
+      <img src="/r/nationality-incarceration-ratios/evidence/homeoffice-irregular-migration-age-sex-2026-08-18.png" alt="Archived screenshot of How many people come to the UK irregularly?" loading="lazy">
+    </a>
+    
+  </details>
+  
+</article>
+
+<article class="source-card" id="s6">
+  <h3>Legal status of begging and rough sleeping enforcement</h3>
+  <p class="source-meta">UK Parliament (legislation.gov.uk) and Home Office · published 2026-06-29 · retrieved 2026-08-18</p>
+  <p class="source-contains">Checked against a further hypothesis: that homelessness/begging enforcement disproportionately affects migrants, and might distort the statistics this page discusses. Two separate legal facts, both primary-sourced: (1) the Vagrancy Act 1824, England and Wales&#39;s begging/vagrancy offence since Georgian times, was FULLY REPEALED on 29 June 2026 (Police, Crime, Sentencing and Courts Act 2022, s.81, commenced by S.I. 2026/690) — as of this page&#39;s retrieval date it carries no criminal offence at all; modern enforcement instead uses anti-social-behaviour powers (Community Protection Notices, Public Spaces Protection Orders), which the sector expects a further Crime and Policing Bill to reshape. (2) Separately and still in force: since 1 December 2020, rough sleeping has been a discretionary ground under the Immigration Rules for refusing or cancelling a non-British national&#39;s permission to stay in the UK (currently Part Suitability, paragraphs SUI 27.1–27.2, formerly Part 9 paragraph 9.21) — amended in April 2021 to require persistent refusal of support plus anti-social behaviour, and explicitly not applicable to those with settled/protection status. This is an enforcement exposure that, by definition, cannot exist for a British national.</p>
+
+  
+  <div class="key-figures">
+    
+    
+    <div class="key-figure">
+      <p class="kf-figure"><strong>Vagrancy Act 1824 repeal, England and Wales:</strong> In force from 29 June 2026</p>
+      <p class="kf-caveat">Confirms begging/vagrancy has NOT been a criminal offence at all since this date — consistent with S1&#39;s finding that no detailed offence code resembling vagrancy or begging appears in the current prisoner tables.</p>
+      <p class="kf-ref">legislation.gov.uk, Police, Crime, Sentencing and Courts Act 2022, s.81, Commencement Information</p>
+      <button type="button" class="copy-btn" data-copy="Vagrancy Act 1824 repeal, England and Wales: In force from 29 June 2026
+Confirms begging/vagrancy has NOT been a criminal offence at all since this date — consistent with S1&#39;s finding that no detailed offence code resembling vagrancy or begging appears in the current prisoner tables.
+
+Source: Legal status of begging and rough sleeping enforcement, UK Parliament (legislation.gov.uk) and Home Office — https://www.legislation.gov.uk/ukpga/2022/32/part/3/crossheading/repeal-of-the-vagrancy-act-1824-etc">Copy</button>
+      <div class="card-source-links"><a href="https://www.legislation.gov.uk/ukpga/2022/32/part/3/crossheading/repeal-of-the-vagrancy-act-1824-etc" rel="noopener">https://www.legislation.gov.uk/ukpga/2022/32/part/3/crossheading/repeal-of-the-vagrancy-act-1824-etc</a></div>
+    </div>
+    
+    
+    <div class="key-figure">
+      <p class="kf-figure"><strong>Rough sleeping as grounds for immigration refusal/cancellation:</strong> In force since 1 December 2020, non-British nationals only</p>
+      <p class="kf-caveat">Applies only where a person has repeatedly refused suitable offers of support and engaged in persistent anti-social behaviour — not to rough sleeping alone. Does not apply to those with settled status, indefinite leave, or a protection route (e.g. refugees).</p>
+      <p class="kf-ref">gov.uk, “Grounds for refusal – rough sleeping in the UK” (Home Office caseworker guidance, version 3.0, updated 11 November 2025), Immigration Rules Part Suitability paragraphs SUI 27.1–2</p>
+      <button type="button" class="copy-btn" data-copy="Rough sleeping as grounds for immigration refusal/cancellation: In force since 1 December 2020, non-British nationals only
+Applies only where a person has repeatedly refused suitable offers of support and engaged in persistent anti-social behaviour — not to rough sleeping alone. Does not apply to those with settled status, indefinite leave, or a protection route (e.g. refugees).
+
+Source: Legal status of begging and rough sleeping enforcement, UK Parliament (legislation.gov.uk) and Home Office — https://www.legislation.gov.uk/ukpga/2022/32/part/3/crossheading/repeal-of-the-vagrancy-act-1824-etc">Copy</button>
+      <div class="card-source-links"><a href="https://www.legislation.gov.uk/ukpga/2022/32/part/3/crossheading/repeal-of-the-vagrancy-act-1824-etc" rel="noopener">https://www.legislation.gov.uk/ukpga/2022/32/part/3/crossheading/repeal-of-the-vagrancy-act-1824-etc</a></div>
+    </div>
+    
+  </div>
+  
+
+  
+  <div class="source-limits-context">
+    <p>The prison-population effect of this whole area is checked and found to be immaterial (S1: no vagrancy/begging offence code appears in the prisoner tables at all, and the underlying criminal offence no longer exists). The real effect is on immigration status — a mechanism, not a prison-count distortion — and on the broader statistics in S7 (who gets recorded as homeless), not on the incarceration figures this page&#39;s ratios are built from.</p>
+  </div>
+  
+
+  
+  
+
+  <div class="source-links">
+    <p><a href="https://www.legislation.gov.uk/ukpga/2022/32/part/3/crossheading/repeal-of-the-vagrancy-act-1824-etc" target="_blank" rel="noopener noreferrer">Official page ↗</a> <button type="button" class="copy-btn" data-copy="https://www.legislation.gov.uk/ukpga/2022/32/part/3/crossheading/repeal-of-the-vagrancy-act-1824-etc">Copy</button></p>
+    
+    
+    
+    
+    
+    
+    
+    
+  </div>
+  
+  
+    
+  
+    
+  
+    
+  
+  
+  <details class="source-shots">
+    <summary>Archived screenshots of this source, as retrieved</summary>
+    
+    <a href="/r/nationality-incarceration-ratios/evidence/legislation-vagrancy-act-1824-repealed-2026-08-18.png" target="_blank" rel="noopener noreferrer" class="shot-link">
+      <img src="/r/nationality-incarceration-ratios/evidence/legislation-vagrancy-act-1824-repealed-2026-08-18.png" alt="Archived screenshot of Legal status of begging and rough sleeping enforcement" loading="lazy">
+    </a>
+    
+    <a href="/r/nationality-incarceration-ratios/evidence/legislation-pcsc-act-2022-s81-commencement-2026-08-18.png" target="_blank" rel="noopener noreferrer" class="shot-link">
+      <img src="/r/nationality-incarceration-ratios/evidence/legislation-pcsc-act-2022-s81-commencement-2026-08-18.png" alt="Archived screenshot of Legal status of begging and rough sleeping enforcement" loading="lazy">
+    </a>
+    
+    <a href="/r/nationality-incarceration-ratios/evidence/homeoffice-rough-sleeping-grounds-refusal-2026-08-18.png" target="_blank" rel="noopener noreferrer" class="shot-link">
+      <img src="/r/nationality-incarceration-ratios/evidence/homeoffice-rough-sleeping-grounds-refusal-2026-08-18.png" alt="Archived screenshot of Legal status of begging and rough sleeping enforcement" loading="lazy">
+    </a>
+    
+  </details>
+  
+</article>
+
+<article class="source-card" id="s7">
+  <h3>CHAIN Annual Report, Greater London, 2025/26</h3>
+  <p class="source-meta">Greater London Authority / Combined Homelessness and Information Network (CHAIN), managed by Homeless Link · published 2026-06-01 · retrieved 2026-08-18</p>
+  <p class="source-contains">The official multi-agency database of people seen rough sleeping in London, commissioned by the GLA. Checked to establish whether migrants are in fact disproportionately represented among rough sleepers — the premise behind S6&#39;s immigration-rule finding.</p>
+
+  
+  <div class="key-figures">
+    
+    
+    <div class="key-figure">
+      <p class="kf-figure"><strong>People seen rough sleeping in London with a KNOWN nationality who were non-UK nationals, 2025/26:</strong> 5,667 of 11,142 (50.9%)</p>
+      <p class="kf-caveat">5,475 (49.1%) were UK nationals. A further 1,796 people had no nationality recorded, and the report itself cautions that “non-UK nationals tend to be more likely than UK nationals to be recorded as unknown nationality” — so the true non-UK share, if it were fully known, is more likely to be understated than overstated by this figure.</p>
+      <p class="kf-ref">Greater London full 2025-26.pdf, page 34, Chart 8 and page 35, Table 8</p>
+      <button type="button" class="copy-btn" data-copy="People seen rough sleeping in London with a KNOWN nationality who were non-UK nationals, 2025/26: 5,667 of 11,142 (50.9%)
+5,475 (49.1%) were UK nationals. A further 1,796 people had no nationality recorded, and the report itself cautions that “non-UK nationals tend to be more likely than UK nationals to be recorded as unknown nationality” — so the true non-UK share, if it were fully known, is more likely to be understated than overstated by this figure.
+
+Source: CHAIN Annual Report, Greater London, 2025/26, Greater London Authority / Combined Homelessness and Information Network (CHAIN), managed by Homeless Link — https://data.london.gov.uk/dataset/chain-reports">Copy</button>
+      <div class="card-source-links"><a href="https://data.london.gov.uk/dataset/chain-reports" rel="noopener">https://data.london.gov.uk/dataset/chain-reports</a></div>
+    </div>
+    
+  </div>
+  
+
+  
+
+  
+  
+  <div class="source-charts"><figure class="chart" id="chart-chain-nationality-share">
+  <figcaption class="chart-title">People seen rough sleeping in London, by nationality (2025/26)</figcaption>
+  <div class="chart-svg-wrap"><svg viewBox="0 0 860 108" class="chart-svg" role="img" aria-label="People seen rough sleeping in London, by nationality (2025/26)"><rect x="4" y="44" width="852" height="28" rx="6" class="chart-track"/><text x="213.2" y="34" class="chart-label" text-anchor="middle">49.1%</text><text x="639.2" y="34" class="chart-label" text-anchor="middle">50.9%</text><rect x="4.0" y="44" width="417.3" height="28" style="fill:#3987e5"><title>UK national: 49.1 %</title></rect><rect x="423.3" y="44" width="432.7" height="28" style="fill:#d95926"><title>Non-UK national: 50.9 %</title></rect></svg><div class="chart-legend"><span class="chart-legend-item"><i class="chart-swatch" style="background:#3987e5"></i>UK national <b>49.1 %</b></span><span class="chart-legend-item"><i class="chart-swatch" style="background:#d95926"></i>Non-UK national <b>50.9 %</b></span></div></div>
+  <div class="chart-foot">
+    <p class="chart-source">GLA/CHAIN, Annual Report Greater London 2025/26, page 34, retrieved 2026-08-18</p>
+    <p class="chart-note">Base: 11,142 people with a known nationality (excludes 1,796 people whose nationality was not known — see S7&#39;s caveat on why the true non-UK share may be understated here).</p>
+    <button type="button" class="copy-btn" data-copy="People seen rough sleeping in London, by nationality (2025/26)
+UK national: 49.1 %
+Non-UK national: 50.9 %
+
+Source: GLA/CHAIN, Annual Report Greater London 2025/26, page 34, retrieved 2026-08-18">Copy data</button>
+  </div>
+  <div class="card-source-links"><a href="https://data.london.gov.uk/dataset/chain-reports" rel="noopener">https://data.london.gov.uk/dataset/chain-reports</a></div>
+  <details class="chart-table"><summary>Show as table</summary><table><thead><tr><th>Group</th><th>%</th></tr></thead><tbody><tr><td>UK national</td><td>49.1 %</td></tr><tr><td>Non-UK national</td><td>50.9 %</td></tr></tbody></table></details>
+</figure></div>
+  
+
+  <div class="source-links">
+    <p><a href="https://data.london.gov.uk/dataset/chain-reports" target="_blank" rel="noopener noreferrer">Official page ↗</a> <button type="button" class="copy-btn" data-copy="https://data.london.gov.uk/dataset/chain-reports">Copy</button></p>
+    
+    <p><a href="https://data.london.gov.uk/download/2n88x/dcp/Greater%20London%20full%202025-26.pdf" target="_blank" rel="noopener noreferrer">Direct spreadsheet download ↗</a> <button type="button" class="copy-btn" data-copy="https://data.london.gov.uk/download/2n88x/dcp/Greater%20London%20full%202025-26.pdf">Copy</button></p>
+    
+    
+    
+    <p><a href="/r/nationality-incarceration-ratios/evidence/gla-chain-annual-report-greater-london-2025-26.pdf">Archived copy: gla-chain-annual-report-greater-london-2025-26.pdf ↗</a></p>
+    
+    
+    
+    
+  </div>
+  
+  
+    
+  
+    
+  
+  
+  <details class="source-shots">
+    <summary>Archived screenshot of this source, as retrieved</summary>
+    
+    <a href="/r/nationality-incarceration-ratios/evidence/gla-chain-reports-dataset-landing-2026-08-18.png" target="_blank" rel="noopener noreferrer" class="shot-link">
+      <img src="/r/nationality-incarceration-ratios/evidence/gla-chain-reports-dataset-landing-2026-08-18.png" alt="Archived screenshot of CHAIN Annual Report, Greater London, 2025/26" loading="lazy">
+    </a>
+    
+  </details>
+  
+</article>
+
+<article class="source-card" id="s8">
+  <h3>Ethnicity and the Criminal Justice System, 2024</h3>
+  <p class="source-meta">Ministry of Justice · published 2025-11-27 · retrieved 2026-08-18</p>
+  <p class="source-contains">Cited briefly (not re-analysed here) as the general, official evidence base for a related but distinct hypothesis: that ethnic-minority and migrant populations face more intensive policing generally, not only through the specific, nationality-only mechanism this page verifies directly in S6. This biennial MoJ compendium and the original 2017 Lammy Review (also archived) document ethnicity-based disproportionality in stop-and-search, arrest and sentencing — evidence about ETHNICITY, which is not the same category as NATIONALITY, and which this page does not attempt to re-derive. S6&#39;s finding (rough sleeping as immigration-permission grounds, applicable to non-British nationals only, by legal definition) is the more direct, nationality-specific evidence this page could independently verify.</p>
+
+  
+
+  
+
+  
+  
+
+  <div class="source-links">
+    <p><a href="https://www.gov.uk/government/statistics/ethnicity-and-the-criminal-justice-system-2024" target="_blank" rel="noopener noreferrer">Official page ↗</a> <button type="button" class="copy-btn" data-copy="https://www.gov.uk/government/statistics/ethnicity-and-the-criminal-justice-system-2024">Copy</button></p>
+    
+    
+    
+    
+    
+    
+  </div>
+  
+  
+    
+  
+    
+  
+  
+  <details class="source-shots">
+    <summary>Archived screenshots of this source, as retrieved</summary>
+    
+    <a href="/r/nationality-incarceration-ratios/evidence/govuk-ethnicity-cjs-2024-landing-2026-08-18.png" target="_blank" rel="noopener noreferrer" class="shot-link">
+      <img src="/r/nationality-incarceration-ratios/evidence/govuk-ethnicity-cjs-2024-landing-2026-08-18.png" alt="Archived screenshot of Ethnicity and the Criminal Justice System, 2024" loading="lazy">
+    </a>
+    
+    <a href="/r/nationality-incarceration-ratios/evidence/govuk-lammy-review-landing-2026-08-18.png" target="_blank" rel="noopener noreferrer" class="shot-link">
+      <img src="/r/nationality-incarceration-ratios/evidence/govuk-lammy-review-landing-2026-08-18.png" alt="Archived screenshot of Ethnicity and the Criminal Justice System, 2024" loading="lazy">
+    </a>
+    
+  </details>
+  
+</article>
+
+<article class="source-card" id="s9">
+  <h3>Population estimates for England and Wales, mid-2025</h3>
+  <p class="source-meta">Office for National Statistics · published 2026-07-29 · retrieved 2026-08-18</p>
+  <p class="source-contains">ONS&#39;s routine mid-year population estimate by single year of age, used only for the British side of step 3&#39;s age-structure comparison — the general UK population&#39;s age pyramid, unrelated to nationality.</p>
+
+  
+  <div class="key-figures">
+    
+    
+    <div class="key-figure">
+      <p class="kf-figure"><strong>England and Wales population by broad age band, mid-2025:</strong> 17.9% under 16, 62.9% aged 16–64, 19.3% aged 65+</p>
+      <p class="kf-caveat">Total population 62,009,993. A standard, routinely-published, robust official statistic — included for contrast with S2&#39;s discontinued nationality-population series.</p>
+      <p class="kf-ref">mye25tablesew.xlsx, sheet “MYE2 - Persons”, row “ENGLAND AND WALES”, summed from single-year-of-age columns</p>
+      <button type="button" class="copy-btn" data-copy="England and Wales population by broad age band, mid-2025: 17.9% under 16, 62.9% aged 16–64, 19.3% aged 65+
+Total population 62,009,993. A standard, routinely-published, robust official statistic — included for contrast with S2&#39;s discontinued nationality-population series.
+
+Source: Population estimates for England and Wales, mid-2025, Office for National Statistics — https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/datasets/estimatesofthepopulationforenglandandwales">Copy</button>
+      <div class="card-source-links"><a href="https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/datasets/estimatesofthepopulationforenglandandwales" rel="noopener">https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/datasets/estimatesofthepopulationforenglandandwales</a></div>
+    </div>
+    
+  </div>
+  
+
+  
+
+  
+  
+
+  <div class="source-links">
+    <p><a href="https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/datasets/estimatesofthepopulationforenglandandwales" target="_blank" rel="noopener noreferrer">Official page ↗</a> <button type="button" class="copy-btn" data-copy="https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/datasets/estimatesofthepopulationforenglandandwales">Copy</button></p>
+    
+    <p><a href="https://www.ons.gov.uk/file?uri=/peoplepopulationandcommunity/populationandmigration/populationestimates/datasets/estimatesofthepopulationforenglandandwales/mid20252023localauthorityboundaries/mye25tablesew.xlsx" target="_blank" rel="noopener noreferrer">Direct spreadsheet download ↗</a> <button type="button" class="copy-btn" data-copy="https://www.ons.gov.uk/file?uri=/peoplepopulationandcommunity/populationandmigration/populationestimates/datasets/estimatesofthepopulationforenglandandwales/mid20252023localauthorityboundaries/mye25tablesew.xlsx">Copy</button></p>
+    
+    
+    
+    <p><a href="/r/nationality-incarceration-ratios/evidence/ons-ew-population-estimates-mid2025.xlsx">Archived copy: ons-ew-population-estimates-mid2025.xlsx ↗</a></p>
+    
+    
+    
+    
+  </div>
+  
+  
+    
+  
+    
+  
+  
+  <details class="source-shots">
+    <summary>Archived screenshot of this source, as retrieved</summary>
+    
+    <a href="/r/nationality-incarceration-ratios/evidence/ons-ew-population-estimates-dataset-landing-2026-08-18.png" target="_blank" rel="noopener noreferrer" class="shot-link">
+      <img src="/r/nationality-incarceration-ratios/evidence/ons-ew-population-estimates-dataset-landing-2026-08-18.png" alt="Archived screenshot of Population estimates for England and Wales, mid-2025" loading="lazy">
+    </a>
+    
+  </details>
+  
+</article>
+
+</section>
+
+<section id="limits" class="briefing-limits">
+  <h2>What this data can and cannot tell you</h2>
+  <ul>
+    
+    <li>The population denominator problem is the central limitation of this whole page, not a footnote to it: the UK&#39;s only individual-nationality population series was discontinued after 2021, its best available (2024, ad hoc) successor only publishes broad regional groups, and the planned replacement methodology isn&#39;t due until November–December 2026. Every ratio computed anywhere — on this page, by a journalist, or by an AI chatbot — for a 2026 headcount against an individual nationality&#39;s population currently rests on either a five-year-stale official estimate or an unofficial one nobody has published a methodology for.</li>
+    
+    <li>MoJ&#39;s prison tables do not cross-tabulate age against nationality at all — not even at the British/foreign group level, let alone for individual nationalities — so this page cannot present a direct, computed age-standardised incarceration rate for Albanian, Iranian or Afghan nationals. Step 3&#39;s small-boat age/sex data is offered as the best-evidenced, most current available context for the underlying mechanism, not as a substitute for that missing statistic.</li>
+    
+    <li>MoJ prison figures are England and Wales only; the ONS population denominator (S2) is UK-wide. Wales&#39;s Albanian and Iranian nationality counts are small enough to be marked “No contacts” (Albania) or partially suppressed in the source table, so an England-and-Wales-only denominator could not be reliably constructed without guessing at suppressed cells; using the UK-wide figure instead means the true England-and-Wales-specific population is probably slightly SMALLER than shown here, which would make the true ratio slightly HIGHER — a conservative direction, not one that favours this page&#39;s argument.</li>
+    
+    <li>Four further hypotheses about what might inflate or deflate these figures were checked directly against primary data and are reported honestly whichever way they came out: sex-work enforcement (S1) and pure immigration-status offences (S1) both turned out to be NEGLIGIBLE contributors to the current sentenced-prisoner count; the remand disparity (S1) and deportation attrition (S4) both turned out to be REAL and are built into the interactive walkthrough&#39;s steps 4 and 6; homelessness/begging enforcement (S6, S7) turned out to be a real, nationality-specific mechanism but one that affects immigration status and homelessness statistics, not the prison-population figures this page&#39;s ratios are built from.</li>
+    
+    <li>The interactive walkthrough applies its corrections in one particular order (denominator uncertainty, then age/sex, then remand, then immigration-status offences, then deportation, then enforcement intensity). This is one reasonable ordering, not the only one — a different order would show different numbers at each intermediate step, though the final honest range is unaffected, since every step that could not be precisely quantified left the range unchanged regardless of where it sat in the sequence.</li>
+    
+    <li>This page checks whether raw nationality-incarceration ratios are misleading; it does not and cannot determine why any genuine, fully-adjusted gap that might remain would exist — offending behaviour, policing practice, offence mix, poverty, displacement and asylum-system pressures are all live, contested, and not resolved by anything on this page.</li>
+    
+    <li>As with this site&#39;s companion briefing on UK crime by nationality: every nationality figure here is a legal-nationality count, not an immigration-status or ethnicity count, and every table carries its own small “not recorded” category, included rather than silently dropped.</li>
+    
+  </ul>
+</section>
+
+</section>
+
+
+<script>
+if (!navigator.clipboard) {
+  document.querySelectorAll('.copy-btn').forEach(b => b.hidden = true);
+} else {
+  document.addEventListener('click', async (e) => {
+    const btn = e.target.closest('.copy-btn');
+    if (!btn) return;
+    try {
+      await navigator.clipboard.writeText(btn.dataset.copy || '');
+      const original = btn.textContent;
+      btn.textContent = 'Copied ✓';
+      btn.classList.add('copied');
+      setTimeout(() => { btn.textContent = original; btn.classList.remove('copied'); }, 1600);
+    } catch (err) {
+      btn.textContent = 'Copy failed';
+      setTimeout(() => { btn.textContent = 'Copy'; }, 1600);
+    }
+  });
+}
+</script>
+<script>
+// At a glance / Full detail tabs. The base HTML has both #glance and
+// #detail always visible (see bleep.css) so this is a pure enhancement —
+// without it, both panels show and every hash link (#glance, #detail, or
+// a deep link INTO #detail like #s1/#limits) is a plain, correct browser
+// scroll. With it: only the active panel shows, and a hash pointing at
+// anything nested inside #detail activates #detail first.
+(function () {
+  var glance = document.getElementById('glance');
+  var detail = document.getElementById('detail');
+  var tabGlance = document.getElementById('tab-glance');
+  var tabDetail = document.getElementById('tab-detail');
+  var tablist = document.getElementById('glance-tabs-nav');
+  if (!glance || !detail || !tabGlance || !tabDetail) return;
+  var tabs = [tabGlance, tabDetail];
+
+  if (tablist) tablist.setAttribute('role', 'tablist');
+  tabGlance.setAttribute('role', 'tab');
+  tabGlance.setAttribute('aria-controls', 'glance');
+  tabDetail.setAttribute('role', 'tab');
+  tabDetail.setAttribute('aria-controls', 'detail');
+  glance.setAttribute('role', 'tabpanel');
+  detail.setAttribute('role', 'tabpanel');
+
+  function activate(which) {
+    var showDetail = which === 'detail';
+    detail.hidden = !showDetail;
+    glance.hidden = showDetail;
+    tabDetail.setAttribute('aria-selected', String(showDetail));
+    tabGlance.setAttribute('aria-selected', String(!showDetail));
+  }
+
+  function targetPanel(hash) {
+    var id = (hash || '').slice(1);
+    if (id === 'detail') return 'detail';
+    if (!id || id === 'glance') return 'glance';
+    var el = document.getElementById(id);
+    return (el && detail.contains(el)) ? 'detail' : 'glance';
+  }
+
+  function applyHash(scroll) {
+    activate(targetPanel(location.hash));
+    if (scroll && location.hash.length > 1) {
+      var el = document.getElementById(location.hash.slice(1));
+      if (el) el.scrollIntoView();
+    }
+  }
+
+  tabGlance.addEventListener('click', function (e) { e.preventDefault(); location.hash = '#glance'; });
+  tabDetail.addEventListener('click', function (e) { e.preventDefault(); location.hash = '#detail'; });
+  window.addEventListener('hashchange', function () { applyHash(true); });
+
+  tabs.forEach(function (tab) {
+    tab.addEventListener('keydown', function (e) {
+      var idx = tabs.indexOf(document.activeElement);
+      if (idx === -1) return;
+      var next = null;
+      if (e.key === 'ArrowRight') next = tabs[(idx + 1) % tabs.length];
+      else if (e.key === 'ArrowLeft') next = tabs[(idx - 1 + tabs.length) % tabs.length];
+      else if (e.key === 'Home') next = tabs[0];
+      else if (e.key === 'End') next = tabs[tabs.length - 1];
+      if (next) { e.preventDefault(); next.focus(); next.click(); }
+    });
+  });
+
+  applyHash(false);
+})();
+</script>
+
+
+<script>
+(function () {
+  var dataEl = document.getElementById('stages-data');
+  if (!dataEl) return;
+  var stages;
+  try { stages = JSON.parse(dataEl.textContent); } catch (e) { return; }
+  if (!stages || !stages.length) return;
+
+  // Reduced motion (or no JS at all, which never reaches this line) keeps
+  // the static panels as-is — the interactive stepper never activates.
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  var stepper = document.getElementById('stepper');
+  var staticEl = document.getElementById('stages-static');
+  var headlineEl = document.getElementById('stepper-headline');
+  var chartSlot = document.getElementById('stepper-chart-slot');
+  var captionEl = document.getElementById('stepper-caption');
+  var sourceEl = document.getElementById('stepper-source');
+  var frameEl = stepper.querySelector('.stepper-frame');
+  var backBtn = document.getElementById('stepper-back');
+  var nextBtn = document.getElementById('stepper-next');
+  var dotsEl = document.getElementById('stepper-dots');
+  if (!stepper || !staticEl || !headlineEl) return;
+
+  var stageCharts = stages.map(function (s) {
+    var panel = document.getElementById('stage-' + s.id);
+    return panel ? panel.querySelector('.stage-charts') : null;
+  });
+
+  var idx = 0;
+  var beat = 'setup';
+
+  function arrow(direction) {
+    return direction === 'down' ? '↓' : direction === 'up' ? '↑' : '↔';
+  }
+
+  function renderHeadline(h) {
+    headlineEl.innerHTML = '';
+    if (!h) return;
+    var num = document.createElement('span');
+    var label = document.createElement('span');
+    label.className = 'stepper-num-label';
+    if (h.type === 'value') {
+      num.className = 'stepper-num';
+      num.textContent = h.value + h.unit;
+      label.textContent = h.label || '';
+    } else if (h.type === 'band') {
+      num.className = 'stepper-num stepper-num-band';
+      num.textContent = h.low + '–' + h.high + h.unit;
+      label.textContent = h.label || 'a range, not a single point';
+    } else if (h.type === 'held') {
+      num.className = 'stepper-num stepper-num-held';
+      num.textContent = h.band.low + '–' + h.band.high + h.unit + ' ' + arrow(h.direction);
+      label.textContent = h.note || '';
+    } else if (h.type === 'zero') {
+      num.className = 'stepper-num stepper-num-zero';
+      num.textContent = h.band.low + '–' + h.band.high + h.unit + ' ✓';
+      label.textContent = h.note || '';
+    }
+    headlineEl.appendChild(num);
+    headlineEl.appendChild(label);
+    // restart the reveal transition each time
+    headlineEl.classList.remove('stepper-headline-in');
+    void headlineEl.offsetWidth;
+    headlineEl.classList.add('stepper-headline-in');
+  }
+
+  function render() {
+    var stage = stages[idx];
+    var isSetup = beat === 'setup';
+    captionEl.textContent = isSetup ? stage.setup_caption : stage.apply_caption;
+    renderHeadline(stage.headline ? (isSetup ? stage.headline.pre : stage.headline.post) : null);
+
+    chartSlot.innerHTML = '';
+    var chartsWrap = stageCharts[idx];
+    if (chartsWrap) {
+      var clone = chartsWrap.cloneNode(true);
+      chartSlot.appendChild(clone);
+    }
+    frameEl.setAttribute('data-beat', beat);
+
+    var firstChart = (stage.charts || [])[0];
+    sourceEl.textContent = firstChart ? firstChart.source_line : '';
+
+    backBtn.disabled = (idx === 0 && beat === 'setup');
+    var atEnd = (idx === stages.length - 1 && beat === 'apply');
+    nextBtn.textContent = atEnd ? 'Done ✓' : 'Next →';
+    nextBtn.disabled = atEnd;
+
+    renderDots();
+  }
+
+  function renderDots() {
+    dotsEl.innerHTML = '';
+    stages.forEach(function (s, i) {
+      var pair = document.createElement('span');
+      pair.className = 'stepper-dot-pair';
+      ['setup', 'apply'].forEach(function (b) {
+        var dot = document.createElement('span');
+        var passed = i < idx || (i === idx && (beat === 'apply' || b === 'setup'));
+        var current = i === idx && b === beat;
+        dot.className = 'stepper-dot' + (passed ? ' is-done' : '') + (current ? ' is-current' : '');
+        pair.appendChild(dot);
+      });
+      dotsEl.appendChild(pair);
+    });
+  }
+
+  function next() {
+    if (beat === 'setup') { beat = 'apply'; }
+    else if (idx < stages.length - 1) { idx += 1; beat = 'setup'; }
+    else { return; }
+    render();
+  }
+  function back() {
+    if (beat === 'apply') { beat = 'setup'; }
+    else if (idx > 0) { idx -= 1; beat = 'apply'; }
+    else { return; }
+    render();
+  }
+
+  nextBtn.addEventListener('click', next);
+  backBtn.addEventListener('click', back);
+
+  staticEl.setAttribute('data-stepper-active', 'true');
+  stepper.hidden = false;
+  render();
+})();
+</script>
+
+
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Bleep publishes real data from primary sources — every figure traced to an official
+      document, archived, with honest limits stated alongside it. Nothing here is fabricated
+      or cherry-picked.</p>
+      <p class="support-line">If anything in this subject matter affects you, the Samaritans are
+      available any time on <strong>116 123</strong> (UK &amp; ROI), or
+      <a href="https://www.samaritans.org">samaritans.org</a>.</p>
+    </div>
+  </footer>
+</body>
+</html>
