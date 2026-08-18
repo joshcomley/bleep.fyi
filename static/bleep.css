@@ -165,16 +165,20 @@ tr.row-primary th, tr.row-primary td { background: rgba(217,164,65,.06); }
 .briefing-hero { padding-bottom: 8px; }
 .briefing-updated { color: var(--ink-faint); font-size: 13px; margin-top: -4px; }
 
+/* Tap targets: a 44px comfortable-thumb minimum on touch devices, per
+   the mobile-verification doctrine (docs/mobile-verification.md) — a
+   visually compact button can still have a full-size hit area via
+   padding, so the desktop-density look is unchanged. */
 .copy-btn {
   background: var(--panel-2); color: var(--ink-dim); border: 1px solid var(--line);
   border-radius: 6px; padding: 4px 10px; font-size: 12.5px; font-family: var(--sans);
-  cursor: pointer; white-space: nowrap;
+  cursor: pointer; white-space: nowrap; min-height: 32px;
 }
 .copy-btn:hover { color: var(--ink); border-color: var(--accent); }
 .copy-btn.copied { color: var(--defence); border-color: var(--defence); }
 .copy-btn-prominent {
   background: var(--accent); color: var(--bg); border-color: var(--accent);
-  font-size: 14.5px; font-weight: 600; padding: 10px 18px;
+  font-size: 14.5px; font-weight: 600; padding: 10px 18px; min-height: 44px;
 }
 .copy-btn-prominent:hover { color: var(--bg); filter: brightness(1.08); }
 .copy-btn-prominent.copied { background: var(--defence); border-color: var(--defence); color: var(--bg); }
@@ -187,16 +191,26 @@ tr.row-primary th, tr.row-primary td { background: rgba(217,164,65,.06); }
 /* Per-card source links — every data card (charts, key-figures, hero
    stat, evidence panel, you-should-know) gets its own sources as full,
    visible-URL links at the bottom, deliberately duplicating the master
-   source list — present but unobtrusive (operator doctrine, 2026-08-17). */
-.card-source-links { margin-top: 10px; display: flex; flex-direction: column; gap: 2px; }
-.card-source-links a { color: var(--ink-faint); font-size: 11.5px; word-break: break-all; }
+   source list — present but unobtrusive (operator doctrine, 2026-08-17),
+   prefixed with the literal label "Sources:" (2026-08-18) and wrapping
+   tidily at any width rather than breaking mid-word (2026-08-18 mobile
+   pass: break-all read raggedly on a phone-width card). */
+.card-source-links { margin-top: 10px; display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 8px; }
+.card-source-label { color: var(--ink-dim); font-size: 11.5px; font-weight: 600; }
+.card-source-links a { color: var(--ink-faint); font-size: 11.5px; overflow-wrap: anywhere; line-height: 1.5; }
 .card-source-links a:hover { color: var(--accent); }
 
 .briefing-sources { padding: 20px 0; }
 .briefing-sources > h2 { font-family: var(--serif); font-size: 26px; margin: 0 0 20px; border-bottom: 1px solid var(--line); padding-bottom: 10px; }
+/* "Kill the root card" (operator, 2026-08-18): source cards no longer sit
+   inside their own bordered, rounded, independently-padded box — that
+   stacked a second layer of padding on top of .wrap's own and squished
+   content narrower than it needed to be, worst on mobile. A full-width
+   background band (same colour the card used) keeps the visual
+   separation between sections without the width tax — see
+   docs/mobile-verification.md. */
 .source-card {
-  background: var(--panel); border: 1px solid var(--line); border-radius: 10px;
-  padding: 22px 24px; margin-bottom: 22px;
+  background: var(--panel); padding: 22px 0; margin-bottom: 4px;
 }
 .source-card h3 { font-family: var(--serif); font-size: 21px; margin: 0 0 4px; }
 .source-meta { color: var(--ink-faint); font-size: 13px; margin: 0 0 12px; }
@@ -209,7 +223,11 @@ tr.row-primary th, tr.row-primary td { background: rgba(217,164,65,.06); }
 }
 .kf-figure { margin: 0; flex: 1 1 auto; min-width: 220px; }
 .kf-caveat { margin: 2px 0 0; color: var(--ink-dim); font-size: 13.5px; font-style: italic; flex-basis: 100%; }
-.kf-ref { margin: 2px 0 0; color: var(--ink-faint); font-size: 12px; flex-basis: 100%; }
+/* overflow-wrap:anywhere — a source spreadsheet's raw filename has no
+   spaces to wrap at, so at narrow widths it silently pushed the page a
+   few px past the viewport (measured, 2026-08-18 mobile pass follow-up:
+   the SAME failure mode .card-source-links a was already fixed for). */
+.kf-ref { margin: 2px 0 0; color: var(--ink-faint); font-size: 12px; flex-basis: 100%; overflow-wrap: anywhere; }
 .key-figure .copy-btn { margin-left: auto; }
 
 .source-limits-context {
@@ -230,32 +248,126 @@ tr.row-primary th, tr.row-primary td { background: rgba(217,164,65,.06); }
 .briefing-limits h2 { font-family: var(--serif); font-size: 24px; }
 .briefing-limits li { color: var(--ink-dim); margin-bottom: 12px; }
 
-/* Charts (inline SVG, generated server-side from briefing JSON) */
+/* Charts — server-rendered. Geometry that genuinely needs precise x,y
+   positioning (trend_lines' curves/points, the pictogram's icon grid)
+   stays SVG; every bar chart and every piece of chart TEXT (labels,
+   values, axis) is real HTML. This is a structural mobile-legibility
+   fix, not a font-size tweak: an SVG viewBox scales its whole coordinate
+   space — including anything measured in it, like a "font-size" set via
+   CSS on <text> — down with the container, so a 12px label was measured
+   at ~6px actual height on a 390px phone screenshot (operator doctrine,
+   2026-08-18). Real HTML text is plain CSS pixels and has no such
+   failure mode at any viewport width. See app/charts.py's per-function
+   comments for the rationale on each chart kind. */
+/* "Kill the root card" (operator, 2026-08-18) — see the .source-card
+   comment above; same treatment here. */
 .chart {
-  background: var(--panel-2); border: 1px solid var(--line); border-radius: 8px;
-  padding: 16px 18px; margin: 16px 0; max-width: 100%;
+  background: var(--panel-2); padding: 16px 0; margin: 16px 0; max-width: 100%;
 }
 .chart-title { font-family: var(--serif); font-weight: 600; font-size: 15px; color: var(--ink); margin-bottom: 10px; }
 .chart-svg-wrap { overflow-x: auto; }
 .chart-svg { width: 100%; height: auto; display: block; }
+/* chart-svg-ranked / chart-track: the "16.6x" briefing's own inline-SVG
+   components (app/infographic_ratios.py, a deliberately separate module —
+   see its docstring) still render bars as real SVG <rect>/<text>, unlike
+   this page's HTML/CSS bar charts, so they need their own sizing/fill
+   hooks. */
 .chart-svg-ranked { min-width: 480px; }
 .chart-track { fill: var(--line); }
-.chart-label { fill: var(--ink); font-size: 12px; font-family: var(--sans); }
-.chart-axis { fill: var(--ink-faint); font-size: 11px; font-family: var(--sans); font-variant-numeric: tabular-nums; }
-.chart-gridline { stroke: var(--line); stroke-width: 1; }
-.chart-line { fill: none; stroke-width: 2; }
-.chart-dot { stroke: var(--panel-2); stroke-width: 2; }
+/* chart-label / chart-axis are DUAL-USE: an HTML <p> here (pictogram
+   labels, below) AND an SVG <text> in app/infographic_ratios.py's
+   still-SVG chart kinds — so both a CSS `color` (for the HTML case) and
+   an SVG `fill` (for the SVG case, where `color` has no effect) are
+   declared together rather than picking one and silently unstyling the
+   other's text. */
+.chart-label { display: block; color: var(--ink); fill: var(--ink); font-size: 12px; font-family: var(--sans); }
+.chart-label-lg { display: block; color: var(--ink); font-size: 14px; font-weight: 600; margin: 0 0 2px; }
+.chart-axis { display: block; color: var(--ink-faint); fill: var(--ink-faint); font-size: 11px; font-family: var(--sans); font-variant-numeric: tabular-nums; }
+/* vector-effect: non-scaling-stroke makes stroke-width a true CSS pixel
+   count regardless of the viewBox's scale factor — without it, a
+   "2px" stroke is measured in the SAME user-space units as a viewBox-
+   scaled font-size and gets just as thin on a narrow phone width
+   (2026-08-18 mobile pass: the same root cause as the text-legibility
+   fix, applied to line thickness instead of font size). */
+.chart-gridline { stroke: var(--line); stroke-width: 1; vector-effect: non-scaling-stroke; }
+.chart-line { fill: none; stroke-width: 2.5; vector-effect: non-scaling-stroke; }
+.chart-dot { stroke: var(--panel-2); stroke-width: 2; vector-effect: non-scaling-stroke; }
+@media (max-width: 480px) {
+  .chart-line { stroke-width: 3.5; }
+  /* fewer x-axis tick labels at phone width — keep first, last, and
+     every other one, so the remaining labels have room to breathe
+     without needing a second row or truncation. */
+  .trend-xaxis span:not(:first-child):not(:last-child):nth-child(odd) { visibility: hidden; }
+}
 .chart-legend { display: flex; flex-wrap: wrap; gap: 8px 16px; margin-top: 10px; font-size: 12.5px; color: var(--ink-dim); }
 .chart-legend-item { display: inline-flex; align-items: center; gap: 6px; }
-.chart-swatch { width: 10px; height: 10px; border-radius: 2px; display: inline-block; }
+.chart-swatch { width: 10px; height: 10px; border-radius: 2px; display: inline-block; flex: none; }
 .chart-foot { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px; margin-top: 12px; }
 .chart-source { color: var(--ink-faint); font-size: 12px; margin: 0; flex: 1 1 auto; }
 .chart-note { color: var(--ink-dim); font-size: 12.5px; margin: 0; flex-basis: 100%; }
-.chart-table { margin-top: 10px; }
-.chart-table summary { cursor: pointer; color: var(--accent); font-size: 12.5px; }
+/* overflow-x:auto — a many-column table (the trend chart's one-column-
+   per-year fallback especially) cannot shrink below its content's
+   natural width; without this the table pushed the WHOLE PAGE a few
+   px wider than the viewport at 390px (measured directly via
+   document.scrollWidth during the 2026-08-18 mobile pass — .chart-
+   svg-wrap already had this, .chart-table had been missed). */
+.chart-table { margin-top: 10px; overflow-x: auto; }
+.chart-table summary { cursor: pointer; color: var(--accent); font-size: 12.5px; padding: 6px 0; }
 .chart-table table { width: 100%; border-collapse: collapse; margin-top: 8px; font-size: 12.5px; }
 .chart-table th, .chart-table td { text-align: left; padding: 5px 8px; border-bottom: 1px solid var(--line); font-variant-numeric: tabular-nums; }
 .chart-table th { color: var(--ink-faint); font-weight: 600; }
+
+/* share_bar — pure HTML/CSS composite bar (part-to-whole, always 100%
+   of the track, so no unfilled background is needed). */
+.hbar-track { display: flex; height: 28px; border-radius: 6px; overflow: hidden; width: 100%; }
+.hbar-seg { height: 100%; }
+
+/* ranked_bar — pure HTML/CSS rows: label | track | value */
+.ranked-rows { display: flex; flex-direction: column; gap: 10px; }
+.ranked-row { display: grid; grid-template-columns: minmax(72px, 140px) 1fr auto; align-items: center; gap: 10px; }
+.ranked-label { color: var(--ink-faint); font-size: 13px; text-align: right; overflow-wrap: break-word; }
+.ranked-track { background: var(--line); border-radius: 4px; height: 18px; overflow: hidden; }
+.ranked-fill { height: 100%; border-radius: 4px; }
+.ranked-value { color: var(--ink); font-size: 13px; font-variant-numeric: tabular-nums; min-width: 3.5ch; }
+
+/* paired_share — pure HTML/CSS rows, each its own track+fill+value */
+.paired-rows { display: flex; flex-direction: column; gap: 20px; }
+.paired-label { margin: 0 0 6px; font-size: 14px; font-weight: 600; color: var(--ink); }
+.paired-track-wrap { display: flex; align-items: center; gap: 10px; }
+.paired-track { position: relative; flex: 1 1 auto; height: 28px; background: var(--line); border-radius: 6px; overflow: hidden; }
+.paired-fill { position: absolute; inset: 0 auto 0 0; border-radius: 6px; }
+/* The reference marker sits ON TOP of the fill (z-index) so it stays
+   visible as a dashed line even where a bar's own fill would otherwise
+   cover it — the geometric "these are close" check the marker exists
+   for only works if it is never hidden underneath the very bar it is
+   checking. */
+.paired-refline { position: absolute; top: -3px; bottom: -3px; width: 0; border-left: 1.5px dashed var(--ink); z-index: 1; opacity: .65; }
+.paired-value { flex: none; font-weight: 600; color: var(--ink); font-size: 14px; font-variant-numeric: tabular-nums; min-width: 4.5ch; }
+
+/* diverging_bar — pure HTML/CSS rows diverging from a center zero line */
+.diverging-baseline { text-align: center; color: var(--ink-faint); font-size: 12px; margin: 0 0 10px; }
+.diverging-rows { display: flex; flex-direction: column; gap: 8px; }
+.diverging-row { display: grid; grid-template-columns: minmax(92px, 150px) 1fr auto; align-items: center; gap: 8px; }
+.diverging-label { color: var(--ink-faint); font-size: 12.5px; text-align: right; overflow-wrap: break-word; }
+.diverging-track { position: relative; height: 18px; }
+.diverging-zero { position: absolute; left: 50%; top: -4px; bottom: -4px; width: 1.5px; background: var(--ink-dim); }
+.diverging-fill { position: absolute; top: 0; height: 100%; border-radius: 3px; }
+.diverging-value { font-size: 12.5px; font-variant-numeric: tabular-nums; color: var(--ink); min-width: 5.5ch; }
+.diverging-sides { display: flex; justify-content: space-between; margin-top: 8px; font-size: 11.5px; color: var(--ink-faint); padding: 0 4px; }
+
+/* trend_lines — SVG carries ONLY the line paths, dots and a zero
+   baseline (pure geometry, scales gracefully); the y-axis min/max and
+   x-axis tick labels are HTML siblings, positioned to bracket the SVG's
+   own rendered height/width via flexbox rather than coordinate math. */
+.trend-plot { display: flex; gap: 8px; }
+.trend-yaxis { display: flex; flex-direction: column; justify-content: space-between; font-size: 11px; color: var(--ink-faint); font-variant-numeric: tabular-nums; padding: 4px 0; text-align: right; flex: none; }
+.trend-svg-col { flex: 1 1 auto; min-width: 0; }
+.trend-xaxis { display: flex; justify-content: space-between; gap: 4px; font-size: 11px; color: var(--ink-faint); margin-top: 4px; }
+.trend-xaxis span { text-align: center; }
+
+/* pictogram_100 (unchanged by the mobile pass — already HTML labels +
+   a small fixed-cell SVG grid with no text in it; the pattern every
+   other chart above now follows). */
 
 /* Briefing stages (infographic-led "how the trick works" sequence).
    Mobile-first sizing throughout — clamp() scales text without a media
@@ -370,23 +482,19 @@ tr.row-primary th, tr.row-primary td { background: rgba(217,164,65,.06); }
   .stages-sequence { display: flex !important; }
 }
 
-/* At a glance — chart component additions */
-.chart-label-lg { fill: var(--ink); font-size: 14px; font-weight: 600; font-family: var(--sans); }
-.chart-label-bold { font-weight: 600; }
-.chart-refline { stroke: var(--ink-faint); stroke-width: 1.5; stroke-dasharray: 4 3; }
-.chart-zero-axis { stroke: var(--ink-dim); stroke-width: 1.5; }
-.chart-svg-paired { min-width: 420px; }
-.chart-svg-diverging { min-width: 520px; }
 .pictogram-groups { display: flex; flex-direction: column; gap: 20px; }
-.pictogram-group .chart-label-lg { display: block; margin: 0 0 2px; }
-.pictogram-group .chart-axis { display: block; margin: 0 0 8px; }
 .chart-svg-pictogram { width: 178px; max-width: 100%; height: auto; display: block; }
+/* The shared .chart-axis rule (above) has no bottom margin — most callers
+   sit right against a chart title or a track with no gap needed — but the
+   pictogram's per-group subscript line ("12 of 100 (11.88%) — ...") needs
+   breathing room before the icon grid below it. */
+.pictogram-group .chart-axis { margin: 0 0 8px; }
 
 /* At a glance — hero ratio stat (the "Stat tile"/"Hero figure" pattern:
-   one big number, ≥48px, proportional (not tabular) figures). */
+   one big number, ≥48px, proportional (not tabular) figures). "Kill the
+   root card" (operator, 2026-08-18): full-width band, no border/radius. */
 .hero-stat {
-  background: var(--panel-2); border: 1px solid var(--line); border-radius: 10px;
-  padding: 24px 28px; margin: 20px 0; text-align: center;
+  background: var(--panel-2); padding: 24px 12px; margin: 20px 0; text-align: center;
 }
 .hero-stat-label { color: var(--ink-faint); font-size: 13px; text-transform: uppercase; letter-spacing: .1em; margin: 0 0 6px; }
 .hero-stat-value { font-family: var(--sans); font-size: 56px; font-weight: 700; color: var(--ink); margin: 0 0 10px; line-height: 1; }
@@ -403,16 +511,19 @@ tr.row-primary th, tr.row-primary td { background: rgba(217,164,65,.06); }
   border-radius: 0 8px 8px 0; padding: 14px 16px;
 }
 .ysk-text { color: var(--ink); font-size: 14.5px; margin: 0; }
-.ysk-jump { display: inline-block; margin-top: 8px; font-size: 12.5px; color: var(--accent); }
+.ysk-jump { display: inline-flex; align-items: center; min-height: 44px; margin-top: 4px; font-size: 12.5px; color: var(--accent); }
 
 /* At a glance — enforcement-bias / disparity evidence panel. Uses --accent
    (the page's existing "important editorial content" color, per
    .comment-box/.header-note) rather than a nationality-series color —
    this panel is research/context, not chart data, so it must not borrow
    a hue that elsewhere on the page means "foreign nationals". */
+/* "Kill the root card" (operator, 2026-08-18): full-width band, no
+   right-side rounding — only the left accent border remains, since a
+   colour stripe is not a width tax the way a boxed card's own padding is. */
 .evidence-panel {
   border-left: 3px solid var(--accent); background: var(--panel);
-  border-radius: 0 10px 10px 0; padding: 22px 24px; margin: 24px 0;
+  padding: 22px 0 22px 18px; margin: 24px 0;
 }
 .evidence-panel h2 { font-family: var(--serif); font-size: 22px; margin: 0 0 10px; }
 .evidence-intro { color: var(--ink-dim); max-width: 74ch; margin: 0 0 18px; }
@@ -427,6 +538,28 @@ tr.row-primary th, tr.row-primary td { background: rgba(217,164,65,.06); }
   color: var(--ink-dim); font-size: 14px;
 }
 
+/* At a glance — the "featured question" section: a named, answer-first
+   block for the single most-asked question, high on the page (operator
+   doctrine, 2026-08-18). Generic/JSON-driven — not sex-crimes-specific —
+   so a future briefing's own most-asked question uses the same markup.
+   "Kill the root card": full-width band, left accent only (matches
+   .evidence-panel's treatment — this section carries similar editorial
+   weight, arguably the page's second-most-important block after the hero). */
+.featured-question {
+  border-left: 3px solid var(--accent); background: var(--panel);
+  padding: 22px 0 22px 18px; margin: 24px 0;
+}
+.featured-question h2 { font-family: var(--serif); font-size: 22px; margin: 0 0 10px; }
+.featured-answer { color: var(--ink); font-size: 16px; max-width: 74ch; margin: 0 0 14px; }
+.featured-limits { color: var(--ink-dim); font-size: 13.5px; max-width: 74ch; margin: 14px 0 0; }
+.featured-question .chart { padding-right: 18px; }
+
+/* Full detail's charts-first lead (operator, 2026-08-18: "even on the
+   full version put the graphs stuff at the top" — the picture before
+   the source-by-source prose). */
+.detail-charts-lead { margin: 20px 0 8px; }
+.detail-charts-lead h2 { font-family: var(--serif); font-size: 22px; margin: 0 0 4px; }
+
 /* At a glance / Full detail tabs. No-JS floor: #glance and #detail are
    both ordinary, always-visible <section>s in document order — no CSS
    hiding at all — so every hash link (#glance, #detail, and internal
@@ -437,6 +570,7 @@ tr.row-primary th, tr.row-primary td { background: rgba(217,164,65,.06); }
    (see copy_script()) — it is additive, never a replacement contract. */
 .glance-tabs { display: flex; gap: 4px; border-bottom: 1px solid var(--line); margin: 24px 0 0; }
 .glance-tabs a {
+  display: inline-flex; align-items: center; min-height: 44px;
   padding: 10px 18px; color: var(--ink-dim); font-size: 14px; font-weight: 600;
   border-bottom: 2px solid transparent; margin-bottom: -1px;
 }
@@ -447,10 +581,10 @@ tr.row-primary th, tr.row-primary td { background: rgba(217,164,65,.06); }
 
 .glance-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start; }
 .glance-more { margin: 24px 0 40px; font-size: 14.5px; }
+.glance-more a { display: inline-flex; align-items: center; min-height: 44px; }
 @media (max-width: 820px) {
   .evidence-columns { grid-template-columns: 1fr; }
   .glance-grid { grid-template-columns: 1fr; }
-  .chart-svg-diverging, .chart-svg-paired { min-width: 0; }
 }
 
 @media (max-width: 720px) {
@@ -460,4 +594,19 @@ tr.row-primary th, tr.row-primary td { background: rgba(217,164,65,.06); }
   .nav { flex-wrap: wrap; }
   .stepper-controls { justify-content: center; }
   .stepper-back, .stepper-next { flex: 1 1 auto; }
+}
+
+/* Mobile pass, 2026-08-18 (operator-verified on live phone screenshot):
+   tighten label columns and gaps so bar-chart rows and the trend y-axis
+   have more room for the track itself on a narrow phone width, and grow
+   copy buttons a touch further for comfortable thumb tapping. */
+@media (max-width: 480px) {
+  .ranked-row, .diverging-row { grid-template-columns: minmax(56px, 92px) 1fr auto; gap: 6px; }
+  .ranked-label, .diverging-label { font-size: 11.5px; }
+  .trend-yaxis { min-width: 2.5ch; font-size: 10px; }
+  .trend-xaxis { font-size: 10px; }
+  .paired-track-wrap { gap: 6px; }
+  .paired-value { font-size: 13px; }
+  .copy-btn { padding: 8px 12px; }
+  .hero h1 { font-size: 26px; }
 }
