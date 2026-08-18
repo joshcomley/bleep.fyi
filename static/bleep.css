@@ -147,6 +147,7 @@ a:hover { text-decoration: underline; }
 .subject-card p { color: var(--ink-dim); font-size: 14.5px; margin: 0 0 12px; }
 .subject-kind { font-size: 11px; text-transform: uppercase; letter-spacing: .1em; color: var(--ink-faint); }
 .subject-card.primary-archive { border-left: 3px solid var(--accent); }
+.subject-card.briefing-archive { border-left: 3px solid var(--corrected); }
 .subject-count { color: var(--accent); font-size: 13.5px; font-weight: 600; }
 
 .table-scroll { overflow-x: auto; padding-bottom: 30px; }
