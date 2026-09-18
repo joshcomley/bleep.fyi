@@ -20,6 +20,9 @@
 
 
 
+
+
+
 <section class="hero briefing-hero">
   <h1>What do the official statistics actually say about Albanian nationals and crime in the UK?</h1>
   <p class="lede">The most-quoted claim about Albanian nationals in Britain — that they are the nationality most likely to commit sexual offences — cannot be checked against official UK data, because the government has never published the figure it would take. The Ministry of Justice publishes how many Albanian nationals are in prison (943, as at 30 June 2026) and separately how many prisoners are held for sexual offences, but it has never crossed the two, for Albanians or for any other nationality. The one dataset that would answer it has been compiled by the Ministry, ordered released by the Information Commissioner, and withheld while the Ministry appeals. Where individual police forces have published their own full nationality tables, Albanians are near the bottom: 2 of the 575 arrests of non-UK nationals for rape and sexual assault in West Yorkshire in 2024, and 2 of the 594 West Midlands sexual-offence records that name a nationality in 2025. What is true is that Albanian nationals are the largest single foreign nationality in prison in England and Wales, and on the raw overall imprisonment rate — all offences, not sexual offences — they are the highest of any nationality that can be measured, at 35.9 times the British rate. That figure carries two separate kinds of uncertainty, and both are large. Its own survey&#39;s margin of error alone puts it between 26.0 and 57.9 times. Swapping that survey for a different official population figure — there are six, all defensible — moves it further still, to anywhere between 8.3 and 57.9 times. During 2025, 1,937 Albanian nationals were referred to the government as suspected victims of modern slavery — about twice the 943 in prison — and just over half of those referrals involved criminal exploitation: being trafficked into committing crimes for someone else. Full sources, the arithmetic and every caveat: https://bleep.fyi/r/albanian-nationals-uk-crime</p>
@@ -1786,6 +1789,65 @@ if (!navigator.clipboard) {
   staticEl.setAttribute('data-stepper-active', 'true');
   stepper.hidden = false;
   render();
+})();
+</script>
+
+
+<script>
+(function() {
+  var section = document.getElementById('timeline-section');
+  if (!section) return;
+
+  var eraSelect = document.getElementById('filter-era');
+  var countrySelect = document.getElementById('filter-country');
+  var powerSelect = document.getElementById('filter-power');
+  var resetBtn = document.getElementById('timeline-filter-reset');
+  var countEl = document.getElementById('timeline-visible-count');
+  var cards = section.querySelectorAll('.timeline-card');
+
+  if (!eraSelect || !countrySelect || !powerSelect || !cards.length) return;
+
+  function filterTimeline() {
+    var selectedEra = eraSelect.value;
+    var selectedCountry = countrySelect.value;
+    var selectedPower = powerSelect.value;
+    var visibleCount = 0;
+
+    for (var i = 0; i < cards.length; i++) {
+      var card = cards[i];
+      var cardEra = card.getAttribute('data-era') || '';
+      var cardCountries = (card.getAttribute('data-countries') || '').split(',');
+      var cardPowers = (card.getAttribute('data-powers') || '').split(',');
+
+      var eraMatch = (selectedEra === 'all' || cardEra === selectedEra);
+      var countryMatch = (selectedCountry === 'all' || cardCountries.indexOf(selectedCountry) !== -1);
+      var powerMatch = (selectedPower === 'all' || cardPowers.indexOf(selectedPower) !== -1);
+
+      if (eraMatch && countryMatch && powerMatch) {
+        card.style.display = '';
+        visibleCount++;
+      } else {
+        card.style.display = 'none';
+      }
+    }
+
+    if (countEl) {
+      countEl.textContent = visibleCount;
+    }
+  }
+
+  eraSelect.addEventListener('change', filterTimeline);
+  countrySelect.addEventListener('change', filterTimeline);
+  powerSelect.addEventListener('change', filterTimeline);
+
+  if (resetBtn) {
+    resetBtn.addEventListener('click', function() {
+      eraSelect.value = 'all';
+      countrySelect.value = 'all';
+      powerSelect.value = 'all';
+      filterTimeline();
+    });
+  }
 })();
 </script>
 

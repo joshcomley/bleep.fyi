@@ -20,6 +20,9 @@
 
 
 
+
+
+
 <section class="hero briefing-hero">
   <h1>Is it true that Afghan men in the UK are &#34;22 times more likely&#34; to be convicted of rape?</h1>
   <p class="lede">The claim that Afghan men in Britain are &#34;22 times more likely&#34; to be convicted of rape does not reproduce from any data we could find — including data published later by the think tank the figure is traced back to. Nigel Farage made it at his campaign launch in the summer of 2025. Three independent fact-checks disagree with each other about exactly how the number was built, but all conclude it does not hold up, and the think tank&#39;s own later analysis, using real government data obtained under freedom of information law, explicitly refuses to compute a per-nationality &#34;times more likely&#34; figure at all, because doing so &#34;would likely require unverifiable assumptions&#34;. That does not mean there is nothing here. Real 2024 conviction data shows 43 sexual-offence convictions of Afghan nationals in England and Wales — 19 for sexual assault on a female, 8 for rape of a female aged 16 or over. Those are counts, not rates. Whether they are a lot depends entirely on how many Afghan nationals were in the country, and that is where the whole problem lives: the last official count is five years old, already carried a 39% margin of error, and predates tens of thousands of Afghan arrivals. This page therefore publishes no Afghan rate. For contrast, a different measure entirely — the share of each nationality in prison for ANY offence, divided by that nationality&#39;s UK population — can be computed for nationalities that are well counted, and French, German, Italian, Polish, Portuguese and Spanish nationals all come out BELOW the British rate, with Romanian nationals slightly above it at 1.45 times. Full sources, the arithmetic and every caveat: https://bleep.fyi/r/afghan-nationals-uk-crime</p>
@@ -1210,6 +1213,65 @@ if (!navigator.clipboard) {
   staticEl.setAttribute('data-stepper-active', 'true');
   stepper.hidden = false;
   render();
+})();
+</script>
+
+
+<script>
+(function() {
+  var section = document.getElementById('timeline-section');
+  if (!section) return;
+
+  var eraSelect = document.getElementById('filter-era');
+  var countrySelect = document.getElementById('filter-country');
+  var powerSelect = document.getElementById('filter-power');
+  var resetBtn = document.getElementById('timeline-filter-reset');
+  var countEl = document.getElementById('timeline-visible-count');
+  var cards = section.querySelectorAll('.timeline-card');
+
+  if (!eraSelect || !countrySelect || !powerSelect || !cards.length) return;
+
+  function filterTimeline() {
+    var selectedEra = eraSelect.value;
+    var selectedCountry = countrySelect.value;
+    var selectedPower = powerSelect.value;
+    var visibleCount = 0;
+
+    for (var i = 0; i < cards.length; i++) {
+      var card = cards[i];
+      var cardEra = card.getAttribute('data-era') || '';
+      var cardCountries = (card.getAttribute('data-countries') || '').split(',');
+      var cardPowers = (card.getAttribute('data-powers') || '').split(',');
+
+      var eraMatch = (selectedEra === 'all' || cardEra === selectedEra);
+      var countryMatch = (selectedCountry === 'all' || cardCountries.indexOf(selectedCountry) !== -1);
+      var powerMatch = (selectedPower === 'all' || cardPowers.indexOf(selectedPower) !== -1);
+
+      if (eraMatch && countryMatch && powerMatch) {
+        card.style.display = '';
+        visibleCount++;
+      } else {
+        card.style.display = 'none';
+      }
+    }
+
+    if (countEl) {
+      countEl.textContent = visibleCount;
+    }
+  }
+
+  eraSelect.addEventListener('change', filterTimeline);
+  countrySelect.addEventListener('change', filterTimeline);
+  powerSelect.addEventListener('change', filterTimeline);
+
+  if (resetBtn) {
+    resetBtn.addEventListener('click', function() {
+      eraSelect.value = 'all';
+      countrySelect.value = 'all';
+      powerSelect.value = 'all';
+      filterTimeline();
+    });
+  }
 })();
 </script>
 

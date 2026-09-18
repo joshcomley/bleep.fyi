@@ -20,6 +20,9 @@
 
 
 
+
+
+
 <section class="hero briefing-hero">
   <h1>Is Ben-Gvir building gallows with viewing booths so people can watch Palestinian prisoners be hanged?</h1>
   <p class="lede">A viral post claims Ben-Gvir &#34;is building gallows with viewing booths so people can watch Palestinian prisoners be hanged.&#34; The core of this is true, with two overshoots. Israel&#39;s Knesset passed a law on 30 March 2026, by 62 votes to 48 (of its 120 seats), requiring military courts to sentence defined categories of killing to death by hanging, unless the court finds special circumstances allowing life imprisonment. On 18 August 2026, National Security Minister Itamar Ben-Gvir published video — from his own political party, with no independent inspection or confirmation — from a prison whose death-row wing is already built and whose hanging facility is now under construction, with no completion date given, saying in his own words that it will include viewing booths. First overshoot: his own wording limits viewing to bereaved victims&#39; families holding a permit, not the general public. Second overshoot: the post presupposes prisoners will actually be hanged there, but no death sentence has yet been handed down under the law and no execution has taken place — the facility could be completed and never used. The law reaches Palestinians in practice through two separate mechanisms: its West Bank military courts, which try only Palestinians and foreign residents and explicitly exclude Israeli citizens by law, and a separate civilian-court offence that applies only to killing intended to deny the existence of the State of Israel — a motive test legal scholars say is unlikely to be attributed to a Jewish extremist. Multiple human-rights bodies, including a United Nations committee, call this discriminatory. A legal challenge against the law remains unresolved at Israel&#39;s High Court of Justice, which has declined to freeze it. Full sources, every figure, every caveat: https://bleep.fyi/r/ben-gvir-gallows-viewing-booths</p>
@@ -1901,6 +1904,65 @@ if (!navigator.clipboard) {
   staticEl.setAttribute('data-stepper-active', 'true');
   stepper.hidden = false;
   render();
+})();
+</script>
+
+
+<script>
+(function() {
+  var section = document.getElementById('timeline-section');
+  if (!section) return;
+
+  var eraSelect = document.getElementById('filter-era');
+  var countrySelect = document.getElementById('filter-country');
+  var powerSelect = document.getElementById('filter-power');
+  var resetBtn = document.getElementById('timeline-filter-reset');
+  var countEl = document.getElementById('timeline-visible-count');
+  var cards = section.querySelectorAll('.timeline-card');
+
+  if (!eraSelect || !countrySelect || !powerSelect || !cards.length) return;
+
+  function filterTimeline() {
+    var selectedEra = eraSelect.value;
+    var selectedCountry = countrySelect.value;
+    var selectedPower = powerSelect.value;
+    var visibleCount = 0;
+
+    for (var i = 0; i < cards.length; i++) {
+      var card = cards[i];
+      var cardEra = card.getAttribute('data-era') || '';
+      var cardCountries = (card.getAttribute('data-countries') || '').split(',');
+      var cardPowers = (card.getAttribute('data-powers') || '').split(',');
+
+      var eraMatch = (selectedEra === 'all' || cardEra === selectedEra);
+      var countryMatch = (selectedCountry === 'all' || cardCountries.indexOf(selectedCountry) !== -1);
+      var powerMatch = (selectedPower === 'all' || cardPowers.indexOf(selectedPower) !== -1);
+
+      if (eraMatch && countryMatch && powerMatch) {
+        card.style.display = '';
+        visibleCount++;
+      } else {
+        card.style.display = 'none';
+      }
+    }
+
+    if (countEl) {
+      countEl.textContent = visibleCount;
+    }
+  }
+
+  eraSelect.addEventListener('change', filterTimeline);
+  countrySelect.addEventListener('change', filterTimeline);
+  powerSelect.addEventListener('change', filterTimeline);
+
+  if (resetBtn) {
+    resetBtn.addEventListener('click', function() {
+      eraSelect.value = 'all';
+      countrySelect.value = 'all';
+      powerSelect.value = 'all';
+      filterTimeline();
+    });
+  }
 })();
 </script>
 

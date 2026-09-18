@@ -20,6 +20,9 @@
 
 
 
+
+
+
 <section class="hero briefing-hero">
   <h1>Where are the official UK government statistics on crime broken down by nationality?</h1>
   <p class="lede">Official UK government data on crime and nationality does exist, but it is scattered and easy to miss. The Ministry of Justice publishes the prison population by nationality every quarter: as at 30 June 2026, foreign nationals were 11.8% of the prison population (10,134 of 85,858), and 10.25% of prisoners held for sexual offences specifically — slightly under-represented on that measure. What the government does NOT routinely publish is criminal convictions broken down by nationality: MoJ has confirmed in writing to Parliament that its conviction statistics carry no nationality breakdown, and MoJ is currently appealing an Information Commissioner&#39;s Office order to release fuller conviction-by-nationality data. Full sources, verified figures and archived copies of every spreadsheet: https://bleep.fyi/r/uk-crime-by-nationality</p>
@@ -1506,6 +1509,65 @@ if (!navigator.clipboard) {
   staticEl.setAttribute('data-stepper-active', 'true');
   stepper.hidden = false;
   render();
+})();
+</script>
+
+
+<script>
+(function() {
+  var section = document.getElementById('timeline-section');
+  if (!section) return;
+
+  var eraSelect = document.getElementById('filter-era');
+  var countrySelect = document.getElementById('filter-country');
+  var powerSelect = document.getElementById('filter-power');
+  var resetBtn = document.getElementById('timeline-filter-reset');
+  var countEl = document.getElementById('timeline-visible-count');
+  var cards = section.querySelectorAll('.timeline-card');
+
+  if (!eraSelect || !countrySelect || !powerSelect || !cards.length) return;
+
+  function filterTimeline() {
+    var selectedEra = eraSelect.value;
+    var selectedCountry = countrySelect.value;
+    var selectedPower = powerSelect.value;
+    var visibleCount = 0;
+
+    for (var i = 0; i < cards.length; i++) {
+      var card = cards[i];
+      var cardEra = card.getAttribute('data-era') || '';
+      var cardCountries = (card.getAttribute('data-countries') || '').split(',');
+      var cardPowers = (card.getAttribute('data-powers') || '').split(',');
+
+      var eraMatch = (selectedEra === 'all' || cardEra === selectedEra);
+      var countryMatch = (selectedCountry === 'all' || cardCountries.indexOf(selectedCountry) !== -1);
+      var powerMatch = (selectedPower === 'all' || cardPowers.indexOf(selectedPower) !== -1);
+
+      if (eraMatch && countryMatch && powerMatch) {
+        card.style.display = '';
+        visibleCount++;
+      } else {
+        card.style.display = 'none';
+      }
+    }
+
+    if (countEl) {
+      countEl.textContent = visibleCount;
+    }
+  }
+
+  eraSelect.addEventListener('change', filterTimeline);
+  countrySelect.addEventListener('change', filterTimeline);
+  powerSelect.addEventListener('change', filterTimeline);
+
+  if (resetBtn) {
+    resetBtn.addEventListener('click', function() {
+      eraSelect.value = 'all';
+      countrySelect.value = 'all';
+      powerSelect.value = 'all';
+      filterTimeline();
+    });
+  }
 })();
 </script>
 
