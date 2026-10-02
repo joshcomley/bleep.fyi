@@ -947,6 +947,10 @@ tr.row-primary th, tr.row-primary td { background: rgba(217,164,65,.06); }
 .explainer-sources { max-width: 900px; margin: 1.5rem auto; }
 .explainer-sources summary { cursor: pointer; }
 @media (max-width: 600px) {
-  .explainer-table { font-size: .85rem; }
-  .explainer-table th, .explainer-table td { padding: .35rem; }
+  .explainer-table, .explainer-table tbody, .explainer-table tr,
+  .explainer-table th, .explainer-table td, .explainer-table caption { display: block; }
+  .explainer-table thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+  .explainer-table tr { margin-bottom: 1rem; border-bottom: 1px solid #777; }
+  .explainer-table th, .explainer-table td { padding: .4rem 0; border: 0; }
+  .explainer-table td::before { content: attr(data-label); font-weight: 600; }
 }
