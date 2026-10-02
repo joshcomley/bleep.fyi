@@ -23,6 +23,10 @@
 
 
 
+
+
+
+
 <section class="hero briefing-hero">
   <h1>Is it true that Afghan men in the UK are &#34;22 times more likely&#34; to be convicted of rape?</h1>
   <p class="lede">The claim that Afghan men in Britain are &#34;22 times more likely&#34; to be convicted of rape does not reproduce from any data we could find — including data published later by the think tank the figure is traced back to. Nigel Farage made it at his campaign launch in the summer of 2025. Three independent fact-checks disagree with each other about exactly how the number was built, but all conclude it does not hold up, and the think tank&#39;s own later analysis, using real government data obtained under freedom of information law, explicitly refuses to compute a per-nationality &#34;times more likely&#34; figure at all, because doing so &#34;would likely require unverifiable assumptions&#34;. That does not mean there is nothing here. Real 2024 conviction data shows 43 sexual-offence convictions of Afghan nationals in England and Wales — 19 for sexual assault on a female, 8 for rape of a female aged 16 or over. Those are counts, not rates. Whether they are a lot depends entirely on how many Afghan nationals were in the country, and that is where the whole problem lives: the last official count is five years old, already carried a 39% margin of error, and predates tens of thousands of Afghan arrivals. This page therefore publishes no Afghan rate. For contrast, a different measure entirely — the share of each nationality in prison for ANY offence, divided by that nationality&#39;s UK population — can be computed for nationalities that are well counted, and French, German, Italian, Polish, Portuguese and Spanish nationals all come out BELOW the British rate, with Romanian nationals slightly above it at 1.45 times. Full sources, the arithmetic and every caveat: https://bleep.fyi/r/afghan-nationals-uk-crime</p>
@@ -996,6 +1000,7 @@ Source: Two independent reconstructions of where the &#34;22 times&#34; figure c
 </section>
 
 
+
 <script>
 if (!navigator.clipboard) {
   document.querySelectorAll('.copy-btn').forEach(b => b.hidden = true);
@@ -1272,6 +1277,56 @@ if (!navigator.clipboard) {
       filterTimeline();
     });
   }
+})();
+</script>
+
+
+<script>
+(function() {
+  var tabButtons = document.querySelectorAll('.comparison-tab-btn');
+  var panels = document.querySelectorAll('.comparison-panel');
+  if (!tabButtons.length || !panels.length) return;
+
+  function switchTab(btn) {
+    var targetPanelId = btn.getAttribute('data-panel');
+    tabButtons.forEach(function(b) {
+      b.classList.remove('active');
+      b.setAttribute('aria-selected', 'false');
+    });
+    panels.forEach(function(p) {
+      p.classList.remove('active');
+      p.hidden = true;
+    });
+
+    btn.classList.add('active');
+    btn.setAttribute('aria-selected', 'true');
+    var activePanel = document.getElementById(targetPanelId);
+    if (activePanel) {
+      activePanel.classList.add('active');
+      activePanel.hidden = false;
+    }
+  }
+
+  tabButtons.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      switchTab(this);
+    });
+    btn.addEventListener('keydown', function(e) {
+      var btnArr = Array.prototype.slice.call(tabButtons);
+      var idx = btnArr.indexOf(this);
+      if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+        e.preventDefault();
+        var nextIdx = (idx + 1) % btnArr.length;
+        btnArr[nextIdx].focus();
+        switchTab(btnArr[nextIdx]);
+      } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        var prevIdx = (idx - 1 + btnArr.length) % btnArr.length;
+        btnArr[prevIdx].focus();
+        switchTab(btnArr[prevIdx]);
+      }
+    });
+  });
 })();
 </script>
 

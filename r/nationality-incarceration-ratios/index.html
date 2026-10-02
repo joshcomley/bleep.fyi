@@ -284,6 +284,10 @@ Source: GLA/CHAIN, Annual Report Greater London 2025/26, page 34, retrieved 2026
 
 
 
+
+
+
+
 <section class="hero briefing-hero">
   <h1>Is it true that Albanian nationals in the UK are &#34;16.6 times more likely&#34; to be in prison than British people?</h1>
   <p class="lede">Reproducing the &#34;16.6x more likely to be in prison&#34; calculation from official data — the same kind of prison count divided by the same kind of population estimate — does not make the number smaller. For Albanian and Afghan nationals it comes out larger. The real problem is what a raw ratio like this leaves out. The population figure on the bottom of the sum is a UK statistical series that was discontinued in 2021, with a margin of error of roughly a third even then. &#34;British&#34; in the comparison means the UK&#39;s entire population, newborns to pensioners, while migrant nationality groups are overwhelmingly young working-age adults — the highest-imprisonment group for every nationality, not just some. And foreign nationals in the prison count are twice as likely as British nationals to be unconvicted and awaiting trial rather than sentenced, while thousands of convicted foreign offenders are removed from the country each year, before a longer-run count would ever catch them. None of that proves the true, fully corrected gap is zero — for these specific nationalities, no official body has published the like-for-like adjustment needed to know either way. Full sources, the arithmetic and every caveat: https://bleep.fyi/r/nationality-incarceration-ratios</p>
@@ -1150,6 +1154,7 @@ Source: Population estimates for England and Wales, mid-2025, Office for Nationa
 </section>
 
 
+
 <script>
 if (!navigator.clipboard) {
   document.querySelectorAll('.copy-btn').forEach(b => b.hidden = true);
@@ -1426,6 +1431,56 @@ if (!navigator.clipboard) {
       filterTimeline();
     });
   }
+})();
+</script>
+
+
+<script>
+(function() {
+  var tabButtons = document.querySelectorAll('.comparison-tab-btn');
+  var panels = document.querySelectorAll('.comparison-panel');
+  if (!tabButtons.length || !panels.length) return;
+
+  function switchTab(btn) {
+    var targetPanelId = btn.getAttribute('data-panel');
+    tabButtons.forEach(function(b) {
+      b.classList.remove('active');
+      b.setAttribute('aria-selected', 'false');
+    });
+    panels.forEach(function(p) {
+      p.classList.remove('active');
+      p.hidden = true;
+    });
+
+    btn.classList.add('active');
+    btn.setAttribute('aria-selected', 'true');
+    var activePanel = document.getElementById(targetPanelId);
+    if (activePanel) {
+      activePanel.classList.add('active');
+      activePanel.hidden = false;
+    }
+  }
+
+  tabButtons.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      switchTab(this);
+    });
+    btn.addEventListener('keydown', function(e) {
+      var btnArr = Array.prototype.slice.call(tabButtons);
+      var idx = btnArr.indexOf(this);
+      if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+        e.preventDefault();
+        var nextIdx = (idx + 1) % btnArr.length;
+        btnArr[nextIdx].focus();
+        switchTab(btnArr[nextIdx]);
+      } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        var prevIdx = (idx - 1 + btnArr.length) % btnArr.length;
+        btnArr[prevIdx].focus();
+        switchTab(btnArr[prevIdx]);
+      }
+    });
+  });
 })();
 </script>
 
